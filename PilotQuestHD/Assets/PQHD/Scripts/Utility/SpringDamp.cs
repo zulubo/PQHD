@@ -35,6 +35,16 @@ namespace PQHD
             integrator.Update(Mathf.Min(deltaTime, MaxDT), forces);
         }
 
+        public void UpdateSubstepped(float setPoint, float deltaTime, int substeps)
+        {
+            deltaTime = Mathf.Min(deltaTime, MaxDT);
+            deltaTime /= substeps;
+            for(int i = 0; i < substeps; i++)
+            {
+                Update(setPoint, deltaTime);
+            }
+        }
+
         public void Bump(float velocity)
         {
             Velocity += velocity;
@@ -85,6 +95,16 @@ namespace PQHD
             integrator.Update(Mathf.Min(deltaTime, MaxDT), forces);
         }
 
+        public void UpdateSubstepped(Vector2 setPoint, float deltaTime, int substeps)
+        {
+            deltaTime = Mathf.Min(deltaTime, MaxDT);
+            deltaTime /= substeps;
+            for(int i = 0; i < substeps; i++)
+            {
+                Update(setPoint, deltaTime);
+            }
+        }
+
         public void Bump(Vector2 velocity)
         {
             Velocity += velocity;
@@ -133,6 +153,16 @@ namespace PQHD
             Vector3 forces = Vector3.Scale(setPoint - integrator.position, spring);
             forces -=  Vector3.Scale(integrator.velocity, damp);
             integrator.Update(Mathf.Min(deltaTime, MaxDT), forces);
+        }
+
+        public void UpdateSubstepped(Vector3 setPoint, float deltaTime, int substeps)
+        {
+            deltaTime = Mathf.Min(deltaTime, MaxDT);
+            deltaTime /= substeps;
+            for(int i = 0; i < substeps; i++)
+            {
+                Update(setPoint, deltaTime);
+            }
         }
 
         public void Bump(Vector3 velocity)

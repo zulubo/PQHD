@@ -61,8 +61,9 @@ namespace PQHD
             {
                 if (bounceTimer > 0)
                 {
-                    bounceTimer -= Time.deltaTime;
-                    bounceSim.Update(1, Time.deltaTime);
+                    float dt = Mathf.Min(Time.deltaTime, 0.01666666666f);
+                    bounceTimer -= dt;
+                    bounceSim.UpdateSubstepped(1, dt, 2);
                     numText.transform.localScale = new Vector3(1, bounceSim.Position, 1);
                 }
             }

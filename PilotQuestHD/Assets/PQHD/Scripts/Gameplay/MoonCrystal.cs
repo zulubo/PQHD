@@ -55,7 +55,7 @@ namespace PQHD
 
         private void Update()
         {
-            reactSim.Update(Vector2.one, Time.deltaTime);
+            reactSim.UpdateSubstepped(Vector2.one, Time.deltaTime, 4);
             reactTransform.transform.localScale = new Vector3(reactSim.Position.x, reactSim.Position.y, 1);
         }
     }
