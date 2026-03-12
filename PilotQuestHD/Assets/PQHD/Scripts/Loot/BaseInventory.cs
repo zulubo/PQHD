@@ -21,7 +21,7 @@ namespace PQHD
 
         private void OnDestroy()
         {
-            Saving.SaveToDisk();
+            Save();
             Saving.OnLoadedState -= LoadedState;
         }
 
@@ -35,8 +35,14 @@ namespace PQHD
             while (true)
             {
                 yield return new WaitForSeconds(autosaveTime);
-                Saving.SaveToDisk();
+                Save();
             }
+        }
+
+        void Save()
+        {
+            Saving.State.inventory = inventory.Serialize();
+            Saving.SaveToDisk();
         }
     }
 }

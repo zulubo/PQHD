@@ -34,11 +34,13 @@ namespace PQHD
 
         private const bool ModernControls = true;
 
+        bool AllowMovement => !StopMoving && !Dialog.DialogManager.IsPlayingDialog;
+
         private void Update()
         {
             Vector2 moveInput = moveAction.ReadValue<Vector2>();
 
-            if (moveInput.magnitude > 0.5f && !StopMoving)
+            if (moveInput.magnitude > 0.5f && AllowMovement)
             {
                 if (!ModernControls)
                 {
@@ -59,7 +61,7 @@ namespace PQHD
                 moveInput = Vector2.zero;
             }
 
-            if (ModernControls && !StopMoving)
+            if (ModernControls && AllowMovement)
             {
                 Vector2 aimInput = aimAction.ReadValue<Vector2>();
                 if (aimInput.magnitude > 0.2f)

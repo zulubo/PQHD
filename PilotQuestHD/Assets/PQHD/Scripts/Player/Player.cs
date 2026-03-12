@@ -31,6 +31,8 @@ namespace PQHD
 
         private void Update()
         {
+            if(Dialog.DialogManager.IsPlayingDialog) return;
+            
             if (action_attack.WasPressedThisFrame() && !busy)
             {
                 YoyoAttack(yoyoDefault);

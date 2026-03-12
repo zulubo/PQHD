@@ -83,6 +83,7 @@ namespace PQHD
 
         public void Deserialize(SerializedInventory serialized)
         {
+            if(serialized.contents == null) return;
             foreach (KeyValuePair<string, int> loadedContent in serialized.contents)
             {
                 Loot loot = database.FindByID(loadedContent.Key);
