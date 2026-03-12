@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fa9e039220f72499f778a79c0a0e29, type: 3}
+  m_Name: StoneTileTileset
+  m_EditorClassIdentifier: PilotQuestHD::PQHD.MeshTilesetSimple
+  addColliders: 0
+  colliderTopHeight: 0
+  colliderBottomHeight: -1
+  colliderMaterial: {fileID: 0}
+  tiles:
+  - tile2D: {fileID: 11400000, guid: 420086f4eb62bc04abeb7523641e7adb, type: 2}
+    prefab: {fileID: 8606038929012833190, guid: 52a81baf74391e94eb9b04bbcb7c21ca, type: 3}
+    randomRotation: 1
+  - tile2D: {fileID: 11400000, guid: 9b3db988f5faa0640acad09c6db0ff5d, type: 2}
+    prefab: {fileID: 28721871211330115, guid: 2e288a0ad15970740b2915665f60c1ee, type: 3}
+    randomRotation: 1
+  - tile2D: {fileID: 11400000, guid: f9dffb3633d50fd4f826b235ec29e981, type: 2}
+    prefab: {fileID: 4808333676011075837, guid: b056f9b60b4c38f44bcff2ccd08b760c, type: 3}
+    randomRotation: 0
+  - tile2D: {fileID: 11400000, guid: 8af28208765968948a45a4c933766760, type: 2}
+    prefab: {fileID: 3625367395046123420, guid: e0a6635fdf04a9a4c9bd076842ad572e, type: 3}
+    randomRotation: 0
+  - tile2D: {fileID: 11400000, guid: 8fd83dcc686493b49a5765b74d203540, type: 2}
+    prefab: {fileID: 4916860865581057550, guid: e6e47e741cddd3b4daa33be5add638a7, type: 3}
+    randomRotation: 0

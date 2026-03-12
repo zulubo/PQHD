@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b95ad8d7f8a7942a3ecff7b03370bb, type: 3}
+  m_Name: BlueGrassTileset
+  m_EditorClassIdentifier: PilotQuestHD::PQHD.MeshTilesetDualGrid
+  tile2D: {fileID: 11400000, guid: 5509733c1d0047546b9a89bed23fdc70, type: 2}
+  tile_1111:
+    prefab: {fileID: 5316913786428596139, guid: d3ab96ca22a4ed8429e13c3fe92a4723, type: 3}
+    rotateDecorations: 0
+    decorations:
+    - prefab: {fileID: 0}
+      weight: 1.5
+    - prefab: {fileID: 8273140117296384112, guid: 55ec8aec7da622440b1f7bec40566f54, type: 3}
+      weight: 1
+    - prefab: {fileID: 3336476695838876026, guid: 6607a0e17563a6446b841bfa4377ebb0, type: 3}
+      weight: 1
+    - prefab: {fileID: 1950579353624893479, guid: 3dcacf3dce063154fabd25aacc0561a1, type: 3}
+      weight: 0.6
+    - prefab: {fileID: 2193861541752720992, guid: e12a7e882880f7c41b26c38a27902801, type: 3}
+      weight: 1
+    - prefab: {fileID: 4398960558018773369, guid: f06e832db2181ad45843432a3d1e2a12, type: 3}
+      weight: 1
+    - prefab: {fileID: 162045623964373306, guid: a5054cb02a60f3a4a8a1134f614b5f6d, type: 3}
+      weight: 1
+  tile_1101:
+    prefab: {fileID: 1967042290083645978, guid: 320f4ac5772d1d74d86e06c7871da0d7, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 2011957710593978177, guid: e289843775bbc9e4ba56d5fa20dd58ea, type: 3}
+      weight: 1
+  tile_1010:
+    prefab: {fileID: 9189473997093029124, guid: 16600c2f71870424382ee0312ee6307b, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 629796368998404387, guid: 6c1a7e699fe45bc4e93199d11903bda6, type: 3}
+      weight: 1
+  tile_1001:
+    prefab: {fileID: 9021221000032894729, guid: ae6164b8216156a40a33a019f4ca3880, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 5196576781589452107, guid: c2d8bbdc9459066458f7080671abacfb, type: 3}
+      weight: 1
+    - prefab: {fileID: 5196576781589452107, guid: 959b94f7fe2425848abf73da8b1ffe26, type: 3}
+      weight: 1
+  tile_1000:
+    prefab: {fileID: 8536351996403819297, guid: da76ef713b82b7340a538bc60af092e3, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 3302902056137199176, guid: ade28aa0711c635429ae0eb324f341ab, type: 3}
+      weight: 1

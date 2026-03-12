@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2b95ad8d7f8a7942a3ecff7b03370bb, type: 3}
+  m_Name: HedgeSlopeTileset
+  m_EditorClassIdentifier: PilotQuestHD::PQHD.MeshTilesetDualGrid
+  tile2D: {fileID: 11400000, guid: ddd4b6ea87cc3c44ea49292894a49082, type: 2}
+  tile_1111:
+    prefab: {fileID: 7140246523159125144, guid: 77f191f01295b3746a9844ae421f2de3, type: 3}
+    rotateDecorations: 1
+    decorations: []
+  tile_1101:
+    prefab: {fileID: 4961278108844215048, guid: 5840acce99f36d24db9f87d0355f56b2, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 3910340988691499996, guid: a022cf18c9a861649a0abecb0d8304cd, type: 3}
+      weight: 1
+  tile_1010:
+    prefab: {fileID: 3526480862488306047, guid: 25ab3149282c3924e970bc3e1ae5fe93, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 712048567832968141, guid: 951048584e798ab428abd4653d87e1e4, type: 3}
+      weight: 1
+  tile_1001:
+    prefab: {fileID: 2851751628602416132, guid: 9753a8abac77b00469f67773ecdc9ac2, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 3719713286036293567, guid: a63402d9fb63d014bbcfed284c8615cd, type: 3}
+      weight: 1
+    - prefab: {fileID: 3286409732451430407, guid: e2494f90a1f6c3540a2d7953119b8367, type: 3}
+      weight: 1
+  tile_1000:
+    prefab: {fileID: 402863702107945060, guid: 7a933c00f308ddb4fad89aaf844d9c4c, type: 3}
+    rotateDecorations: 1
+    decorations:
+    - prefab: {fileID: 7751604374735268332, guid: 47177287816529648a424b758c528e92, type: 3}
+      weight: 1
+    - prefab: {fileID: 1425021106849675224, guid: 39042c2018e8d4946baebaa884feeddc, type: 3}
+      weight: 1
