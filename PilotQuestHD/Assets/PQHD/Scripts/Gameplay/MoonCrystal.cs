@@ -16,21 +16,17 @@ namespace PQHD
         [SerializeField] private float spawnMinSpeed = 2f;
         [SerializeField] private float spawnMaxSpeed = 4f;
 
-        [SerializeField] private Transform reactTransform;
-        [SerializeField] private Vector2 reactSpring = new Vector2(200, 100);
-        [SerializeField] private Vector2 reactDamp = new Vector2(25, 20);
-        [SerializeField] private float reactAmount = 0.5f;
-        private SpringDamp2 reactSim;
+        
 
-        private void Start()
-        {
-            reactSim = new SpringDamp2(Vector2.one, reactSpring, reactDamp);
-        }
 
-        public void Hit()
+        public void Hit(HitInfo info)
         {
-            SpawnSomething();
-            reactSim.Bump(new Vector2(reactAmount, -reactAmount));
+            if (info.type != HitType.Melee) return;
+            
+            for (int d = 0; d < info.strength; d++)
+            {
+                SpawnSomething();
+            }
         }
 
         private void SpawnSomething()
@@ -53,10 +49,5 @@ namespace PQHD
                                 Vector3.forward * Random.Range(spawnMinSpeed, spawnMaxSpeed);
         }
 
-        private void Update()
-        {
-            reactSim.UpdateSubstepped(Vector2.one, Time.deltaTime, 4);
-            reactTransform.transform.localScale = new Vector3(reactSim.Position.x, reactSim.Position.y, 1);
-        }
     }
 }

@@ -209,8 +209,9 @@ namespace PQHD
                     mr = chunk.gameObject.AddComponent<MeshRenderer>();
                 mf.sharedMesh = chunkMesh;
                 mr.sharedMaterials = materials.ToArray();
+#if UNITY_EDITOR
                 mr.receiveGI = ReceiveGI.LightProbes;
-
+#endif
                 // clean up tiles
                 for (int t = 0; t < instTiles.Count; t++)
                 {

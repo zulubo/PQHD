@@ -8,7 +8,7 @@ namespace PQHD
         [SerializeField] DialogGraphRuntime hitDialog;
         [SerializeField] DialogGraphRuntime interactDialog;
 
-        public void Hit()
+        public void Hit(HitInfo info)
         {
             hitDialog.Play();
         }

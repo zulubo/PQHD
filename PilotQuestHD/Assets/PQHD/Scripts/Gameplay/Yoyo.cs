@@ -20,6 +20,8 @@ namespace PQHD
         private bool hasHit;
         private float attackTimer;
 
+        [SerializeField] private int hitDamage = 1;
+
 
         private void OnDrawGizmosSelected()
         {
@@ -71,7 +73,7 @@ namespace PQHD
 
             for (int i = 0; i < overlapCount; i++)
             {
-                if (IHittable.TryFind(overlapBuffer[i], out IHittable hit)) hit.Hit();
+                IHittable.HitCollider(overlapBuffer[i], new HitInfo(hitDamage, HitType.Melee));
             }
         }
     }

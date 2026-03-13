@@ -25,6 +25,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+  - _GEOMETRICSPECULARAA
   - _MASKBLUECHANNEL_UNUSED
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -128,7 +129,7 @@ Material:
     - _DstBlendAlpha: 0
     - _ENABLEDETAILS: 0
     - _EnvironmentReflections: 1
-    - _GEOMETRICSPECULARAA: 0
+    - _GEOMETRICSPECULARAA: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

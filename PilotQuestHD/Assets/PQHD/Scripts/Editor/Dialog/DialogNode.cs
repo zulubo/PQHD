@@ -1,0 +1,161 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEditor;
+using UnityEditor.Experimental.GraphView;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
+using System.Linq;
+
+namespace PQHD.Dialog
+{
+    // ===============================================================
+    // Dialog node using unity's graphview
+    // ===============================================================
+    public class DialogNode : DialogNodeBase
+    {
+        public TextField dialogText;
+
+        public ObjectField voiceLine;
+
+
+        public static DialogNode Create(DialogGraphView graph, Vector2 position)
+        {
+            var dialogNode = new DialogNode()
+            {
+                GUID = System.Guid.NewGuid().ToString(),
+            };
+
+            dialogNode.tooltip = "Plays dialog";
+
+            dialogNode.style.flexDirection = FlexDirection.Row;
+            dialogNode.style.maxWidth = 300;
+            //dialogNode.style.flexGrow = 1;
+
+            var inputPort = DialogGraphView.GeneratePort(dialogNode, Direction.Input, Port.Capacity.Multi);
+            inputPort.portName = "Input";
+            dialogNode.inputContainer.Add(inputPort);
+
+            var button = new Button(() => { AddChoicePort(graph, dialogNode); });
+            button.text = "Add Choice";
+            dialogNode.titleContainer.Add(button);
+
+
+            dialogNode.mainContainer.Add(DialogGraphView.Spacer(10));
+
+            dialogNode.mainContainer.Add(DialogGraphView.Spacer(10));
+
+
+            dialogNode.dialogText = new TextField(string.Empty)
+            {
+                multiline = true,
+            };
+            dialogNode.dialogText.RegisterValueChangedCallback(evt =>
+            {
+                dialogNode.title = GetNodeTitle(evt.newValue);
+                if (evt.newValue != evt.previousValue) graph.isDirty = true;
+            });
+            //dialogNode.dialogText.SetValueWithoutNotify(dialogNode.dialogText);
+            dialogNode.dialogText.style.whiteSpace = WhiteSpace.Normal;
+            dialogNode.mainContainer.Add(dialogNode.dialogText);
+
+            dialogNode.mainContainer.Add(DialogGraphView.Spacer(10));
+
+            DialogGraphView.AddDefaultPort(dialogNode);
+
+            dialogNode.RefreshExpandedState();
+            dialogNode.RefreshPorts();
+            dialogNode.SetPosition(new Rect(position, graph.defaultNodeSize));
+
+            return dialogNode;
+        }
+
+
+        public static void AddChoicePort(DialogGraphView graph, DialogNode dialogNode, string overridePortName = "", bool retriggerEnabled = true)
+        {
+            var generatedPort = DialogGraphView.GeneratePort(dialogNode, Direction.Output);
+
+            // remove default port if needed
+            var defaultPort = dialogNode.outputContainer.Children().ToList().Find(p => p is Port && ((Port)p).portName == "DEFAULT") as Port;
+            if (defaultPort != null)
+            {
+                foreach (Edge e in defaultPort.connections.ToList())
+                {
+                    // reassign all default connections to this new port
+                    defaultPort.Disconnect(e);
+                    e.output = generatedPort;
+                    generatedPort.Connect(e);
+                }
+                dialogNode.outputContainer.Remove(defaultPort);
+                graph.RemoveElement(defaultPort);
+            }
+
+            AddRetriggerToggle(generatedPort.contentContainer, retriggerEnabled);
+
+            var oldLabel = generatedPort.contentContainer.Q<Label>("type");
+            oldLabel.style.display = DisplayStyle.None;
+            //generatedPort.contentContainer.Remove(oldLabel);
+
+            var outputPortCount = dialogNode.outputContainer.Query("connector").ToList().Count;
+            generatedPort.portName = $"Choice {outputPortCount}";
+
+            var choicePortName = string.IsNullOrEmpty(overridePortName) ? $"Choice {outputPortCount}" : overridePortName;
+
+            var textField = new TextField
+            {
+                name = string.Empty,
+                value = choicePortName
+            };
+            textField.RegisterValueChangedCallback(evt => { generatedPort.portName = evt.newValue; if (evt.newValue != evt.previousValue) graph.isDirty = true; });
+            textField.style.maxWidth = 120;
+            dialogNode.dialogText.style.whiteSpace = WhiteSpace.Normal;
+            generatedPort.contentContainer.Add(new Label("  "));
+            generatedPort.contentContainer.Add(textField);
+
+            var deleteButton = new Button(() => graph.RemovePort(dialogNode, generatedPort)) { text = "X" };
+            generatedPort.contentContainer.Add(deleteButton);
+
+            generatedPort.portName = choicePortName;
+            dialogNode.outputContainer.Add(generatedPort);
+            dialogNode.RefreshPorts();
+            dialogNode.RefreshExpandedState();
+            graph.isDirty = true;
+        }
+
+
+        readonly static System.Text.RegularExpressions.Regex regex_removeEvents = new System.Text.RegularExpressions.Regex(@"\n|\[([^]]*)\]");
+        readonly static System.Text.RegularExpressions.Regex regex_removeWhitespace = new System.Text.RegularExpressions.Regex(@"/\S.*\S/");
+        static string GetNodeTitle(string text)
+        {
+            text = regex_removeEvents.Replace(text, "");
+            text = regex_removeWhitespace.Replace(text, "");
+            if (text.Length < 24) return text;
+            else return text.Substring(0, 24);
+        }
+
+
+        public override SerializedNode SerializeNode()
+        {
+            return new SerializedDialogNode()
+            {
+                GUID = this.GUID,
+                position = this.GetPosition().position,
+                ports = SerializePorts(),
+                dialogText = dialogText.value,
+            };
+        }
+
+        public override void DeserializeNode(DialogGraphView graph, SerializedNode data)
+        {
+            var d = data as SerializedDialogNode;
+            graph.ResetPorts(this);
+            GUID = d.GUID;
+            SetPosition(new Rect(d.position, Vector2.zero));
+            d.ports.ForEach(p => { if (p.portName != "DEFAULT") AddChoicePort(graph, this, p.portName, p.retriggerEnabled); });
+            dialogText.value = d.dialogText;
+
+            RefreshPorts();
+            RefreshExpandedState();
+        }
+    }
+}
