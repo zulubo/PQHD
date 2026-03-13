@@ -19,16 +19,29 @@ MonoBehaviour:
   - baseNodeGuid: acc9057d-3279-48d3-888d-d08df7cd038c
     portName: Yes
     targetNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
+  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
+    portName: True
+    targetNodeGuid: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
+  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
+    portName: False
+    targetNodeGuid: fbbe8dca-6751-48af-93f4-5b8a9614534b
+  - baseNodeGuid: acc9057d-3279-48d3-888d-d08df7cd038c
+    portName: No
+    targetNodeGuid: 069a088a-1419-44c9-a58a-54e5d1b3c382
   nodeData:
-  - rid: 8349358455216406701
-  - rid: 8349358455216406702
-  - rid: 8349358455216406703
-  - rid: 8349358455216406704
-  exposedProperties: []
+  - rid: 4911756245520351588
+  - rid: 4911756245520351589
+  - rid: 4911756245520351590
+  - rid: 4911756245520351591
+  - rid: 4911756245520351592
+  - rid: 4911756245520351593
+  exposedProperties:
+  - PropertyName: HasMeat
+    DefaultValue: False
   references:
     version: 2
     RefIds:
-    - rid: 8349358455216406701
+    - rid: 4911756245520351588
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -36,7 +49,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 8349358455216406702
+    - rid: 4911756245520351589
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: acc9057d-3279-48d3-888d-d08df7cd038c
@@ -49,17 +62,17 @@ MonoBehaviour:
         dialogText: Slard is my name. If you want to survive the wild zone, you'll
           need some meat.
         defaultPort: -1
-    - rid: 8349358455216406703
+    - rid: 4911756245520351590
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 808, y: 37}
+        position: {x: 808, y: 37.333332}
         eventKey: 'custom:'
         eventBody: MoveAside
-    - rid: 8349358455216406704
+    - rid: 4911756245520351591
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 1a313bc5-638d-44a6-a663-f63084fcaa72
@@ -68,8 +81,28 @@ MonoBehaviour:
           retriggerEnabled: 1
         - portName: False
           retriggerEnabled: 1
-        position: {x: 631.5, y: 110}
+        position: {x: 631.3334, y: 110}
         propertyName: HasMeat
         type: 1
         comparison: 0
         comparator: True
+    - rid: 4911756245520351592
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: fbbe8dca-6751-48af-93f4-5b8a9614534b
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 829.3334, y: 251.33334}
+        dialogText: Get some meat and I'll let you pass.
+        defaultPort: -1
+    - rid: 4911756245520351593
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 069a088a-1419-44c9-a58a-54e5d1b3c382
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 596.6667, y: 388.66666}
+        dialogText: Oh yeah? Well, just stay here then.
+        defaultPort: -1

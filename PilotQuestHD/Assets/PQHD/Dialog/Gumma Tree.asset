@@ -1,0 +1,160 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
+  m_Name: Gumma Tree
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: 88d6fdd7-6e1e-440c-ab42-4e90e16c64c3
+  - baseNodeGuid: 88d6fdd7-6e1e-440c-ab42-4e90e16c64c3
+    portName: True
+    targetNodeGuid: 28a96361-2c52-4276-9b00-5dd246aba5c5
+  - baseNodeGuid: 88d6fdd7-6e1e-440c-ab42-4e90e16c64c3
+    portName: False
+    targetNodeGuid: dbfd2a3d-32c4-4341-9e1f-178d13403ad1
+  - baseNodeGuid: 28a96361-2c52-4276-9b00-5dd246aba5c5
+    portName: No
+    targetNodeGuid: 8512ac9e-6b7f-44bd-90bf-eb2fb87730bb
+  - baseNodeGuid: 28a96361-2c52-4276-9b00-5dd246aba5c5
+    portName: Yes
+    targetNodeGuid: 2ca53cdf-09c5-4fd2-8064-b1cdb8198e31
+  - baseNodeGuid: 2ca53cdf-09c5-4fd2-8064-b1cdb8198e31
+    portName: False
+    targetNodeGuid: f447b74f-a3d4-4138-9380-abc9c77e0e71
+  - baseNodeGuid: 2ca53cdf-09c5-4fd2-8064-b1cdb8198e31
+    portName: True
+    targetNodeGuid: a0239589-9e09-485e-9e2a-302a512e6d90
+  - baseNodeGuid: a0239589-9e09-485e-9e2a-302a512e6d90
+    portName: DEFAULT
+    targetNodeGuid: aea237f8-32a8-44a8-970f-38299764e672
+  nodeData:
+  - rid: 4911756245520351526
+  - rid: 4911756245520351527
+  - rid: 4911756245520351528
+  - rid: 4911756245520351529
+  - rid: 4911756245520351530
+  - rid: 4911756245520351531
+  - rid: 4911756245520351532
+  - rid: 4911756245520351533
+  - rid: 4911756245520351534
+  exposedProperties:
+  - PropertyName: Price
+    DefaultValue: 5
+  - PropertyName: SeedAvailable
+    DefaultValue: True
+  - PropertyName: CanAfford
+    DefaultValue: False
+  - PropertyName: MoonDropsRequired
+    DefaultValue: 200
+  references:
+    version: 2
+    RefIds:
+    - rid: 4911756245520351526
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 4911756245520351527
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 88d6fdd7-6e1e-440c-ab42-4e90e16c64c3
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 256.66666, y: 200}
+        propertyName: SeedAvailable
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756245520351528
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 28a96361-2c52-4276-9b00-5dd246aba5c5
+        ports:
+        - portName: Yes
+          retriggerEnabled: 1
+        - portName: No
+          retriggerEnabled: 1
+        position: {x: 502.66666, y: 84}
+        dialogText: I'm the gumma tree. If you give me <prop:Price> moon drops I
+          can make a seed for you.
+        defaultPort: 1
+    - rid: 4911756245520351529
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: dbfd2a3d-32c4-4341-9e1f-178d13403ad1
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 499.3333, y: 388.66666}
+        dialogText: OUT OF SEEDS (TEMP)
+        defaultPort: -1
+    - rid: 4911756245520351530
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 8512ac9e-6b7f-44bd-90bf-eb2fb87730bb
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 860.6667, y: 231.33333}
+        dialogText: I see. Please return if you'd like a seed.
+        defaultPort: -1
+    - rid: 4911756245520351531
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 2ca53cdf-09c5-4fd2-8064-b1cdb8198e31
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 860.6667, y: -8.666667}
+        propertyName: CanAfford
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756245520351532
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: f447b74f-a3d4-4138-9380-abc9c77e0e71
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1088.6666, y: 71.333336}
+        dialogText: I'm sorry, I need <prop:MoonDropsRequired> more moon drops!
+        defaultPort: -1
+    - rid: 4911756245520351533
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: a0239589-9e09-485e-9e2a-302a512e6d90
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1088.6666, y: -116}
+        eventKey: 'custom:'
+        eventBody: DropSeed
+    - rid: 4911756245520351534
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: aea237f8-32a8-44a8-970f-38299764e672
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1282, y: -116}
+        dialogText: Thank you! Here is your seed!
+        defaultPort: -1

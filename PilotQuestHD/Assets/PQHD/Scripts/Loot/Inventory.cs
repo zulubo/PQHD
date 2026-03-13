@@ -52,6 +52,30 @@ namespace PQHD
             }
         }
 
+        /// <summary>
+        /// Remove all of one loot item
+        /// </summary>
+        public void RemoveAll(Loot loot)
+        {
+            if (contents.TryGetValue(loot, out int haveCount))
+            {
+                contents[loot] = 0;
+                OnChanged?.Invoke();
+            }
+        }
+
+        /// <summary>
+        /// Remove all posessions
+        /// </summary>
+        public void RemoveAll()
+        {
+            foreach (KeyValuePair<Loot, int> pair in contents)
+            {
+                contents[pair.Key] = 0;
+            }
+            OnChanged?.Invoke();
+        }
+
         private void Awake()
         {
             I = this;

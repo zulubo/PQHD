@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEditor.UIElements;
@@ -70,7 +71,7 @@ namespace PQHD.Dialog
             node.outputCount++;
             var generatedPort = DialogGraphView.GeneratePort(node, Direction.Output);
 
-            generatedPort.portName = node.outputCount.ToString();
+            generatedPort.portName = node.outputCount.ToString(CultureInfo.InvariantCulture);
             node.outputContainer.Add(generatedPort);
             Port defaultPort = node.outputContainer.Children().ToList().Find(v => v is Port && ((Port)v).portName == "DEFAULT") as Port;
             if (defaultPort != null) defaultPort.BringToFront();

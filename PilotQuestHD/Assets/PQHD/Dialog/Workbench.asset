@@ -17,29 +17,33 @@ MonoBehaviour:
     portName: DEFAULT
     targetNodeGuid: a49f987e-75ff-49c7-bf4e-a510326ce5ca
   - baseNodeGuid: a49f987e-75ff-49c7-bf4e-a510326ce5ca
+    portName: No
+    targetNodeGuid: 9fe4034f-8359-4659-a978-5305278bec86
+  - baseNodeGuid: a49f987e-75ff-49c7-bf4e-a510326ce5ca
     portName: Yes
-    targetNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
-  - baseNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+    targetNodeGuid: dcb7285c-7604-4762-afcd-4db63b577d40
+  - baseNodeGuid: dcb7285c-7604-4762-afcd-4db63b577d40
     portName: True
     targetNodeGuid: d5718fe2-e8b6-47cf-b751-b782709d9da6
-  - baseNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+  - baseNodeGuid: dcb7285c-7604-4762-afcd-4db63b577d40
     portName: False
     targetNodeGuid: 166454f1-b1a2-4078-90ad-409609a52416
   nodeData:
-  - rid: 8349358455216406739
-  - rid: 8349358455216406740
-  - rid: 8349358455216406741
-  - rid: 8349358455216406742
-  - rid: 8349358455216406743
+  - rid: 4911756245520351625
+  - rid: 4911756245520351626
+  - rid: 4911756245520351627
+  - rid: 4911756245520351628
+  - rid: 4911756245520351629
+  - rid: 4911756245520351630
   exposedProperties:
-  - PropertyName: MoonDropCount
-    PropertyValue: 0
-  - PropertyName: RequiredMoonDrops
-    PropertyValue: 1000
+  - PropertyName: CanAfford
+    DefaultValue: False
+  - PropertyName: MoonDropsRequired
+    DefaultValue: 1000
   references:
     version: 2
     RefIds:
-    - rid: 8349358455216406739
+    - rid: 4911756245520351625
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -47,7 +51,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 8349358455216406740
+    - rid: 4911756245520351626
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: a49f987e-75ff-49c7-bf4e-a510326ce5ca
@@ -60,37 +64,47 @@ MonoBehaviour:
         dialogText: You can use this workbench to turn 1000 moon drops into 1 moon
           ingot.
         defaultPort: 1
-    - rid: 8349358455216406741
-      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
-        ports:
-        - portName: True
-          retriggerEnabled: 1
-        - portName: False
-          retriggerEnabled: 1
-        position: {x: 578, y: 110}
-        propertyName: MoonDropCount
-        type: 2
-        comparison: 1
-        comparator: 999
-    - rid: 8349358455216406742
+    - rid: 4911756245520351627
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: d5718fe2-e8b6-47cf-b751-b782709d9da6
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 746, y: 52.5}
+        position: {x: 746, y: 52.666664}
         eventKey: 'custom:'
-        eventBody: CreateMoonIngot
-    - rid: 8349358455216406743
+        eventBody: CreateIngot
+    - rid: 4911756245520351628
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 9fe4034f-8359-4659-a978-5305278bec86
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 571.3334, y: 460}
+        dialogText: Come back when you need a moon ingot.
+        defaultPort: -1
+    - rid: 4911756245520351629
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: dcb7285c-7604-4762-afcd-4db63b577d40
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 557.3334, y: 107.33333}
+        propertyName: CanAfford
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756245520351630
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 166454f1-b1a2-4078-90ad-409609a52416
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 742, y: 260}
-        dialogText: You need [prop:RequiredMoonDrops] more moon drops!
+        position: {x: 746, y: 260}
+        dialogText: You need <prop:MoonDropsRequired> more moon drops!
         defaultPort: -1

@@ -1,0 +1,109 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
+  m_Name: Build Silo
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: 78776907-30a3-4ce0-9b1f-a89384f7a3b2
+  - baseNodeGuid: 78776907-30a3-4ce0-9b1f-a89384f7a3b2
+    portName: Yes
+    targetNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
+  - baseNodeGuid: 78776907-30a3-4ce0-9b1f-a89384f7a3b2
+    portName: No
+    targetNodeGuid: a1cb3a62-4848-4df9-be27-31c2f79c82aa
+  - baseNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
+    portName: True
+    targetNodeGuid: 601733e7-6e6f-4d2a-9718-f794c69aeef6
+  - baseNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
+    portName: False
+    targetNodeGuid: f974afd8-8fe6-4081-bc8d-9e5f2349a4cb
+  nodeData:
+  - rid: 4911756245520351276
+  - rid: 4911756245520351277
+  - rid: 4911756245520351278
+  - rid: 4911756245520351279
+  - rid: 4911756245520351280
+  - rid: 4911756245520351281
+  exposedProperties:
+  - PropertyName: IngotsNeeded
+    PropertyValue: 5
+  - PropertyName: CanAfford
+    PropertyValue: False
+  references:
+    version: 2
+    RefIds:
+    - rid: 4911756245520351276
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 4911756245520351277
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 78776907-30a3-4ce0-9b1f-a89384f7a3b2
+        ports:
+        - portName: Yes
+          retriggerEnabled: 1
+        - portName: No
+          retriggerEnabled: 1
+        position: {x: 216.66667, y: 200}
+        dialogText: Build a resource silo for 50 ingots?
+        defaultPort: 1
+    - rid: 4911756245520351278
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 569.3334, y: 71.333336}
+        propertyName: CanAfford
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756245520351279
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 601733e7-6e6f-4d2a-9718-f794c69aeef6
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 763.3334, y: -26}
+        eventKey: 'custom:'
+        eventBody: Build
+    - rid: 4911756245520351280
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: f974afd8-8fe6-4081-bc8d-9e5f2349a4cb
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 786.6667, y: 215.33333}
+        dialogText: You need [prop:IngotsNeeded] more ingots!
+        defaultPort: -1
+    - rid: 4911756245520351281
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: a1cb3a62-4848-4df9-be27-31c2f79c82aa
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 544.6667, y: 384.66666}
+        dialogText: The silo remains unbuilt.
+        defaultPort: -1

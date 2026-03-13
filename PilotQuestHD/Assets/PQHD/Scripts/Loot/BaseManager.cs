@@ -5,10 +5,9 @@ using UnityEngine.InputSystem;
 
 namespace PQHD
 {
-    public class BaseInventory : MonoBehaviour
+    public class BaseManager : MonoBehaviour
     {
         [SerializeField] private Inventory inventory;
-        
         [SerializeField] private float autosaveTime = 10;
 
         private void Start()

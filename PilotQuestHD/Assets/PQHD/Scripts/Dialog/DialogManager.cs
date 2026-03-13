@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.UI;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -18,11 +16,7 @@ namespace PQHD.Dialog
     {
         public static DialogManager I;
         public static bool IsPlayingDialog => I.activeDialog != null;
-
-        private InputAction action_a;
-        private InputAction action_b;
-        private InputAction action_navigate;
-
+        public static DialogGraphRuntime ActiveDialogRuntime => IsPlayingDialog ? I.activeDialog.runtime : null;
 
         [System.Serializable]
         private class DialogBox
@@ -127,16 +121,10 @@ namespace PQHD.Dialog
             I = this;
         }
 
-        private void Start()
-        {
-            action_a = InputSystem.actions.FindAction("A");
-            action_b = InputSystem.actions.FindAction("B");
-            action_navigate = InputSystem.actions.FindAction("Move");
-        }
 
         public delegate void DialogFinishEvent(bool cancel = false, string selectedPort = "DEFAULT");
 
-        public static void TriggerDialog(SerializedDialogNode node, MonoBehaviour context, List<string> choices, DialogFinishEvent onFinish)
+        public static void TriggerDialog(SerializedDialogNode node, DialogGraphRuntime runtime, List<string> choices, DialogFinishEvent onFinish)
         {
             if(I == null)
             {
@@ -144,13 +132,13 @@ namespace PQHD.Dialog
                 return;
             }
 
-            I.ShowDialogBox(node, context, choices, onFinish);
+            I.ShowDialogBox(node, runtime, choices, onFinish);
         }
 
         private class ActiveDialog
         {
             public Coroutine coroutine;
-            public MonoBehaviour context;
+            public DialogGraphRuntime runtime;
             public DialogFinishEvent finishEvent;
             public bool finishedReading = false;
             public bool hasPorts;
@@ -158,7 +146,7 @@ namespace PQHD.Dialog
         }
 
         ActiveDialog activeDialog;
-        private void ShowDialogBox(SerializedDialogNode node, MonoBehaviour context, List<string> choices, DialogFinishEvent onFinish)
+        private void ShowDialogBox(SerializedDialogNode node, DialogGraphRuntime runtime, List<string> choices, DialogFinishEvent onFinish)
         {
             if(activeDialog != null)
             {
@@ -167,7 +155,7 @@ namespace PQHD.Dialog
                 activeDialog = null;
             }
 
-            activeDialog = new ActiveDialog() { finishEvent = onFinish, context = context };
+            activeDialog = new ActiveDialog() { finishEvent = onFinish, runtime = runtime };
             activeDialog.coroutine = StartCoroutine(DialogBoxCoroutine(node, choices, onFinish)); // separated so coroutine can access activeDialogBox
         }
 
@@ -206,7 +194,9 @@ namespace PQHD.Dialog
             string dialogText = ParseInlineEvents(node.dialogText, out List<ParsedInlineEvent> events);
             List<ParsedInlineEvent> eventsWithDelay = events.FindAll(e => e.delay > 0);
             float totalDelays = 0; eventsWithDelay.ForEach(e => totalDelays += e.delay);
-
+            
+            // parse inline properties
+            dialogText = ParseInlineProperties(node.dialogText, activeDialog.runtime);
 
             // precalculate some stuff about the length of the dialog text
             dialogBox.textbox.text = dialogText;
@@ -254,7 +244,7 @@ namespace PQHD.Dialog
 
                 if (i < events.Count)
                 {
-                    events[i].sourceEvent.output?.Invoke(activeDialog.context, events[i].eventParams);
+                    events[i].sourceEvent.output?.Invoke(activeDialog.runtime, events[i].eventParams);
                     yield return new WaitForSeconds(events[i].delay);
                 }
             }
@@ -290,10 +280,10 @@ namespace PQHD.Dialog
             {
                 if (activeDialog.hasPorts)
                 {
-                    dialogBox.UpdateNavigation(action_navigate.ReadValue<Vector2>());
+                    dialogBox.UpdateNavigation(Input.MoveAxis.Position);
                 }
 
-                if (action_a.WasPressedThisFrame() || action_b.WasPressedThisFrame())
+                if (Input.ButtonA.WasPressedThisFrame || Input.ButtonB.WasPressedThisFrame)
                 {
                     UISubmit();
                 }
@@ -377,7 +367,7 @@ namespace PQHD.Dialog
                 description = "custom external event. Requires DialogEventRelay on context behaviour",
                 pauseDialog = false,
                 output = (MonoBehaviour context, string param) => CustomEvent(context, param)
-            }
+            },
         };
 
 
@@ -423,7 +413,6 @@ namespace PQHD.Dialog
         }
 
         readonly Regex RegexEvents = new Regex(@"\[([^]]*)\]");
-        //readonly Regex RegexWhitespace = new Regex(@"/\S+\s\S+/");
         string ParseInlineEvents(string dialog, out List<ParsedInlineEvent> events)
         {
             // use regex to find events contained in brackets
@@ -467,6 +456,29 @@ namespace PQHD.Dialog
                 Debug.LogError("Unknown Dialog Event: " + eventString);
                 return false;
             }
+        }
+        
+        readonly Regex RegexProps = new Regex(@"\<prop:([^]]*)\>");
+        string ParseInlineProperties(string dialog, DialogGraphRuntime runtime)
+        {
+            // use regex to find properties contained in angle brackets
+            var foundEvents = RegexProps.Matches(dialog);
+
+            int trimmedCount = 0;
+            for (int i = foundEvents.Count - 1; i >= 0; i--)
+            {
+                string propString = foundEvents[i].Groups[1].Value;
+
+                if (!runtime.GetProperty(propString, out string propValue))
+                {
+                    propValue = "<ERROR PROPERTY NOT FOUND>";
+                }
+                
+                // replace with property value
+                dialog = dialog.Remove(foundEvents[i].Index, foundEvents[i].Length).Insert(foundEvents[i].Index, propValue);
+            }
+
+            return dialog;
         }
     }
 }

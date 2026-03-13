@@ -1,4 +1,5 @@
 using System;
+using PQHD.Dialog;
 using UnityEngine;
 
 namespace PQHD
@@ -14,6 +15,12 @@ namespace PQHD
         private void Update()
         {
             Vector3 followPos = target.position;
+
+            if (DialogManager.IsPlayingDialog && DialogManager.ActiveDialogRuntime.pullCameraFocusWhenActive)
+            {
+                followPos = DialogManager.ActiveDialogRuntime.transform.position;
+            }
+            
             Vector3 followOffset = followPos - transform.position;
             Vector3 followOffsetWithDeadzone = followOffset;
             followOffsetWithDeadzone.x = followOffset.x - Mathf.Clamp(followOffset.x, -deadZone.x, deadZone.x);

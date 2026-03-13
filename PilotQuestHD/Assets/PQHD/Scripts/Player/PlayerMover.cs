@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace PQHD
 {
@@ -9,9 +8,6 @@ namespace PQHD
         [SerializeField] CharacterController characterController;
         [SerializeField] private float gravity = 5;
         [SerializeField] private float moveSpeed;
-
-        private InputAction moveAction;
-        private InputAction aimAction;
 
         [SerializeField] private float rotateSmoothing;
 
@@ -26,8 +22,6 @@ namespace PQHD
 
         private void Start()
         {
-            moveAction = InputSystem.actions.FindAction("Move");
-            aimAction = InputSystem.actions.FindAction("Aim");
             facingAngle = Mathf.Atan2(transform.forward.z, transform.forward.x);
         }
 
@@ -38,17 +32,10 @@ namespace PQHD
 
         private void Update()
         {
-            Vector2 moveInput = moveAction.ReadValue<Vector2>();
+            Vector2 moveInput = Input.MoveAxis.Position;
 
-            if (moveInput.magnitude > 0.5f && AllowMovement)
+            if (moveInput.sqrMagnitude > 0 && AllowMovement)
             {
-                if (!ModernControls)
-                {
-                    moveInput = moveInput.normalized;
-                    moveInput.x = Mathf.Round(moveInput.x);
-                    moveInput.y = Mathf.Round(moveInput.y);
-                }
-
                 moveInput = Vector2.ClampMagnitude(moveInput, 1);
 
                 Vector3 move = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed + Vector3.down * gravity;
@@ -63,7 +50,7 @@ namespace PQHD
 
             if (ModernControls && AllowMovement)
             {
-                Vector2 aimInput = aimAction.ReadValue<Vector2>();
+                Vector2 aimInput = Input.AimAxis.Position;
                 if (aimInput.magnitude > 0.2f)
                 {
                     facingAngle = Mathf.Atan2(aimInput.y, aimInput.x);

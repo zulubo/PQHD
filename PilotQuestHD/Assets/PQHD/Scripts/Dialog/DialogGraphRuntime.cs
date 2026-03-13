@@ -12,11 +12,14 @@ namespace PQHD.Dialog
         public DialogGraphContainer dialog;
         CachedNode activeNode = null;
 
+        public bool pullCameraFocusWhenActive = true;
+
         [HideInInspector]
         public int playCount;
         [Tooltip("Maximum number of times you can start this dialog")]
         public int maximumPlayCount = -1;
-
+        
+        private Dictionary<string, string> properties = new();
 
         // store choices we make so we can hide them upon replaying if needed
         [HideInInspector]
@@ -81,12 +84,29 @@ namespace PQHD.Dialog
             }
         }
 
+        public void SetProperty(string name, string value)
+        {
+            properties[name] = value;
+        }
+        
+        public bool GetProperty(string name, out string value)
+        {
+            return properties.TryGetValue(name, out value);
+        }
+
         public void Play()
         {
             if (isPlaying || DialogManager.IsPlayingDialog) return;
 
             isPlaying = true;
             playCount++;
+            
+            // set up default properties
+            for (int p = 0; p < dialog.exposedProperties.Count; p++)
+            {
+                if(!properties.ContainsKey(dialog.exposedProperties[p].PropertyName))
+                    properties[dialog.exposedProperties[p].PropertyName] = dialog.exposedProperties[p].DefaultValue;
+            }
 
             // transition to first node connected to start node
             activeNode = cachedGraph[0];
@@ -153,8 +173,7 @@ namespace PQHD.Dialog
         
         void EvaluateComparisonNode(SerializedComparisonNode eventNode)
         {
-            ExposedProperty prop = dialog.exposedProperties.Find(p => p.PropertyName == eventNode.propertyName);
-            if (prop == null)
+            if(!properties.TryGetValue(eventNode.propertyName, out string value))
             {
                 Debug.LogError($"Property {eventNode.propertyName} in comparison node not found", dialog);
                 return;
@@ -165,14 +184,14 @@ namespace PQHD.Dialog
             switch (eventNode.type)
             {
                 case SerializedComparisonNode.PropertyType.String:
-                    result = prop.PropertyValue == eventNode.comparator;
+                    result = value == eventNode.comparator;
                     break;
                 case SerializedComparisonNode.PropertyType.Bool:
-                    result = bool.Parse(prop.PropertyValue) == bool.Parse(eventNode.comparator);
+                    result = bool.Parse(value) == bool.Parse(eventNode.comparator);
                     break;
                 case SerializedComparisonNode.PropertyType.Int:
                 {
-                    int a = int.Parse(prop.PropertyValue);
+                    int a = int.Parse(value);
                     int b = int.Parse(eventNode.comparator);
                     switch (eventNode.comparison)
                     {
@@ -191,7 +210,7 @@ namespace PQHD.Dialog
                 }
                 case SerializedComparisonNode.PropertyType.Float:
                 {
-                    float a = float.Parse(prop.PropertyValue);
+                    float a = float.Parse(value);
                     float b = float.Parse(eventNode.comparator);
                     switch (eventNode.comparison)
                     {

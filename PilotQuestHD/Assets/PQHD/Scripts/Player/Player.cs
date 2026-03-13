@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace PQHD
 {
@@ -9,9 +8,6 @@ namespace PQHD
         public static Player I;
 
         public Transform pickupMagnetPos;
-
-        private InputAction action_attack;
-        private InputAction action_interact;
 
         [SerializeField] private PlayerMover mover;
 
@@ -35,8 +31,6 @@ namespace PQHD
 
         private void Start()
         {
-            action_attack = InputSystem.actions.FindAction("A");
-            action_interact = InputSystem.actions.FindAction("B");
             I = this;
         }
 
@@ -44,12 +38,12 @@ namespace PQHD
         {
             if(Dialog.DialogManager.IsPlayingDialog) busy.Set(0.1f);
             
-            if (action_attack.WasPressedThisFrame() && !busy)
+            if (Input.ButtonB.WasPressedThisFrame && !busy)
             {
                 YoyoAttack(yoyoDefault);
             }
 
-            if(action_interact.WasPressedThisFrame() && !busy)
+            if(Input.ButtonA.WasPressedThisFrame && !busy)
             {
                 Interact();
             }

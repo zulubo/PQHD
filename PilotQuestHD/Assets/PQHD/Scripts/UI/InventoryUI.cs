@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using PQHD.Dialog;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
@@ -7,6 +8,10 @@ namespace PQHD
 {
     public class InventoryUI : MonoBehaviour
     {
+        [SerializeField] private RectTransform rect;
+        private Vector2 defaultPos;
+        [SerializeField] private Vector2 offsetDuringDialog;
+        private bool isDialogOffset;
         [SerializeField] private GameObject lootPrefab;
 
         private class LootDisplay
@@ -78,6 +83,7 @@ namespace PQHD
             if (!Inventory.I) return;
             UpdateUI();
             Inventory.I.OnChanged += UpdateUI;
+            defaultPos = rect.anchoredPosition;
         }
 
         void UpdateUI()
@@ -104,6 +110,14 @@ namespace PQHD
             for (int i = 0; i < loot.Length; i++)
             {
                 displays[i].Update();
+            }
+
+            bool shouldDialogOffset = DialogManager.IsPlayingDialog;
+
+            if (shouldDialogOffset != isDialogOffset)
+            {
+                isDialogOffset = shouldDialogOffset;
+                rect.anchoredPosition = isDialogOffset ? defaultPos + offsetDuringDialog : defaultPos;
             }
         }
     }

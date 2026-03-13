@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace PQHD.Dialog
 {
@@ -100,6 +101,6 @@ namespace PQHD.Dialog
     public class ExposedProperty
     {
         public string PropertyName = "New String";
-        public string PropertyValue = "New Value";
+        [FormerlySerializedAs("PropertyValue")] public string DefaultValue = "New Value";
     }
 }

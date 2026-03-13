@@ -254,6 +254,10 @@ namespace PQHD.Dialog
                 eventElement.Add(ld);
                 rootVisualElement.Add(eventElement);
             }
+            
+            VisualElement propElement = new VisualElement();
+            propElement.Add(new Label("Inject properties inline with the format <prop:PropertyName>"));
+            rootVisualElement.Add(propElement);
         }
     }
 }

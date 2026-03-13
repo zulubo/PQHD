@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
+  m_Name: Lumin Hurt
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: 48dde9c0-b0ed-41be-a8d0-fe1fd79cb0fd
+  nodeData:
+  - rid: 4911756245520351433
+  - rid: 4911756245520351434
+  exposedProperties: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4911756245520351433
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 4911756245520351434
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 48dde9c0-b0ed-41be-a8d0-fe1fd79cb0fd
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 218.66667, y: 200}
+        dialogText: That yoyo generates quite a bit of force!
+        defaultPort: -1

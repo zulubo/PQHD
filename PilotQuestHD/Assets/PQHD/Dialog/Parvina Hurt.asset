@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
+  m_Name: Parvina Hurt
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: fb1ac0e7-8312-4393-b3e5-8914a6e77345
+  nodeData:
+  - rid: 4911756245520351431
+  - rid: 4911756245520351432
+  exposedProperties: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4911756245520351431
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 4911756245520351432
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: fb1ac0e7-8312-4393-b3e5-8914a6e77345
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 230.66667, y: 200}
+        dialogText: Heh heh, that tickles!
+        defaultPort: -1

@@ -103,27 +103,27 @@ namespace PQHD.Dialog
         public void AddPropertyToBlackboard(ExposedProperty exposedProperty)
         {
             var localPropertyName = exposedProperty.PropertyName;
-            var localPropertyValue = exposedProperty.PropertyValue;
+            var localPropertyValue = exposedProperty.DefaultValue;
             while (exposedProperties.Any(x => x.PropertyName == localPropertyName))
                 localPropertyName = $"{localPropertyName}(1)";
 
             var property = new ExposedProperty();
             property.PropertyName = localPropertyName;
-            property.PropertyValue = localPropertyValue;
+            property.DefaultValue = localPropertyValue;
             exposedProperties.Add(property);
 
             var container = new VisualElement();
-            var field = new BlackboardField { text = property.PropertyName, typeText = "string property" };
+            var field = new BlackboardField { text = property.PropertyName, typeText = "" };
             container.Add(field);
 
-            var propertyValueTextField = new TextField("Value")
+            var propertyValueTextField = new TextField("Default Value")
             {
                 value = localPropertyValue
             };
             propertyValueTextField.RegisterValueChangedCallback(evt =>
             {
                 var i = exposedProperties.FindIndex(x => x.PropertyName == property.PropertyName);
-                exposedProperties[i].PropertyValue = evt.newValue;
+                exposedProperties[i].DefaultValue = evt.newValue;
             });
 
             var valueRow = new BlackboardRow(field, propertyValueTextField);
