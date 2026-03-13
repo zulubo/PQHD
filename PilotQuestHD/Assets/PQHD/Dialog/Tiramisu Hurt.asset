@@ -12,9 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
   m_Name: Tiramisu Hurt
   m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
-  nodeLinks: []
-  nodeData: []
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: 709de70c-eb30-4f73-94b4-a3c86121ada3
+  nodeData:
+  - rid: 8349358455216406694
+  - rid: 8349358455216406695
   exposedProperties: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 8349358455216406694
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 8349358455216406695
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 709de70c-eb30-4f73-94b4-a3c86121ada3
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 255, y: 187}
+        dialogText: Okay... maybe try talking to me instead?
+        defaultPort: -1

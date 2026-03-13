@@ -3,7 +3,7 @@ using PQHD.Dialog;
 
 namespace PQHD
 {
-    public class Slard : MonoBehaviour, IHittable
+    public class Slard : MonoBehaviour, IHittable, IInteractable
     {
         [SerializeField] DialogGraphRuntime hitDialog;
         [SerializeField] DialogGraphRuntime interactDialog;
@@ -12,5 +12,12 @@ namespace PQHD
         {
             hitDialog.Play();
         }
+
+        public void Interact()
+        {
+            interactDialog.Play();
+        }
+
+        public Vector3 GetInteractPos() => transform.position;
     }
 }

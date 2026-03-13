@@ -116,6 +116,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: PilotQuestHD::Player
   pickupMagnetPos: {fileID: 4271226798450926362}
   mover: {fileID: 5555676651347435354}
+  interactPos: {x: 0, y: 0.84, z: 1.4}
+  interactRadius: 1.27
+  interactMask:
+    serializedVersion: 2
+    m_Bits: 9
   yoyoDefault: {fileID: 5898141708358377230}
 --- !u!114 &5555676651347435354
 MonoBehaviour:
@@ -259,9 +264,10 @@ MonoBehaviour:
   attackRadius: 0.96
   attackMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 9
   attackDuration: 0.34
   hitDelay: 0.1
+  hitDamage: 1
 --- !u!1 &7189113474546101253
 GameObject:
   m_ObjectHideFlags: 0

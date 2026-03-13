@@ -19,7 +19,8 @@ namespace PQHD.Dialog
         public static DialogManager I;
         public static bool IsPlayingDialog => I.activeDialog != null;
 
-        private InputAction action_select;
+        private InputAction action_a;
+        private InputAction action_b;
         private InputAction action_navigate;
 
 
@@ -128,7 +129,8 @@ namespace PQHD.Dialog
 
         private void Start()
         {
-            action_select = InputSystem.actions.FindAction("A");
+            action_a = InputSystem.actions.FindAction("A");
+            action_b = InputSystem.actions.FindAction("B");
             action_navigate = InputSystem.actions.FindAction("Move");
         }
 
@@ -291,7 +293,7 @@ namespace PQHD.Dialog
                     dialogBox.UpdateNavigation(action_navigate.ReadValue<Vector2>());
                 }
 
-                if (action_select.WasPressedThisFrame())
+                if (action_a.WasPressedThisFrame() || action_b.WasPressedThisFrame())
                 {
                     UISubmit();
                 }

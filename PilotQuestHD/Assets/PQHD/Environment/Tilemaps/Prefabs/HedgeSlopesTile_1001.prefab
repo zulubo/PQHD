@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 854143081121134296}
   - component: {fileID: 1991042783138620290}
   - component: {fileID: 1757337859727737095}
+  - component: {fileID: -7926853822373705574}
   m_Layer: 3
   m_Name: HedgeSlopesTile_1001
   m_TagString: Untagged
@@ -112,3 +113,23 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.5, y: 1.0000001, z: 1}
   m_Center: {x: 0.25, y: 0.50000006, z: -0.000000029802322}
+--- !u!114 &-7926853822373705574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2851751628602416132}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff

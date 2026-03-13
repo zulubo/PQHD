@@ -1,0 +1,96 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 817e5e93703c419479f187f45af6a94a, type: 3}
+  m_Name: Workbench
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
+  nodeLinks:
+  - baseNodeGuid: ENTRYPOINT
+    portName: DEFAULT
+    targetNodeGuid: a49f987e-75ff-49c7-bf4e-a510326ce5ca
+  - baseNodeGuid: a49f987e-75ff-49c7-bf4e-a510326ce5ca
+    portName: Yes
+    targetNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+  - baseNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+    portName: True
+    targetNodeGuid: d5718fe2-e8b6-47cf-b751-b782709d9da6
+  - baseNodeGuid: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+    portName: False
+    targetNodeGuid: 166454f1-b1a2-4078-90ad-409609a52416
+  nodeData:
+  - rid: 8349358455216406739
+  - rid: 8349358455216406740
+  - rid: 8349358455216406741
+  - rid: 8349358455216406742
+  - rid: 8349358455216406743
+  exposedProperties:
+  - PropertyName: MoonDropCount
+    PropertyValue: 0
+  - PropertyName: RequiredMoonDrops
+    PropertyValue: 1000
+  references:
+    version: 2
+    RefIds:
+    - rid: 8349358455216406739
+      type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: ENTRYPOINT
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 0, y: 0}
+    - rid: 8349358455216406740
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: a49f987e-75ff-49c7-bf4e-a510326ce5ca
+        ports:
+        - portName: Yes
+          retriggerEnabled: 1
+        - portName: No
+          retriggerEnabled: 1
+        position: {x: 220, y: 200}
+        dialogText: You can use this workbench to turn 1000 moon drops into 1 moon
+          ingot.
+        defaultPort: 1
+    - rid: 8349358455216406741
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 70afa48e-1a3f-4f9e-8ccc-03bddfe8da6e
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 578, y: 110}
+        propertyName: MoonDropCount
+        type: 2
+        comparison: 1
+        comparator: 999
+    - rid: 8349358455216406742
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: d5718fe2-e8b6-47cf-b751-b782709d9da6
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 746, y: 52.5}
+        eventKey: 'custom:'
+        eventBody: CreateMoonIngot
+    - rid: 8349358455216406743
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 166454f1-b1a2-4078-90ad-409609a52416
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 742, y: 260}
+        dialogText: You need [prop:RequiredMoonDrops] more moon drops!
+        defaultPort: -1

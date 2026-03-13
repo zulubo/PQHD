@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6237155570239659910}
   - component: {fileID: 4417891353347698582}
   - component: {fileID: 2235521865799647348}
+  - component: {fileID: 4101265438376473598}
   m_Layer: 3
   m_Name: HedgeSlopesTile_1010
   m_TagString: Untagged
@@ -113,3 +114,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4665370465492509499, guid: 810c94110c6dfc6458f3e97c3f24bae3, type: 3}
+--- !u!114 &4101265438376473598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3526480862488306047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifier
+  m_SerializedVersion: 0
+  m_OverrideArea: 1
+  m_Area: 1
+  m_OverrideGenerateLinks: 0
+  m_GenerateLinks: 0
+  m_IgnoreFromBuild: 0
+  m_ApplyToChildren: 1
+  m_AffectedAgents: ffffffff

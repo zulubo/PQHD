@@ -52,6 +52,7 @@ namespace PQHD.Dialog
     public class SerializedDialogNode : SerializedNode
     {
         public string dialogText;
+        public int defaultPort = -1;
     }
 
     [System.Serializable]

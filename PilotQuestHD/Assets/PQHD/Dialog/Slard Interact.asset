@@ -19,29 +19,16 @@ MonoBehaviour:
   - baseNodeGuid: acc9057d-3279-48d3-888d-d08df7cd038c
     portName: Yes
     targetNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-    portName: True
-    targetNodeGuid: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
-  - baseNodeGuid: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
-    portName: DEFAULT
-    targetNodeGuid: d03a2b02-26fc-4746-b5b1-f6f35a7d96fa
-  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-    portName: False
-    targetNodeGuid: 1bf3a7ad-7c5b-4950-983f-a9bf8f1f8ba3
   nodeData:
-  - rid: 8349358439817805949
-  - rid: 8349358439817805950
-  - rid: 8349358439817805951
-  - rid: 8349358439817805952
-  - rid: 8349358439817805953
-  - rid: 8349358439817805954
-  exposedProperties:
-  - PropertyName: HasMeat
-    PropertyValue: False
+  - rid: 8349358455216406701
+  - rid: 8349358455216406702
+  - rid: 8349358455216406703
+  - rid: 8349358455216406704
+  exposedProperties: []
   references:
     version: 2
     RefIds:
-    - rid: 8349358439817805949
+    - rid: 8349358455216406701
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -49,7 +36,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 8349358439817805950
+    - rid: 8349358455216406702
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: acc9057d-3279-48d3-888d-d08df7cd038c
@@ -61,7 +48,8 @@ MonoBehaviour:
         position: {x: 270, y: 200}
         dialogText: Slard is my name. If you want to survive the wild zone, you'll
           need some meat.
-    - rid: 8349358439817805951
+        defaultPort: -1
+    - rid: 8349358455216406703
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
@@ -71,7 +59,7 @@ MonoBehaviour:
         position: {x: 808, y: 37}
         eventKey: 'custom:'
         eventBody: MoveAside
-    - rid: 8349358439817805952
+    - rid: 8349358455216406704
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 1a313bc5-638d-44a6-a663-f63084fcaa72
@@ -85,22 +73,3 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 8349358439817805953
-      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: d03a2b02-26fc-4746-b5b1-f6f35a7d96fa
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 976, y: 37}
-        dialogText: That meat won't last forever! Come back before it runs out, heh
-          heh.
-    - rid: 8349358439817805954
-      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: 1bf3a7ad-7c5b-4950-983f-a9bf8f1f8ba3
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 849, y: 200}
-        dialogText: Get some meat and I'll let you pass.

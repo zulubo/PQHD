@@ -41,6 +41,16 @@ namespace PQHD.Dialog
             {
                 SelectDialogGraphTarget(target);
             }
+
+            rootVisualElement.RegisterCallback<KeyDownEvent>(OnKeyDown, TrickleDown.TrickleDown);
+        }
+
+        private void OnKeyDown(KeyDownEvent evt)
+        {
+            if(target != null && (evt.ctrlKey || evt.commandKey) && evt.keyCode == KeyCode.S)
+            {
+                Save();
+            }
         }
 
         void GenerateDialogGraphSelector()
@@ -121,7 +131,7 @@ namespace PQHD.Dialog
 
         private void OnGUI()
         {
-            _saveButton.SetEnabled(_graphView.isDirty);
+            if(_saveButton != null) _saveButton.SetEnabled(_graphView.isDirty);
         }
 
         private void GenerateMiniMap()

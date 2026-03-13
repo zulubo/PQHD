@@ -6,6 +6,7 @@ using UnityEditor.Experimental.GraphView;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
 using System.Linq;
+using System;
 
 namespace PQHD.Dialog
 {
@@ -71,7 +72,7 @@ namespace PQHD.Dialog
         }
 
 
-        public static void AddChoicePort(DialogGraphView graph, DialogNode dialogNode, string overridePortName = "", bool retriggerEnabled = true)
+        public static void AddChoicePort(DialogGraphView graph, DialogNode dialogNode, string overridePortName = "", bool retriggerEnabled = true, bool isDefault = false)
         {
             var generatedPort = DialogGraphView.GeneratePort(dialogNode, Direction.Output);
 
@@ -91,6 +92,7 @@ namespace PQHD.Dialog
             }
 
             AddRetriggerToggle(generatedPort.contentContainer, retriggerEnabled);
+            AddDefaultToggle(generatedPort.contentContainer, graph, dialogNode, generatedPort, isDefault);
 
             var oldLabel = generatedPort.contentContainer.Q<Label>("type");
             oldLabel.style.display = DisplayStyle.None;
@@ -134,6 +136,18 @@ namespace PQHD.Dialog
         }
 
 
+        private int GetDefaultPort()
+        {
+            var ports = outputContainer.Children().Where(p => p is Port).ToList();
+            for(int p = 0; p < ports.Count; p++)
+            {
+                var toggle = GetDefaultToggle(ports[p]);
+                if(toggle != null && toggle.Value) return p;
+            }
+            return -1;
+        }
+
+
         public override SerializedNode SerializeNode()
         {
             return new SerializedDialogNode()
@@ -141,9 +155,11 @@ namespace PQHD.Dialog
                 GUID = this.GUID,
                 position = this.GetPosition().position,
                 ports = SerializePorts(),
+                defaultPort = GetDefaultPort(),
                 dialogText = dialogText.value,
             };
         }
+
 
         public override void DeserializeNode(DialogGraphView graph, SerializedNode data)
         {
@@ -151,7 +167,11 @@ namespace PQHD.Dialog
             graph.ResetPorts(this);
             GUID = d.GUID;
             SetPosition(new Rect(d.position, Vector2.zero));
-            d.ports.ForEach(p => { if (p.portName != "DEFAULT") AddChoicePort(graph, this, p.portName, p.retriggerEnabled); });
+            for(int p = 0; p < d.ports.Count; p++)
+            {
+                if (d.ports[p].portName != "DEFAULT") AddChoicePort(graph, this, d.ports[p].portName, d.ports[p].retriggerEnabled, p == d.defaultPort); 
+            }
+            d.ports.ForEach(p => { });
             dialogText.value = d.dialogText;
 
             RefreshPorts();

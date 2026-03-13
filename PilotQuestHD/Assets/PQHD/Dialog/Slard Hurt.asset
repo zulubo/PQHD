@@ -17,13 +17,13 @@ MonoBehaviour:
     portName: DEFAULT
     targetNodeGuid: ce872420-dde8-4f10-bb08-df119e5c034c
   nodeData:
-  - rid: 8349358439817805947
-  - rid: 8349358439817805948
+  - rid: 8349358455216406616
+  - rid: 8349358455216406617
   exposedProperties: []
   references:
     version: 2
     RefIds:
-    - rid: 8349358439817805947
+    - rid: 8349358455216406616
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -31,7 +31,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 8349358439817805948
+    - rid: 8349358455216406617
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ce872420-dde8-4f10-bb08-df119e5c034c
