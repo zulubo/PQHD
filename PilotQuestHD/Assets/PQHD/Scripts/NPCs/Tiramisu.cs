@@ -1,14 +1,17 @@
+using System;
 using UnityEngine;
 using PQHD.Dialog;
 using System.Collections;
 using UnityEditor.Analytics;
 using UnityEngine.AI;
+using Random = UnityEngine.Random;
 
 namespace PQHD
 {
     public class Tiramisu : MonoBehaviour, IHittable, IInteractable
     {
         [SerializeField] NavMeshAgent nav;
+        [SerializeField] private Rigidbody rb;
         [SerializeField] Vector2 moveDistanceMinMax;
         [SerializeField] Vector2 moveTimeMinMax;
 
@@ -20,7 +23,11 @@ namespace PQHD
         [SerializeField] DialogGraphRuntime hitDialog;
         [SerializeField] DialogGraphRuntime interactDialog;
 
-
+        private void Start()
+        {
+            // moved with rigidbody in fixedupdate
+            nav.updatePosition = false;
+        }
 
         void OnEnable()
         {
@@ -83,6 +90,11 @@ namespace PQHD
             }
 
             nav.SetDestination(bestMove);
+        }
+
+        private void FixedUpdate()
+        {
+            rb.MovePosition(nav.nextPosition);
         }
 
 

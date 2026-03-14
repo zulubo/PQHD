@@ -57,7 +57,7 @@ namespace PQHD
         /// </summary>
         public void RemoveAll(Loot loot)
         {
-            if (contents.TryGetValue(loot, out int haveCount))
+            if (contents.ContainsKey(loot))
             {
                 contents[loot] = 0;
                 OnChanged?.Invoke();
@@ -69,9 +69,9 @@ namespace PQHD
         /// </summary>
         public void RemoveAll()
         {
-            foreach (KeyValuePair<Loot, int> pair in contents)
+            foreach (Loot loot in database.loot)
             {
-                contents[pair.Key] = 0;
+                contents[loot] = 0;
             }
             OnChanged?.Invoke();
         }
