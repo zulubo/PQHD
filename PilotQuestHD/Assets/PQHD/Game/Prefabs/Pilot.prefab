@@ -75,6 +75,7 @@ GameObject:
   - component: {fileID: 5555676651347435354}
   - component: {fileID: 649789876232815853}
   - component: {fileID: 2290686300532162465}
+  - component: {fileID: 1633004761850583370}
   m_Layer: 0
   m_Name: Pilot
   m_TagString: Untagged
@@ -139,6 +140,7 @@ MonoBehaviour:
   moveSpeed: 6
   rotateSmoothing: 0.05
   footstepSoundPlayer: {fileID: 7284121833993484884}
+  softCol: {fileID: 1633004761850583370}
 --- !u!143 &649789876232815853
 CharacterController:
   m_ObjectHideFlags: 0
@@ -182,6 +184,22 @@ MonoBehaviour:
   mover: {fileID: 5555676651347435354}
   anim: {fileID: 9141181682855990225}
   dampTime: 0.05
+--- !u!114 &1633004761850583370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144765552861415929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a5d4a877eeb60f4cbc9b8feef9f5a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.SoftCollider
+  radius: 0.8
+  selfStrengthMul: 1
+  otherStrengthMul: 1
+  selfMoveMode: 0
 --- !u!1 &6202710796938747928
 GameObject:
   m_ObjectHideFlags: 0

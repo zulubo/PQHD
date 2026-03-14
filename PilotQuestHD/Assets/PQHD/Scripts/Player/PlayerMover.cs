@@ -13,6 +13,8 @@ namespace PQHD
 
         [SerializeField] FootstepSoundPlayer footstepSoundPlayer;
 
+        [SerializeField] private SoftCollider softCol;
+
         private float facingAngle;
 
         public Vector2 MoveInput { get; private set; }
@@ -66,6 +68,11 @@ namespace PQHD
             MoveInput = moveInput;
 
             footstepSoundPlayer.Speed = MoveInput.magnitude;
+
+            if (softCol)
+            {
+                characterController.Move(softCol.Forces * Time.deltaTime);
+            }
         }
     }
 }
