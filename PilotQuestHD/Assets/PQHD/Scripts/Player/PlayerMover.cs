@@ -34,14 +34,15 @@ namespace PQHD
 
         private void Update()
         {
+            Vector3 velocity = Vector3.down * gravity;
+            
             Vector2 moveInput = Input.MoveAxis.Position;
 
             if (moveInput.sqrMagnitude > 0 && AllowMovement)
             {
                 moveInput = Vector2.ClampMagnitude(moveInput, 1);
 
-                Vector3 move = new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed + Vector3.down * gravity;
-                characterController.Move(move * Time.deltaTime);
+                velocity += new Vector3(moveInput.x, 0, moveInput.y) * moveSpeed;
 
                 facingAngle = Mathf.Atan2(moveInput.y, moveInput.x);
             }
@@ -71,8 +72,10 @@ namespace PQHD
 
             if (softCol)
             {
-                characterController.Move(softCol.Forces * Time.deltaTime);
+                velocity += softCol.Forces;
             }
+            
+            characterController.Move(velocity * Time.deltaTime);
         }
     }
 }

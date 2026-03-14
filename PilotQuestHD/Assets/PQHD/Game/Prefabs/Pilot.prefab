@@ -76,6 +76,7 @@ GameObject:
   - component: {fileID: 649789876232815853}
   - component: {fileID: 2290686300532162465}
   - component: {fileID: 1633004761850583370}
+  - component: {fileID: 7205246002060461404}
   m_Layer: 0
   m_Name: Pilot
   m_TagString: Untagged
@@ -179,8 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: PilotQuestHD::PlayerAnimator
   player: {fileID: 1379825457012931373}
-  tiltedTransform: {fileID: 4294298348084606717}
-  tiltAmount: 20
   mover: {fileID: 5555676651347435354}
   anim: {fileID: 9141181682855990225}
   dampTime: 0.05
@@ -200,6 +199,21 @@ MonoBehaviour:
   selfStrengthMul: 1
   otherStrengthMul: 1
   selfMoveMode: 0
+--- !u!114 &7205246002060461404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5144765552861415929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 548374b4daa70c14fa8c34cf3f66bfd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.TopDownTilt
+  tiltWhenFacingCamera: 20
+  tiltWhenFacingAwayFromCamera: 0
+  tiltTransform: {fileID: 4294298348084606717}
 --- !u!1 &6202710796938747928
 GameObject:
   m_ObjectHideFlags: 0

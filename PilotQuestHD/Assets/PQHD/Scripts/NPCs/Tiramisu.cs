@@ -23,10 +23,22 @@ namespace PQHD
         [SerializeField] DialogGraphRuntime hitDialog;
         [SerializeField] DialogGraphRuntime interactDialog;
 
+        [SerializeField] private TopDownTilt tilt;
+
+        [SerializeField] private Animator anim;
+        private readonly int anim_walkSpeed = Animator.StringToHash("WalkSpeed");
+        private readonly int anim_fallOver = Animator.StringToHash("FallOver");
+        private readonly int anim_walkState = Animator.StringToHash("Walk");
+        private readonly int anim_tiltReduction = Animator.StringToHash("TiltReduction");
+
+        [SerializeField] private float turnSpeed = 1000;
+        private Vector3 facingDir;
+
         private void Start()
         {
             // moved with rigidbody in fixedupdate
             nav.updatePosition = false;
+            facingDir = transform.forward;
         }
 
         void OnEnable()
@@ -47,6 +59,8 @@ namespace PQHD
                 {
                     continue;
                 }
+
+                if (!Walking) continue;
 
                 Move();
             }
@@ -91,16 +105,33 @@ namespace PQHD
 
             nav.SetDestination(bestMove);
         }
+        
+        private bool Walking => anim.GetCurrentAnimatorStateInfo(0).shortNameHash == anim_walkState;
+
+        private void Update()
+        {
+            anim.SetFloat(anim_walkSpeed, nav.velocity.magnitude / nav.speed, 0.1f, Time.deltaTime);
+
+            nav.enabled = Walking;
+            if (nav.desiredVelocity.sqrMagnitude > 0.1f)
+            {
+                facingDir = nav.desiredVelocity.normalized;
+            }
+            
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(facingDir), turnSpeed * Time.deltaTime);
+
+            tilt.tiltMultiplier = 1 - anim.GetFloat(anim_tiltReduction);
+        }
 
         private void FixedUpdate()
         {
             rb.MovePosition(nav.nextPosition);
         }
 
-
         public void Hit(HitInfo info)
         {
             hitDialog.Play();
+            if(Walking) anim.SetTrigger(anim_fallOver);
         }
 
         public void Interact()

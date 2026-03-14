@@ -6,8 +6,6 @@ namespace PQHD
     public class PlayerAnimator : MonoBehaviour
     {
         [SerializeField] private Player player;
-        [SerializeField] private Transform tiltedTransform;
-        [SerializeField] private float tiltAmount = 20;
         [SerializeField] private PlayerMover mover;
         [SerializeField] private Animator anim;
         [SerializeField] private float dampTime = 0.1f;
@@ -27,8 +25,7 @@ namespace PQHD
 
         void Update()
         {
-            float tiltMul = transform.forward.z * -0.5f + 0.5f; // only tilt when facing camera
-            tiltedTransform.rotation = Quaternion.Euler(tiltAmount * tiltMul, 0, 0) * tiltedTransform.parent.rotation;
+           
             if (anim)
             {
                 if (dampTime > 0)
