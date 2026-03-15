@@ -1,3 +1,4 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 
 namespace PQHD
@@ -20,6 +21,12 @@ namespace PQHD
         public void ResetInventory()
         {
             Inventory.I.RemoveAll();
+        }
+
+        public void ResetSave()
+        {
+            Saving.DeleteSave();
+            Saving.LoadFromDisk();
         }
 
     }

@@ -6,6 +6,8 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace PQHD
 {
@@ -27,51 +29,75 @@ namespace PQHD
         private const string EncryptionKey = "Campanella";
         private const string FileName = "save.data";
         private static string GetFilePath(string name) => SaveDirectory + "/" + name;
+
+        private static Queue<Task> taskQueue = new();
+
+        private static void Init()
+        {
+            if(taskManager == null || taskManager.Status != TaskStatus.Running)
+            {
+                taskManager = TaskManager();
+            }
+        }
+
+        private static Task taskManager;
+
+        private static async Task TaskManager()
+        {
+            while(true)
+            {
+                await Task.Yield();
+
+                while(taskQueue.TryDequeue(out Task task))
+                {
+                    Busy = true;
+                    await task;
+                }
+                Busy = false;
+            }
+        }
         
         /// <summary>
         /// Save state to disk.
-        /// Threaded.
+        /// Adds to a task queue, may not execute immediately.
         /// </summary>
         public static void SaveToDisk()
         {
-            SaveTask(GetFilePath(FileName));
+            Init();
+            taskQueue.Enqueue(SaveTask(GetFilePath(FileName)));
         }
 
         /// <summary>
-        /// Load state from disk.
-        /// Threaded.
-        /// Subscribe to OnLoadedState action to get results
+        /// Save state to disk.
+        /// Adds to a task queue, may not execute immediately.
         /// </summary>
         private static async Task SaveTask(string path)
         {
-            while (Busy) await Task.Yield();
-            
-            Busy = true;
             try
             {
                 string serialized = await Task.Run(() => JsonConvert.SerializeObject(State, Formatting.None));
                 if (UseEncryption) serialized = await Task.Run(() => Encrypt(serialized, EncryptionKey));
                 await File.WriteAllTextAsync(path, serialized);
-                
-                Busy = false;
             }
             catch (Exception e)
             {
                 Debug.LogError("Saving to disk failed: " + e);
-                Busy = false;
             }
         }
 
         public static void LoadFromDisk()
         {
-            LoadThreaded(GetFilePath(FileName));
+            Init();
+            taskQueue.Enqueue(LoadTask(GetFilePath(FileName)));
         }
         
-        private static async Task LoadThreaded(string path)
+        /// <summary>
+        /// Load state from disk.
+        /// Adds to a task queue, may not execute immediately.
+        /// Subscribe to OnLoadedState action to get results
+        /// </summary>
+        private static async Task LoadTask(string path)
         {
-            while (Busy) await Task.Yield();
-
-            Busy = true;
             try
             {
                 if (!File.Exists(path))
@@ -85,13 +111,11 @@ namespace PQHD
                 if (UseEncryption) serialized = await Task.Run(()=> Decrypt(serialized, EncryptionKey));
                 State = await Task.Run(() => JsonConvert.DeserializeObject<SaveState>(serialized));
                 
-                Busy = false;
                 OnLoadedState?.Invoke(State);
             }
             catch (Exception e)
             {
                 Debug.LogError("Loading from disk failed: " + e);
-                Busy = false;
             }
         }
 
@@ -133,6 +157,27 @@ namespace PQHD
             {
                 return sr.ReadToEnd();
             }
+        }
+
+
+        /// <summary>
+        /// Delete save file.
+        /// Added to a task queue, may not execute immediately.
+        /// Call LoadFromDisk after deleting if you want it to take effect in-game
+        /// </summary>
+        public static void DeleteSave()
+        {
+            Init();
+            taskQueue.Enqueue(DeleteSaveTask());
+        }
+
+        private static async Task DeleteSaveTask()
+        {
+            while (Busy) await Task.Yield();
+            Busy = true;
+            string path = GetFilePath(FileName);
+            if(File.Exists(path)) File.Delete(path);
+            Busy = false;
         }
     }
 }
