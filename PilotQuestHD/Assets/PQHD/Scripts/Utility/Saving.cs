@@ -14,6 +14,7 @@ namespace PQHD
         public struct SaveState
         {
             public Inventory.SerializedInventory inventory;
+            public bool[] plants;
         }
 
         public static SaveState State;

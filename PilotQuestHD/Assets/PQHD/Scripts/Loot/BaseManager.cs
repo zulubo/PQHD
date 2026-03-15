@@ -8,6 +8,7 @@ namespace PQHD
     public class BaseManager : MonoBehaviour
     {
         [SerializeField] private Inventory inventory;
+        [SerializeField] private Farm farm;
         [SerializeField] private float autosaveTime = 10;
 
         private void Start()
@@ -27,6 +28,7 @@ namespace PQHD
         private void LoadedState(Saving.SaveState state)
         {
             inventory.Deserialize(state.inventory);
+            farm.Deserialize(state.plants);
         }
 
         IEnumerator AutosaveCoroutine()
@@ -41,6 +43,7 @@ namespace PQHD
         void Save()
         {
             Saving.State.inventory = inventory.Serialize();
+            Saving.State.plants = farm.Serialize();
             Saving.SaveToDisk();
         }
     }
