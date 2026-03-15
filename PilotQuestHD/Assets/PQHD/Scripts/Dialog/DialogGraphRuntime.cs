@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PQHD.Dialog
 {
@@ -13,6 +14,8 @@ namespace PQHD.Dialog
         CachedNode activeNode = null;
 
         public bool pullCameraFocusWhenActive = true;
+
+        public AudioResource voice;
 
         [HideInInspector]
         public int playCount;

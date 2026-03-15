@@ -8,7 +8,6 @@ namespace PQHD
         [SerializeField] CharacterController characterController;
         [SerializeField] private FootstepSoundProfile profile;
         [SerializeField] private LayerMask groundMask;
-        [SerializeField] private AudioSource audioSource;
         [SerializeField] private float volumeMultiplier = 1;
 
         [SerializeField] private bool considerSpeed = true;
@@ -16,6 +15,7 @@ namespace PQHD
 
         public float Speed { private get; set; }
 
+        [SerializeField] private float radius = 10;
 
 
         public void PlayFootstepSound()
@@ -30,8 +30,8 @@ namespace PQHD
                     if (Speed < minSpeed) return;
                     volume *= Mathf.InverseLerp(minSpeed, 1, Speed);
                 }
-
-                profile.Play(hit.collider.sharedMaterial, audioSource, volume);
+                
+                profile.Play(hit.collider.sharedMaterial, transform.position, radius, volume);
             }
         }
 

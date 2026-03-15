@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-6498211787177959759
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-08_{-6498211787177959759}
+  m_AudioClip: {fileID: 8300000, guid: 1ffa3e87e8b0f8a418123a58b060e81b, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5433044415052213396
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-01_{-5433044415052213396}
+  m_AudioClip: {fileID: 8300000, guid: f84e23fdc48821c4582d1fec08b21ecf, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4555915685910739725
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-02_{-4555915685910739725}
+  m_AudioClip: {fileID: 8300000, guid: e572cb566b239ff4bb854b1111c2f06e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &833886556993626618
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-09_{833886556993626618}
+  m_AudioClip: {fileID: 8300000, guid: 1e97ce453330101479e255fcfb564012, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3688998999449329526
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-03_{3688998999449329526}
+  m_AudioClip: {fileID: 8300000, guid: 883b3a6840cbc934eb2082380e5c1eb4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4501884073776827731
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-05_{4501884073776827731}
+  m_AudioClip: {fileID: 8300000, guid: 81a5f58945b9ad94bb8dc8a1e0ed688e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4595672056800370787
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-06_{4595672056800370787}
+  m_AudioClip: {fileID: 8300000, guid: a437e9a595a52f34d837b16c97a81374, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hit_Wood
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -61.208008, y: 67.65103}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -5433044415052213396}
+  - {fileID: -4555915685910739725}
+  - {fileID: 3688998999449329526}
+  - {fileID: 8794609066275494938}
+  - {fileID: 4501884073776827731}
+  - {fileID: 4595672056800370787}
+  - {fileID: 8657283324751790324}
+  - {fileID: -6498211787177959759}
+  - {fileID: 833886556993626618}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &8657283324751790324
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-07_{8657283324751790324}
+  m_AudioClip: {fileID: 8300000, guid: 03bbcd655804d234884e4408e2893761, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8794609066275494938
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_wood-04_{8794609066275494938}
+  m_AudioClip: {fileID: 8300000, guid: 071b42297730d36458eab5c71d641e7f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

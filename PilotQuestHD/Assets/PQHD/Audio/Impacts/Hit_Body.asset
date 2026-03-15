@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-1302204301844242476
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: punch_general_body_impact_07_{-1302204301844242476}
+  m_AudioClip: {fileID: 8300000, guid: 678dbc55bc38fd84aafdc9a7b0054f02, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1387863858829885990
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: punch_general_body_impact_01_{1387863858829885990}
+  m_AudioClip: {fileID: 8300000, guid: 4e9510fd17d24704d88caf9c31ccafd8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2935165413807345332
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: punch_general_body_impact_03_{2935165413807345332}
+  m_AudioClip: {fileID: 8300000, guid: 2c582f756de2843428631659512b62a9, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5396001888255069411
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: punch_general_body_impact_02_{5396001888255069411}
+  m_AudioClip: {fileID: 8300000, guid: 82f57ed089a4c6b40bdf25862cad864f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hit_Body
+  m_Volume: -9.1
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -74.09391, y: 77.315285}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 1387863858829885990}
+  - {fileID: 5396001888255069411}
+  - {fileID: 2935165413807345332}
+  - {fileID: -1302204301844242476}
+  - {fileID: 7552259167966685283}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7552259167966685283
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: punch_general_body_impact_08_{7552259167966685283}
+  m_AudioClip: {fileID: 8300000, guid: 51afc0b415ffdb747b837243689238c3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

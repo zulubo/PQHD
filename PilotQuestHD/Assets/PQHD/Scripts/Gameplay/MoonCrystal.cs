@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 namespace PQHD
@@ -16,6 +17,7 @@ namespace PQHD
         [SerializeField] private float spawnMinSpeed = 2f;
         [SerializeField] private float spawnMaxSpeed = 4f;
 
+        [SerializeField] private AudioResource hitSound;
         
 
 
@@ -27,6 +29,8 @@ namespace PQHD
             {
                 SpawnSomething();
             }
+
+            Audio.I.PlaySound3D(hitSound, transform.position, 50);
         }
 
         private void SpawnSomething()

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq;
 using System.Text.RegularExpressions;
+using UnityEngine.Audio;
 
 namespace PQHD.Dialog 
 {
@@ -23,6 +24,7 @@ namespace PQHD.Dialog
         {
             public GameObject gameObject;
             public RectTransform transform;
+            public RectTransform visual;
             public TMP_Text textbox;
             public CanvasGroup portGroup;
             public CanvasGroup defaultContinue;
@@ -65,6 +67,8 @@ namespace PQHD.Dialog
                 }
                 ports.Clear();
             }
+            
+            public bool IsOpen => gameObject.activeSelf;
 
             public void Open()
             {
@@ -75,8 +79,6 @@ namespace PQHD.Dialog
             {
                 gameObject.SetActive(false);
             }
-            
-            
 
             public void UpdateNavigation(Vector2 navInput)
             {
@@ -141,6 +143,7 @@ namespace PQHD.Dialog
             public DialogGraphRuntime runtime;
             public DialogFinishEvent finishEvent;
             public bool finishedReading = false;
+            public int startFrame;
             public bool hasPorts;
             public bool skip;
         }
@@ -156,12 +159,12 @@ namespace PQHD.Dialog
             }
 
             activeDialog = new ActiveDialog() { finishEvent = onFinish, runtime = runtime };
-            activeDialog.coroutine = StartCoroutine(DialogBoxCoroutine(node, choices, onFinish)); // separated so coroutine can access activeDialogBox
+            activeDialog.coroutine = StartCoroutine(DialogBoxCoroutine(node, choices)); // separated so coroutine can access activeDialogBox
         }
 
         private const float FadeDuration = 0.15f;
 
-        private IEnumerator DialogBoxCoroutine(SerializedDialogNode node, List<string> choices, DialogFinishEvent onFinish)
+        private IEnumerator DialogBoxCoroutine(SerializedDialogNode node, List<string> choices)
         {
             dialogBox.Open();
 /*
@@ -210,6 +213,26 @@ namespace PQHD.Dialog
             dialogBox.textbox.rectTransform.anchoredPosition = Vector2.zero;
 
             dialogBox.textbox.maxVisibleCharacters = 0;
+            
+            activeDialog.startFrame = Time.frameCount;
+
+            if (!wasDialogOpenLastFrame)
+            {
+                // animate box opening
+                Rect boxRect = ((RectTransform)dialogBox.visual.parent).rect;
+                dialogBox.visual.sizeDelta = new Vector2(-boxRect.width, 0);
+                float open = 0;
+                while (open < 1)
+                {
+                    open += Time.deltaTime / 0.2f;
+                    float openCurved = (1 - open) * (1 - open);
+                    dialogBox.visual.sizeDelta = new Vector2(-boxRect.width * openCurved, 0);
+                    if (activeDialog.skip) break;
+                    yield return null;
+                }
+            }
+
+            dialogBox.visual.sizeDelta = Vector2.zero;
 
             // animate text appearing
             activeDialog.finishedReading = false;
@@ -228,6 +251,8 @@ namespace PQHD.Dialog
 
                         t += Time.deltaTime / duration;
                         dialogBox.textbox.maxVisibleCharacters = Mathf.RoundToInt(t * parsedText.Length);
+                        
+                        if(activeDialog.runtime.voice) PlayVoice(activeDialog.runtime.voice);
 
                         if (scrollAmount > 0)
                         {
@@ -290,6 +315,12 @@ namespace PQHD.Dialog
             }
         }
 
+        private bool wasDialogOpenLastFrame;
+        private void LateUpdate()
+        {
+            wasDialogOpenLastFrame = IsPlayingDialog;
+        }
+
         // clicked on one of the dialog branch options
         void ExecutePort(string portName)
         {
@@ -311,7 +342,7 @@ namespace PQHD.Dialog
         private void UISubmit()
         {
             if (activeDialog == null) return;
-            if (!activeDialog.finishedReading)
+            if (!activeDialog.finishedReading && Time.frameCount > activeDialog.startFrame)
             {
                 activeDialog.skip = true;
                 return;
@@ -479,6 +510,14 @@ namespace PQHD.Dialog
             }
 
             return dialog;
+        }
+
+        private Audio.PlayingSound voicePlaying;
+
+        private void PlayVoice(AudioResource voice)
+        {
+            if (voicePlaying != null && !voicePlaying.finished) return;
+            voicePlaying = Audio.I.PlaySound2D(voice);
         }
     }
 }

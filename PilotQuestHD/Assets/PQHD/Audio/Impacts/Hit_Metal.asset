@@ -1,0 +1,137 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8860360651721716586
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-06_{-8860360651721716586}
+  m_AudioClip: {fileID: 8300000, guid: 5befd9fa30827ad4cb62c751ec258673, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8662454928049383119
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-02_{-8662454928049383119}
+  m_AudioClip: {fileID: 8300000, guid: 3384d479dcdd6ab40ae45f33905538d1, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6647998394450732559
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-10_{-6647998394450732559}
+  m_AudioClip: {fileID: 8300000, guid: f6ead8c2e6492c74daaa99a32e6d5951, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5236532056253872871
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-09_{-5236532056253872871}
+  m_AudioClip: {fileID: 8300000, guid: 507e4f6b70513cc45964afa189d99824, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3014567206086783621
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-04_{-3014567206086783621}
+  m_AudioClip: {fileID: 8300000, guid: f8e106b0914407b489fb103aac0171c2, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-914900111592424019
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-01_{-914900111592424019}
+  m_AudioClip: {fileID: 8300000, guid: 820059a739013ed44829bbd8233485a4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1425724066186264594
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-08_{1425724066186264594}
+  m_AudioClip: {fileID: 8300000, guid: 0261a32923c5ee247a31041fd5e25d8f, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3530044519705311276
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-05_{3530044519705311276}
+  m_AudioClip: {fileID: 8300000, guid: 4f672d0581f1791428a4eb3017e8813d, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4858194504872587220
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-03_{4858194504872587220}
+  m_AudioClip: {fileID: 8300000, guid: 7e3805f8d52e4914585a6afb6d9b4378, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4881148980161271574
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hit_metal-07_{4881148980161271574}
+  m_AudioClip: {fileID: 8300000, guid: 81b87769a65161e4ead3e71bb8cad5ad, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Hit_Metal
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -74.09391, y: 77.315285}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -914900111592424019}
+  - {fileID: -8662454928049383119}
+  - {fileID: 4858194504872587220}
+  - {fileID: -3014567206086783621}
+  - {fileID: 3530044519705311276}
+  - {fileID: -8860360651721716586}
+  - {fileID: 4881148980161271574}
+  - {fileID: 1425724066186264594}
+  - {fileID: -5236532056253872871}
+  - {fileID: -6647998394450732559}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 2
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0

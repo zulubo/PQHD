@@ -1,0 +1,577 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8978604285802521562
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-11_{-8978604285802521562}
+  m_AudioClip: {fileID: 8300000, guid: 0f6206902c5060d4e8c3d685c4278b9c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8779907318877821932
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-41_{-8779907318877821932}
+  m_AudioClip: {fileID: 8300000, guid: 2b85344ad23f6a34d967636ca52d42f6, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8032952384885161355
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-23_{-8032952384885161355}
+  m_AudioClip: {fileID: 8300000, guid: 98ea029a2db30d943b4a40530a4c1942, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8007682137344119578
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-36_{-8007682137344119578}
+  m_AudioClip: {fileID: 8300000, guid: 66f6cda67abcd0142b0c2b4ae36094d3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-7501620850950798138
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-07_{-7501620850950798138}
+  m_AudioClip: {fileID: 8300000, guid: bde0742ee1aaa3946a783846e73ee6fc, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-7036995778645732634
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-46_{-7036995778645732634}
+  m_AudioClip: {fileID: 8300000, guid: 2ee5fa9beb92025479625aef2f49c86a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6755875310061784004
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-28_{-6755875310061784004}
+  m_AudioClip: {fileID: 8300000, guid: 30d9f8a126af852478972eae23d92159, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6195406111240797859
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-34_{-6195406111240797859}
+  m_AudioClip: {fileID: 8300000, guid: 2996100ccad9f6841a68ea53b8254729, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6057870403999539648
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-40_{-6057870403999539648}
+  m_AudioClip: {fileID: 8300000, guid: 4d7c3d60043bf7143829de65c15996a5, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5874378765536835923
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-16_{-5874378765536835923}
+  m_AudioClip: {fileID: 8300000, guid: 238b9dbdf76e8a14285f9f5021026123, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5794229439420169326
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-45_{-5794229439420169326}
+  m_AudioClip: {fileID: 8300000, guid: 942c0f79d62c4314189a3f41c8c71565, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5639197297376545068
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-03_{-5639197297376545068}
+  m_AudioClip: {fileID: 8300000, guid: c1feb685c86920b459507538a76b0d60, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4965864123337049369
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-08_{-4965864123337049369}
+  m_AudioClip: {fileID: 8300000, guid: d001a04dc68b023418755beb668dde38, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4714823425970345822
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-39_{-4714823425970345822}
+  m_AudioClip: {fileID: 8300000, guid: 8ba2de6fb0516cf478f8116e9ccce2ec, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4602325259715168715
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-13_{-4602325259715168715}
+  m_AudioClip: {fileID: 8300000, guid: 851f7a14f86e1de42a761b10f3fb1fa8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4578921832395660933
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-48_{-4578921832395660933}
+  m_AudioClip: {fileID: 8300000, guid: f30ed0ffd0af2b94ea33fa96434977a3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4325563718956917547
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-26_{-4325563718956917547}
+  m_AudioClip: {fileID: 8300000, guid: 91747d89b87a6174d8b766c63e61a2cf, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4246549112154275540
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-43_{-4246549112154275540}
+  m_AudioClip: {fileID: 8300000, guid: e6445755bdbb3d648b3502d57cec2e85, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4149115120765590543
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-10_{-4149115120765590543}
+  m_AudioClip: {fileID: 8300000, guid: 4b41abc067a2ddb4eb959dfe251ee852, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4075486796396349678
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-29_{-4075486796396349678}
+  m_AudioClip: {fileID: 8300000, guid: 3e260836107fa0744b6fc72a63a57a05, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3586555114191293920
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-42_{-3586555114191293920}
+  m_AudioClip: {fileID: 8300000, guid: 69e4b988b2a389a49a731492620c99a6, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2856142113112414692
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-12_{-2856142113112414692}
+  m_AudioClip: {fileID: 8300000, guid: 9edfd8e3327f1904784ea8be2e486f59, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2433082111621095036
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-24_{-2433082111621095036}
+  m_AudioClip: {fileID: 8300000, guid: 6437c96d958060a4691e25e23f5d5414, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1915104842292705003
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-14_{-1915104842292705003}
+  m_AudioClip: {fileID: 8300000, guid: cd4d043a359ca7343b4f020fa94df67e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1786018399926870602
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-19_{-1786018399926870602}
+  m_AudioClip: {fileID: 8300000, guid: e0675bf1c23cf43418ee9d523c8ef395, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1512195810464217594
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-17_{-1512195810464217594}
+  m_AudioClip: {fileID: 8300000, guid: 42e521ac0103e1a45b992d1119df236e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1473849722103257470
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-31_{-1473849722103257470}
+  m_AudioClip: {fileID: 8300000, guid: 4171f74092ca11846adf6623bf17b79b, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1018039707795337636
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-05_{-1018039707795337636}
+  m_AudioClip: {fileID: 8300000, guid: 45474e504bd3f674c94d0917f1a79a58, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &320968500884880821
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-33_{320968500884880821}
+  m_AudioClip: {fileID: 8300000, guid: d8f60bd65a599644686985ae51b2797b, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &544005716782188114
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-21_{544005716782188114}
+  m_AudioClip: {fileID: 8300000, guid: f711b001736cad548bc41dd28df7a864, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1156226349196280101
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-49_{1156226349196280101}
+  m_AudioClip: {fileID: 8300000, guid: 83753eca58046fe4ea1bd7334174ee9c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1333116589702647009
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-47_{1333116589702647009}
+  m_AudioClip: {fileID: 8300000, guid: 83bce3f86d9b876418251369aa4ef070, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1812720282832357601
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-06_{1812720282832357601}
+  m_AudioClip: {fileID: 8300000, guid: d85b1ed488a8b574885a0be9c2764a60, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2463013983184968729
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-02_{2463013983184968729}
+  m_AudioClip: {fileID: 8300000, guid: d317987fed290d84b8781594a49d8cd9, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2631486879823862740
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-04_{2631486879823862740}
+  m_AudioClip: {fileID: 8300000, guid: 04f76d7f52ae4434d894251c8b5f2c89, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4034433369266634864
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-22_{4034433369266634864}
+  m_AudioClip: {fileID: 8300000, guid: 59910100317d14249ac769ffd905530e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4423284278314367994
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-15_{4423284278314367994}
+  m_AudioClip: {fileID: 8300000, guid: 0dd6d8b31841f8a4ab5b37ff392957ae, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4736638934074731662
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-35_{4736638934074731662}
+  m_AudioClip: {fileID: 8300000, guid: dcd7ecb0068ee164e810ffd6e1eb1e83, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4961805576602501773
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-32_{4961805576602501773}
+  m_AudioClip: {fileID: 8300000, guid: 3f31331cae277224d9c5621b33ae9402, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5025219065516356492
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-27_{5025219065516356492}
+  m_AudioClip: {fileID: 8300000, guid: 3e2a1f2e28a916e459e0b7fddafa08a4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5064159890815035868
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-01_{5064159890815035868}
+  m_AudioClip: {fileID: 8300000, guid: 9988ce21bc4b6a142bc6cf40d262433e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5195890920580355235
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-44_{5195890920580355235}
+  m_AudioClip: {fileID: 8300000, guid: 7505cf9923c172448973ababa6e37be8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5322597513953876793
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-30_{5322597513953876793}
+  m_AudioClip: {fileID: 8300000, guid: 3d03beed9acaed849a54c08661d8c97c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6281313747556226860
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-38_{6281313747556226860}
+  m_AudioClip: {fileID: 8300000, guid: b5456407de398db49a97021f753808fe, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6298263555240159878
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-18_{6298263555240159878}
+  m_AudioClip: {fileID: 8300000, guid: e0914a95157330c488e9d6e0b34454b0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Voice_Nasal _High
+  m_Volume: -10
+  m_Pitch: 603
+  m_AutomaticTriggerTime: 0.025
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -149.76617, y: 187.20715}
+  m_AutomaticTriggerTimeRandomizationRange: {x: -0.04, y: 0.04}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 5064159890815035868}
+  - {fileID: 2463013983184968729}
+  - {fileID: -5639197297376545068}
+  - {fileID: 2631486879823862740}
+  - {fileID: -1018039707795337636}
+  - {fileID: 1812720282832357601}
+  - {fileID: -7501620850950798138}
+  - {fileID: -4965864123337049369}
+  - {fileID: 7451150203234427982}
+  - {fileID: -4149115120765590543}
+  - {fileID: -8978604285802521562}
+  - {fileID: -2856142113112414692}
+  - {fileID: -4602325259715168715}
+  - {fileID: -1915104842292705003}
+  - {fileID: 4423284278314367994}
+  - {fileID: -5874378765536835923}
+  - {fileID: -1512195810464217594}
+  - {fileID: 6298263555240159878}
+  - {fileID: -1786018399926870602}
+  - {fileID: 8849444653426026161}
+  - {fileID: 544005716782188114}
+  - {fileID: 4034433369266634864}
+  - {fileID: -8032952384885161355}
+  - {fileID: -2433082111621095036}
+  - {fileID: 7325045998464763199}
+  - {fileID: -4325563718956917547}
+  - {fileID: 5025219065516356492}
+  - {fileID: -6755875310061784004}
+  - {fileID: -4075486796396349678}
+  - {fileID: 5322597513953876793}
+  - {fileID: -1473849722103257470}
+  - {fileID: 4961805576602501773}
+  - {fileID: 320968500884880821}
+  - {fileID: -6195406111240797859}
+  - {fileID: 4736638934074731662}
+  - {fileID: -8007682137344119578}
+  - {fileID: 7022336497115318057}
+  - {fileID: 6281313747556226860}
+  - {fileID: -4714823425970345822}
+  - {fileID: -6057870403999539648}
+  - {fileID: -8779907318877821932}
+  - {fileID: -3586555114191293920}
+  - {fileID: -4246549112154275540}
+  - {fileID: 5195890920580355235}
+  - {fileID: -5794229439420169326}
+  - {fileID: -7036995778645732634}
+  - {fileID: 1333116589702647009}
+  - {fileID: -4578921832395660933}
+  - {fileID: 1156226349196280101}
+  - {fileID: 8741945808481021291}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 1
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7022336497115318057
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-37_{7022336497115318057}
+  m_AudioClip: {fileID: 8300000, guid: 6736c3505c30dde42918fc25c12f4712, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &7325045998464763199
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-25_{7325045998464763199}
+  m_AudioClip: {fileID: 8300000, guid: 70812aaeac861ad4080d6922b2091721, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &7451150203234427982
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-09_{7451150203234427982}
+  m_AudioClip: {fileID: 8300000, guid: c8d2948ebcd547e4fb74c4e1dc0762b1, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8741945808481021291
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-50_{8741945808481021291}
+  m_AudioClip: {fileID: 8300000, guid: 25556ff21f48a5947b8fe3d1c2d2b7ba, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8849444653426026161
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_nasal-20_{8849444653426026161}
+  m_AudioClip: {fileID: 8300000, guid: 913082afbda64c14b8c17984605bb0d4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PQHD
 {
@@ -40,11 +41,10 @@ namespace PQHD
             return materials[0];
         }
 
-        public void Play(PhysicsMaterial physicsMat, AudioSource source, float volumeMultiplier = 1)
+        public void Play(PhysicsMaterial physicsMat, Vector3 position, float radius, float volumeMultiplier = 1)
         {
             Material mat = GetMaterial(physicsMat);
-            source.pitch = Random.Range(0.8f, 1.2f);
-            source.PlayOneShot(mat.GetRandomClip(), mat.volume * volumeMultiplier);
+            Audio.I.PlaySound3D(mat.GetRandomClip(), position, radius, mat.volume * volumeMultiplier, Random.Range(0.8f, 1.2f));
         }
 
     }

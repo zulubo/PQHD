@@ -1,0 +1,291 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-9007981896162308864
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-19_{-9007981896162308864}
+  m_AudioClip: {fileID: 8300000, guid: 8f119cf8afd2f03488426f464aced267, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8648794310723423352
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-03_{-8648794310723423352}
+  m_AudioClip: {fileID: 8300000, guid: feffe3fe27e47e1418351f844219270c, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-8588392976559547273
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-04_{-8588392976559547273}
+  m_AudioClip: {fileID: 8300000, guid: 4ba44bc397a1253449f93d894b5622e8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-7505225145209548804
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-20_{-7505225145209548804}
+  m_AudioClip: {fileID: 8300000, guid: 7a6957f632d2ad146ac9826bd947b910, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5848301165788144619
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-05_{-5848301165788144619}
+  m_AudioClip: {fileID: 8300000, guid: 1275d86f58dc92345bcd2d58899fb2a0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-5472583101618597897
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-22_{-5472583101618597897}
+  m_AudioClip: {fileID: 8300000, guid: a0e75e886843ff446afb6ea28615e1da, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3464322850368922334
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-08_{-3464322850368922334}
+  m_AudioClip: {fileID: 8300000, guid: 8117d9a7513071f40b892373af234f0b, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2270125642770967601
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-18_{-2270125642770967601}
+  m_AudioClip: {fileID: 8300000, guid: 3ad93b452c4d9204eb4705a3fe495e91, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1263542599602440396
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-11_{-1263542599602440396}
+  m_AudioClip: {fileID: 8300000, guid: 352004812383d394a845f69f9811b902, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-1104756210354889372
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-01_{-1104756210354889372}
+  m_AudioClip: {fileID: 8300000, guid: c76b0a5c116caf34e9a9d9f22e6229f1, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-558998731651392331
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-21_{-558998731651392331}
+  m_AudioClip: {fileID: 8300000, guid: ff7e54c012322ec418f6e3e28964eda4, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-528907585696176980
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-16_{-528907585696176980}
+  m_AudioClip: {fileID: 8300000, guid: 684219aa3a2ec7e4db4dc6f40cb11e13, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &661942601470138451
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-13_{661942601470138451}
+  m_AudioClip: {fileID: 8300000, guid: cd86b19f4c0f02648a96e0ba1c8defc0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1426157818820827586
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-17_{1426157818820827586}
+  m_AudioClip: {fileID: 8300000, guid: 5e6d5958f9c20c546b3dfbc1b9dcf032, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1446695165460594342
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-09_{1446695165460594342}
+  m_AudioClip: {fileID: 8300000, guid: bac40541ea0f22c4db0d4f4039f9d25d, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1740983469397414430
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-12_{1740983469397414430}
+  m_AudioClip: {fileID: 8300000, guid: 67bd9b613968f0147800fe056c89473e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1893175104729204843
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-06_{1893175104729204843}
+  m_AudioClip: {fileID: 8300000, guid: ce42facd11e4aa342971e0f903cf6230, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &2040660125006515247
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-15_{2040660125006515247}
+  m_AudioClip: {fileID: 8300000, guid: 8d8757abfebcbe641a456315733b1cc0, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &4611795111105542547
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-23_{4611795111105542547}
+  m_AudioClip: {fileID: 8300000, guid: b1f48e38b9dbbba458fb3950f084cf7e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &5813323367104263864
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-14_{5813323367104263864}
+  m_AudioClip: {fileID: 8300000, guid: dcc4ffa08925358478f1c278f9132920, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Voice_Deep
+  m_Volume: -10
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -149.76617, y: 187.20715}
+  m_AutomaticTriggerTimeRandomizationRange: {x: -0.05, y: 0.05}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: -1104756210354889372}
+  - {fileID: 8049895819410188361}
+  - {fileID: -8648794310723423352}
+  - {fileID: -8588392976559547273}
+  - {fileID: -5848301165788144619}
+  - {fileID: 1893175104729204843}
+  - {fileID: 8380730743120396547}
+  - {fileID: -3464322850368922334}
+  - {fileID: 1446695165460594342}
+  - {fileID: 8463066660321555232}
+  - {fileID: -1263542599602440396}
+  - {fileID: 1740983469397414430}
+  - {fileID: 661942601470138451}
+  - {fileID: 5813323367104263864}
+  - {fileID: 2040660125006515247}
+  - {fileID: -528907585696176980}
+  - {fileID: 1426157818820827586}
+  - {fileID: -2270125642770967601}
+  - {fileID: -9007981896162308864}
+  - {fileID: -7505225145209548804}
+  - {fileID: -558998731651392331}
+  - {fileID: -5472583101618597897}
+  - {fileID: 4611795111105542547}
+  - {fileID: 8560651393941705594}
+  m_AvoidRepeatingLast: 1
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &8049895819410188361
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-02_{8049895819410188361}
+  m_AudioClip: {fileID: 8300000, guid: eafc5686be0e4f84bb18dc29f6d68fb5, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8380730743120396547
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-07_{8380730743120396547}
+  m_AudioClip: {fileID: 8300000, guid: c0727acd197680e4ab43c68a3303d511, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8463066660321555232
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-10_{8463066660321555232}
+  m_AudioClip: {fileID: 8300000, guid: 3db814c75ae98fe4098f151ff2bb8ac3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &8560651393941705594
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: voice_deep-24_{8560651393941705594}
+  m_AudioClip: {fileID: 8300000, guid: 61e8a26d3f5c2164abd64964db999400, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
