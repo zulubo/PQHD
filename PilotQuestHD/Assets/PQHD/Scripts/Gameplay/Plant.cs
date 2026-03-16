@@ -11,8 +11,10 @@ namespace PQHD
         [SerializeField] Animator anim;
         [SerializeField] AudioResource spawnDropSound;
         [SerializeField] AudioResource growSound;
+        [SerializeField] private ParticleSystem growParticles;
+        [SerializeField] private HitReaction reaction;
 
-        private int anim_Idle = Animator.StringToHash("Idle");
+        private BoolTimer growing;
 
         /// <summary>
         /// Play grow animation
@@ -20,8 +22,10 @@ namespace PQHD
         public void Grow()
         {
             gameObject.SetActive(true);
-            anim.Play("Grow");
+            anim.Play("Grow", 0);
+            growing.Set(1f);
             //TODO: play sound
+            growParticles?.Play();
         }
 
         void OnEnable()
@@ -42,10 +46,11 @@ namespace PQHD
 
         void SpawnDrop()
         {
-            if(anim.GetCurrentAnimatorStateInfo(0).shortNameHash != anim_Idle) return;
+            if(growing) return;
 
             Inventory.I.Add(moonDrop);
             anim.SetTrigger("SpawnDrop");
+            reaction.Bump(4);
             // TODO: play sound
         }
     }

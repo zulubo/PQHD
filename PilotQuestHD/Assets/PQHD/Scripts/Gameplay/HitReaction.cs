@@ -41,7 +41,7 @@ namespace PQHD
             {
                 float mul = 1;
                 if (bounceProportional) mul = Mathf.Sqrt(info.strength);
-                bounceSim.Bump(bounceAmount * mul);
+                Bump(bounceAmount * mul);
             }
 
             if (enableSound)
@@ -50,6 +50,13 @@ namespace PQHD
             }
         }
 
+        /// <summary>
+        ///  Bump the bouncy sim
+        /// </summary>
+        public void Bump(float velocity)
+        {
+            bounceSim.Bump(velocity);
+        }
 
         private void Update()
         {

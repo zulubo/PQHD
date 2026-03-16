@@ -43,11 +43,13 @@ namespace PQHD
     {
         public int strength;
         public HitType type;
+        public Vector3 direction;
 
-        public HitInfo(int strength, HitType type)
+        public HitInfo(int strength, Vector3 direction, HitType type)
         {
             this.strength = strength;
             this.type = type;
+            this.direction = direction;
         }
     }
 }

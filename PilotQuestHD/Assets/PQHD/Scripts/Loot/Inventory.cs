@@ -107,6 +107,9 @@ namespace PQHD
 
         public void Deserialize(SerializedInventory serialized)
         {
+            // clear 
+            RemoveAll();
+            
             if(serialized.contents == null) return;
             foreach (KeyValuePair<string, int> loadedContent in serialized.contents)
             {

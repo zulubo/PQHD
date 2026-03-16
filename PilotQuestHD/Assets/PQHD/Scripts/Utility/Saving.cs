@@ -100,16 +100,16 @@ namespace PQHD
         {
             try
             {
-                if (!File.Exists(path))
+                if (File.Exists(path))
+                {
+                    string serialized = await File.ReadAllTextAsync(path);
+                    if (UseEncryption) serialized = await Task.Run(() => Decrypt(serialized, EncryptionKey));
+                    State = await Task.Run(() => JsonConvert.DeserializeObject<SaveState>(serialized));
+                }
+                else
                 {
                     State = default;
-                    Busy = false;
-                    return;
                 }
-
-                string serialized = await File.ReadAllTextAsync(path);
-                if (UseEncryption) serialized = await Task.Run(()=> Decrypt(serialized, EncryptionKey));
-                State = await Task.Run(() => JsonConvert.DeserializeObject<SaveState>(serialized));
                 
                 OnLoadedState?.Invoke(State);
             }
@@ -173,11 +173,8 @@ namespace PQHD
 
         private static async Task DeleteSaveTask()
         {
-            while (Busy) await Task.Yield();
-            Busy = true;
             string path = GetFilePath(FileName);
             if(File.Exists(path)) File.Delete(path);
-            Busy = false;
         }
     }
 }

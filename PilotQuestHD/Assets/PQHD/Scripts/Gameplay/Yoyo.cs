@@ -73,7 +73,7 @@ namespace PQHD
 
             for (int i = 0; i < overlapCount; i++)
             {
-                IHittable.HitCollider(overlapBuffer[i], new HitInfo(hitDamage, HitType.Melee));
+                IHittable.HitCollider(overlapBuffer[i], new HitInfo(hitDamage, transform.forward, HitType.Melee));
             }
         }
     }
