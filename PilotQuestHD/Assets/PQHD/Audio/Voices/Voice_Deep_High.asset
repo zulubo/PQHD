@@ -207,7 +207,7 @@ AudioRandomContainer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Voice_Deep_High
-  m_Volume: -10
+  m_Volume: -14.7
   m_Pitch: 949
   m_AutomaticTriggerTime: 0.03
   m_LoopCount: 1

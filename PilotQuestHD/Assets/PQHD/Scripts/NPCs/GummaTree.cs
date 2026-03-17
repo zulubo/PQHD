@@ -4,6 +4,7 @@ using System.Globalization;
 using PQHD.Dialog;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Serialization;
 
 namespace PQHD
 {
@@ -19,7 +20,19 @@ namespace PQHD
 
         [SerializeField] private float seedArcDuration = 1f;
         [SerializeField] private float seedArcHeight = 1f;
-        
+
+        [SerializeField] private Transform eyeTransform;
+        private Quaternion eyeRestRot;
+        [SerializeField] private float lookAtPlayerRadius = 10;
+        [SerializeField] private Vector2 lookAmount = new Vector2(0.6f, 0.6f);
+        [SerializeField] private Vector2 maxLookAngle = new Vector2(30, 30);
+        [SerializeField] private float eyeMoveSpeed = 8;
+
+        private void Start()
+        {
+            eyeRestRot = eyeTransform.rotation;
+        }
+
         public Vector3 GetInteractPos() => transform.position;
         public void Interact()
         {
@@ -35,6 +48,8 @@ namespace PQHD
             {
                 UpdateDialogProperties();
             }
+            
+            UpdateEye();
         }
 
         void UpdateDialogProperties()
@@ -51,6 +66,26 @@ namespace PQHD
                 dialog.SetProperty("CanAfford", (moreNeeded <= 0).ToString(CultureInfo.InvariantCulture));
                 dialog.SetProperty("MoonDropsRequired", moreNeeded.ToString(CultureInfo.InvariantCulture));
             }
+        }
+
+        private void UpdateEye()
+        {
+            Quaternion targetEyeRot = eyeRestRot;
+            if (Player.I && (Player.I.transform.position - transform.position).sqrMagnitude <
+                lookAtPlayerRadius * lookAtPlayerRadius)
+            {
+                Vector3 dir = (Player.I.transform.position - eyeTransform.position).normalized;
+                Quaternion lookRot = Quaternion.FromToRotation(transform.forward, dir);
+                lookRot.ToAngleAxis(out float lookAngle, out Vector3 lookAxis);
+                float vertical = Mathf.Abs(dir.y);
+                lookAngle *= Mathf.LerpAngle(lookAmount.x, lookAmount.y, vertical);
+                float maxAngle = Mathf.LerpAngle(maxLookAngle.x, maxLookAngle.y, vertical);
+                lookAngle = Mathf.Clamp(lookAngle, -maxAngle, maxAngle);
+                lookRot = Quaternion.AngleAxis(lookAngle, lookAxis);
+                targetEyeRot = lookRot * eyeRestRot;
+            }
+            
+            eyeTransform.rotation = Quaternion.Slerp(eyeTransform.rotation, targetEyeRot, Time.deltaTime * eyeMoveSpeed);
         }
 
         private bool spawningSeed;

@@ -283,8 +283,14 @@ namespace PQHD.Dialog
             
             if (activeDialog.hasPorts)
             {
-                // initialize button selection if using gamepad
-                dialogBox.SelectPort(0);
+                if (node.defaultPort > 0 && node.defaultPort < node.ports.Count)
+                {
+                    dialogBox.SelectPort(node.defaultPort);
+                }
+                else
+                {
+                    dialogBox.SelectPort(0);
+                }
             }
 
             // fade in exit options

@@ -38,15 +38,15 @@ MonoBehaviour:
     portName: DEFAULT
     targetNodeGuid: aea237f8-32a8-44a8-970f-38299764e672
   nodeData:
-  - rid: 4911756245520351526
-  - rid: 4911756245520351527
-  - rid: 4911756245520351528
-  - rid: 4911756245520351529
-  - rid: 4911756245520351530
-  - rid: 4911756245520351531
-  - rid: 4911756245520351532
-  - rid: 4911756245520351533
-  - rid: 4911756245520351534
+  - rid: 4911756312070586605
+  - rid: 4911756312070586606
+  - rid: 4911756312070586607
+  - rid: 4911756312070586608
+  - rid: 4911756312070586609
+  - rid: 4911756312070586610
+  - rid: 4911756312070586611
+  - rid: 4911756312070586612
+  - rid: 4911756312070586613
   exposedProperties:
   - PropertyName: Price
     DefaultValue: 5
@@ -59,7 +59,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4911756245520351526
+    - rid: 4911756312070586605
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -67,7 +67,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756245520351527
+    - rid: 4911756312070586606
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 88d6fdd7-6e1e-440c-ab42-4e90e16c64c3
@@ -81,7 +81,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351528
+    - rid: 4911756312070586607
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 28a96361-2c52-4276-9b00-5dd246aba5c5
@@ -94,7 +94,7 @@ MonoBehaviour:
         dialogText: I'm the gumma tree. If you give me <prop:Price> moon drops I
           can make a seed for you.
         defaultPort: 1
-    - rid: 4911756245520351529
+    - rid: 4911756312070586608
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: dbfd2a3d-32c4-4341-9e1f-178d13403ad1
@@ -102,9 +102,9 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 499.3333, y: 388.66666}
-        dialogText: OUT OF SEEDS (TEMP)
+        dialogText: I don't have any more seeds!
         defaultPort: -1
-    - rid: 4911756245520351530
+    - rid: 4911756312070586609
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 8512ac9e-6b7f-44bd-90bf-eb2fb87730bb
@@ -114,7 +114,7 @@ MonoBehaviour:
         position: {x: 860.6667, y: 231.33333}
         dialogText: I see. Please return if you'd like a seed.
         defaultPort: -1
-    - rid: 4911756245520351531
+    - rid: 4911756312070586610
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 2ca53cdf-09c5-4fd2-8064-b1cdb8198e31
@@ -128,7 +128,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351532
+    - rid: 4911756312070586611
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: f447b74f-a3d4-4138-9380-abc9c77e0e71
@@ -138,7 +138,7 @@ MonoBehaviour:
         position: {x: 1088.6666, y: 71.333336}
         dialogText: I'm sorry, I need <prop:MoonDropsRequired> more moon drops!
         defaultPort: -1
-    - rid: 4911756245520351533
+    - rid: 4911756312070586612
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: a0239589-9e09-485e-9e2a-302a512e6d90
@@ -148,7 +148,7 @@ MonoBehaviour:
         position: {x: 1088.6666, y: -116}
         eventKey: 'custom:'
         eventBody: DropSeed
-    - rid: 4911756245520351534
+    - rid: 4911756312070586613
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: aea237f8-32a8-44a8-970f-38299764e672

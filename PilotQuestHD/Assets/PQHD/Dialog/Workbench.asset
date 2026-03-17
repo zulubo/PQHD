@@ -32,13 +32,13 @@ MonoBehaviour:
     portName: DEFAULT
     targetNodeGuid: 7af957e8-6954-46dd-8fce-de87031392e2
   nodeData:
-  - rid: 4911756289586757861
-  - rid: 4911756289586757862
-  - rid: 4911756289586757863
-  - rid: 4911756289586757864
-  - rid: 4911756289586757865
-  - rid: 4911756289586757866
-  - rid: 4911756289586757867
+  - rid: 4911756312070586571
+  - rid: 4911756312070586572
+  - rid: 4911756312070586573
+  - rid: 4911756312070586574
+  - rid: 4911756312070586575
+  - rid: 4911756312070586576
+  - rid: 4911756312070586577
   exposedProperties:
   - PropertyName: CanAfford
     DefaultValue: False
@@ -47,7 +47,7 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 4911756289586757861
+    - rid: 4911756312070586571
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -55,7 +55,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756289586757862
+    - rid: 4911756312070586572
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: a49f987e-75ff-49c7-bf4e-a510326ce5ca
@@ -68,7 +68,7 @@ MonoBehaviour:
         dialogText: You can use this workbench to turn 1000 moon drops into 1 moon
           ingot.
         defaultPort: 1
-    - rid: 4911756289586757863
+    - rid: 4911756312070586573
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 9fe4034f-8359-4659-a978-5305278bec86
@@ -78,7 +78,7 @@ MonoBehaviour:
         position: {x: 571.3334, y: 460}
         dialogText: Come back when you need a moon ingot.
         defaultPort: -1
-    - rid: 4911756289586757864
+    - rid: 4911756312070586574
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: dcb7285c-7604-4762-afcd-4db63b577d40
@@ -92,7 +92,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756289586757865
+    - rid: 4911756312070586575
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 166454f1-b1a2-4078-90ad-409609a52416
@@ -102,7 +102,7 @@ MonoBehaviour:
         position: {x: 746, y: 260}
         dialogText: You need <prop:MoonDropsRequired> more moon drops!
         defaultPort: -1
-    - rid: 4911756289586757866
+    - rid: 4911756312070586576
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: d5718fe2-e8b6-47cf-b751-b782709d9da6
@@ -112,7 +112,7 @@ MonoBehaviour:
         position: {x: 769.3334, y: 48}
         eventKey: 'custom:'
         eventBody: CreateIngot
-    - rid: 4911756289586757867
+    - rid: 4911756312070586577
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 7af957e8-6954-46dd-8fce-de87031392e2

@@ -19,29 +19,30 @@ MonoBehaviour:
   - baseNodeGuid: acc9057d-3279-48d3-888d-d08df7cd038c
     portName: Yes
     targetNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-    portName: True
-    targetNodeGuid: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
-  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
-    portName: False
-    targetNodeGuid: fbbe8dca-6751-48af-93f4-5b8a9614534b
   - baseNodeGuid: acc9057d-3279-48d3-888d-d08df7cd038c
     portName: No
     targetNodeGuid: 069a088a-1419-44c9-a58a-54e5d1b3c382
+  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
+    portName: False
+    targetNodeGuid: fbbe8dca-6751-48af-93f4-5b8a9614534b
+  - baseNodeGuid: 1a313bc5-638d-44a6-a663-f63084fcaa72
+    portName: True
+    targetNodeGuid: 45473c9d-d4cc-4f4e-8129-12cc8bbde84e
   nodeData:
-  - rid: 4911756245520351588
-  - rid: 4911756245520351589
-  - rid: 4911756245520351590
-  - rid: 4911756245520351591
-  - rid: 4911756245520351592
-  - rid: 4911756245520351593
+  - rid: 4911756312070586642
+  - rid: 4911756312070586643
+  - rid: 4911756312070586644
+  - rid: 4911756312070586645
+  - rid: 4911756312070586646
+  - rid: 4911756312070586647
+  - rid: 4911756312070586648
   exposedProperties:
   - PropertyName: HasMeat
     DefaultValue: False
   references:
     version: 2
     RefIds:
-    - rid: 4911756245520351588
+    - rid: 4911756312070586642
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -49,7 +50,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756245520351589
+    - rid: 4911756312070586643
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: acc9057d-3279-48d3-888d-d08df7cd038c
@@ -61,18 +62,8 @@ MonoBehaviour:
         position: {x: 270, y: 200}
         dialogText: Slard is my name. If you want to survive the wild zone, you'll
           need some meat.
-        defaultPort: -1
-    - rid: 4911756245520351590
-      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 808, y: 37.333332}
-        eventKey: 'custom:'
-        eventBody: MoveAside
-    - rid: 4911756245520351591
+        defaultPort: 1
+    - rid: 4911756312070586644
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 1a313bc5-638d-44a6-a663-f63084fcaa72
@@ -86,7 +77,27 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351592
+    - rid: 4911756312070586645
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 069a088a-1419-44c9-a58a-54e5d1b3c382
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 596.6667, y: 388.66666}
+        dialogText: Oh yeah? Well, just stay here then.
+        defaultPort: -1
+    - rid: 4911756312070586646
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: c45bd837-9e1f-4d3b-89d2-7b237406f0ee
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 862, y: 37.333332}
+        eventKey: 'custom:'
+        eventBody: MoveAside
+    - rid: 4911756312070586647
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: fbbe8dca-6751-48af-93f4-5b8a9614534b
@@ -96,13 +107,13 @@ MonoBehaviour:
         position: {x: 829.3334, y: 251.33334}
         dialogText: Get some meat and I'll let you pass.
         defaultPort: -1
-    - rid: 4911756245520351593
+    - rid: 4911756312070586648
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
-        GUID: 069a088a-1419-44c9-a58a-54e5d1b3c382
+        GUID: 45473c9d-d4cc-4f4e-8129-12cc8bbde84e
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 596.6667, y: 388.66666}
-        dialogText: Oh yeah? Well, just stay here then.
+        position: {x: 829.3334, y: -135.33334}
+        dialogText: Sorry, the wild zone does not exist.
         defaultPort: -1

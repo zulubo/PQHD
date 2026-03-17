@@ -48,9 +48,12 @@ namespace PQHD
         private void Spawn(GameObject item)
         {
             GameObject inst = Instantiate(item, spawnPos.position, Quaternion.identity);
-            Rigidbody rb = inst.GetComponent<Rigidbody>();
-            rb.linearVelocity = Quaternion.Euler(Random.Range(spawnMinAngle, spawnMaxAngle), Random.Range(0, 360), 0) *
-                                Vector3.forward * Random.Range(spawnMinSpeed, spawnMaxSpeed);
+            //Rigidbody rb = inst.GetComponent<Rigidbody>();
+            //rb.linearVelocity = Quaternion.Euler(Random.Range(spawnMinAngle, spawnMaxAngle), Random.Range(0, 360), 0) *
+            //                    Vector3.forward * Random.Range(spawnMinSpeed, spawnMaxSpeed);
+            DynamicLootPickup dyn = inst.GetComponent<DynamicLootPickup>();
+            dyn.Velocity = Quaternion.Euler(Random.Range(spawnMinAngle, spawnMaxAngle), Random.Range(0, 360), 0) *
+                           Vector3.forward * Random.Range(spawnMinSpeed, spawnMaxSpeed);
         }
 
     }

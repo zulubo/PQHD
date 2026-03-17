@@ -13,15 +13,6 @@ MonoBehaviour:
   m_Name: Parvina Interact
   m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphContainer
   nodeLinks:
-  - baseNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
-    portName: No
-    targetNodeGuid: fb3f85b2-d000-460c-a24e-bcc4d26a44d6
-  - baseNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
-    portName: Yes
-    targetNodeGuid: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
-  - baseNodeGuid: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
-    portName: False
-    targetNodeGuid: fceaeb03-cdcc-41d0-81a0-0bbf988f7d21
   - baseNodeGuid: ENTRYPOINT
     portName: DEFAULT
     targetNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
@@ -31,6 +22,15 @@ MonoBehaviour:
   - baseNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
     portName: True
     targetNodeGuid: a35ed137-a0ca-432f-bbe5-5305a7c32eae
+  - baseNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
+    portName: No
+    targetNodeGuid: fb3f85b2-d000-460c-a24e-bcc4d26a44d6
+  - baseNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
+    portName: Yes
+    targetNodeGuid: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
+  - baseNodeGuid: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
+    portName: False
+    targetNodeGuid: fceaeb03-cdcc-41d0-81a0-0bbf988f7d21
   - baseNodeGuid: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
     portName: True
     targetNodeGuid: 110a07ac-46d9-4923-81bc-24c1b899442e
@@ -41,25 +41,25 @@ MonoBehaviour:
     portName: DEFAULT
     targetNodeGuid: 7e08cb0c-99dd-4070-af3c-b379480f0eba
   nodeData:
-  - rid: 4911756245520351340
-  - rid: 4911756245520351341
-  - rid: 4911756245520351342
-  - rid: 4911756245520351343
-  - rid: 4911756245520351344
-  - rid: 4911756245520351345
-  - rid: 4911756245520351346
-  - rid: 4911756245520351347
-  - rid: 4911756245520351348
-  - rid: 4911756245520351349
+  - rid: 4911756312070586675
+  - rid: 4911756312070586676
+  - rid: 4911756312070586677
+  - rid: 4911756312070586678
+  - rid: 4911756312070586679
+  - rid: 4911756312070586680
+  - rid: 4911756312070586681
+  - rid: 4911756312070586682
+  - rid: 4911756312070586683
+  - rid: 4911756312070586684
   exposedProperties:
   - PropertyName: HasMoonIngot
-    PropertyValue: False
+    DefaultValue: False
   - PropertyName: IsShackBuilt
-    PropertyValue: False
+    DefaultValue: False
   references:
     version: 2
     RefIds:
-    - rid: 4911756245520351340
+    - rid: 4911756312070586675
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -67,7 +67,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756245520351341
+    - rid: 4911756312070586676
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: b4d84c3e-6ee0-45e0-97ed-c07702697de5
@@ -81,7 +81,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351342
+    - rid: 4911756312070586677
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
@@ -94,7 +94,7 @@ MonoBehaviour:
         dialogText: I'm Parvina the huntress. I need a moon ingot to repair my destroyed
           shack.
         defaultPort: 1
-    - rid: 4911756245520351343
+    - rid: 4911756312070586678
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: fb3f85b2-d000-460c-a24e-bcc4d26a44d6
@@ -104,7 +104,7 @@ MonoBehaviour:
         position: {x: 866, y: 396}
         dialogText: Okay... but I can't sell meat until I repair my shack.
         defaultPort: -1
-    - rid: 4911756245520351344
+    - rid: 4911756312070586679
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
@@ -118,7 +118,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351345
+    - rid: 4911756312070586680
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: fceaeb03-cdcc-41d0-81a0-0bbf988f7d21
@@ -128,7 +128,7 @@ MonoBehaviour:
         position: {x: 1042, y: 226.66667}
         dialogText: You don't have a moon ingot!
         defaultPort: -1
-    - rid: 4911756245520351346
+    - rid: 4911756312070586681
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: a35ed137-a0ca-432f-bbe5-5305a7c32eae
@@ -138,7 +138,7 @@ MonoBehaviour:
         position: {x: 525.3334, y: 68}
         dialogText: Dialog Node
         defaultPort: -1
-    - rid: 4911756245520351347
+    - rid: 4911756312070586682
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 7e08cb0c-99dd-4070-af3c-b379480f0eba
@@ -149,7 +149,7 @@ MonoBehaviour:
         dialogText: Thank you stranger! I can hunt again. Here's a free meat for
           helping me.
         defaultPort: -1
-    - rid: 4911756245520351348
+    - rid: 4911756312070586683
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 110a07ac-46d9-4923-81bc-24c1b899442e
@@ -158,14 +158,14 @@ MonoBehaviour:
           retriggerEnabled: 1
         position: {x: 1042, y: 40.666664}
         eventKey: 'custom:'
-        eventBody: GiveMeat
-    - rid: 4911756245520351349
+        eventBody: GiveFreeMeat
+    - rid: 4911756312070586684
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 1b2596a3-8485-4fc0-ac71-c3916162d5a9
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 1220, y: 40.666664}
+        position: {x: 1232, y: 40.666664}
         eventKey: 'custom:'
         eventBody: RebuildShack
