@@ -23,27 +23,28 @@ MonoBehaviour:
     portName: No
     targetNodeGuid: a1cb3a62-4848-4df9-be27-31c2f79c82aa
   - baseNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
-    portName: True
-    targetNodeGuid: 601733e7-6e6f-4d2a-9718-f794c69aeef6
-  - baseNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
     portName: False
     targetNodeGuid: f974afd8-8fe6-4081-bc8d-9e5f2349a4cb
+  - baseNodeGuid: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
+    portName: True
+    targetNodeGuid: e4e422b3-bfbd-45b2-b4be-5a77bfad94f8
   nodeData:
-  - rid: 4911756245520351288
-  - rid: 4911756245520351289
-  - rid: 4911756245520351290
-  - rid: 4911756245520351291
-  - rid: 4911756245520351292
-  - rid: 4911756245520351293
+  - rid: 4911756333870481799
+  - rid: 4911756333870481800
+  - rid: 4911756333870481801
+  - rid: 4911756333870481802
+  - rid: 4911756333870481803
+  - rid: 4911756333870481804
+  - rid: 4911756333870481805
   exposedProperties:
-  - PropertyName: IngotsNeeded
-    PropertyValue: 5
+  - PropertyName: MoreLootNeeded
+    DefaultValue: 5
   - PropertyName: CanAfford
-    PropertyValue: False
+    DefaultValue: False
   references:
     version: 2
     RefIds:
-    - rid: 4911756245520351288
+    - rid: 4911756333870481799
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -51,7 +52,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756245520351289
+    - rid: 4911756333870481800
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 78776907-30a3-4ce0-9b1f-a89384f7a3b2
@@ -63,7 +64,7 @@ MonoBehaviour:
         position: {x: 216.66667, y: 200}
         dialogText: Build house for 5 ingots?
         defaultPort: 1
-    - rid: 4911756245520351290
+    - rid: 4911756333870481801
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: cba9d2fb-8b7f-42f8-8ddc-3b17027416e3
@@ -77,27 +78,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756245520351291
-      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: 601733e7-6e6f-4d2a-9718-f794c69aeef6
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 763.3334, y: -26}
-        eventKey: 'custom:'
-        eventBody: Build
-    - rid: 4911756245520351292
-      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: f974afd8-8fe6-4081-bc8d-9e5f2349a4cb
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 786.6667, y: 215.33333}
-        dialogText: You need [prop:IngotsNeeded] more ingots!
-        defaultPort: -1
-    - rid: 4911756245520351293
+    - rid: 4911756333870481802
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: a1cb3a62-4848-4df9-be27-31c2f79c82aa
@@ -106,4 +87,34 @@ MonoBehaviour:
           retriggerEnabled: 1
         position: {x: 544.6667, y: 384.66666}
         dialogText: If you build a house, someone may come and live in it.
+        defaultPort: -1
+    - rid: 4911756333870481803
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: f974afd8-8fe6-4081-bc8d-9e5f2349a4cb
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 785.3334, y: 214.66667}
+        dialogText: You need <prop:MoreLootNeeded> more ingots!
+        defaultPort: -1
+    - rid: 4911756333870481804
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 601733e7-6e6f-4d2a-9718-f794c69aeef6
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 764, y: -127.333336}
+        eventKey: 'custom:'
+        eventBody: Build
+    - rid: 4911756333870481805
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: e4e422b3-bfbd-45b2-b4be-5a77bfad94f8
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 785.3334, y: 7.333334}
+        dialogText: Sorry, you can't do this.
         defaultPort: -1

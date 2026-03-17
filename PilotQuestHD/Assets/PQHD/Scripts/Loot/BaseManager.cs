@@ -14,8 +14,8 @@ namespace PQHD
 
         private void Start()
         {
-            Saving.LoadFromDisk();
             Saving.OnLoadedState += LoadedState;
+            Saving.LoadFromDisk();
             
             StartCoroutine(AutosaveCoroutine());
         }

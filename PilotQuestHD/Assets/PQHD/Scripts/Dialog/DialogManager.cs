@@ -27,6 +27,7 @@ namespace PQHD.Dialog
             public RectTransform visual;
             public TMP_Text textbox;
             public CanvasGroup portGroup;
+            public SimpleUINavigator navigator;
             public CanvasGroup defaultContinue;
             
             [SerializeField] private RectTransform portPointer;
@@ -39,6 +40,7 @@ namespace PQHD.Dialog
                 public GameObject gameObject;
                 public TMP_Text text;
                 public RectTransform transform;
+                public SimpleUISelectable selectable;
                 public string name;
             }
             public List<Port> ports = new List<Port>();
@@ -46,17 +48,22 @@ namespace PQHD.Dialog
             private int oldNavValue;
             public int SelectedPort { get; private set; }
 
-            public void AddPort(GameObject gameObject, string name)
+            public void AddPort(GameObject gameObject, DialogManager manager, string name)
             {
                 TMP_Text text = gameObject.GetComponentInChildren<TMP_Text>();
                 text.text = name;
-                ports.Add(new Port()
+                Port port = new Port()
                 {
                     gameObject = gameObject,
                     text = text,
                     transform = gameObject.GetComponent<RectTransform>(),
                     name = name,
-                });
+                    selectable = gameObject.GetComponent<SimpleUISelectable>(),
+                };
+
+                port.selectable.onSelect.AddListener(() => manager.ExecutePort(name));
+
+                ports.Add(port);
             }
 
             public void ClearPorts()
@@ -78,34 +85,6 @@ namespace PQHD.Dialog
             public void Close()
             {
                 gameObject.SetActive(false);
-            }
-
-            public void UpdateNavigation(Vector2 navInput)
-            {
-                int navValue = 0;
-                if(navInput.y < -0.8f) navValue = 1;
-                else if(navInput.y > 0.8f) navValue = -1;
-
-                if (navValue != oldNavValue)
-                {
-                    SelectPort(SelectedPort + navValue);
-                    oldNavValue = navValue;
-                }
-            }
-
-            public void SelectPort(int port)
-            {
-                if (ports.Count == 0) return;
-                
-                if (port < 0) port = 0;
-                else if(port >= ports.Count) port = ports.Count - 1;
-                SelectedPort = port;
-                portPointer.anchoredPosition = ports[port].transform.anchoredPosition;
-
-                for (int p = 0; p < ports.Count; p++)
-                {
-                    ports[p].text.color = p == SelectedPort ? portTextColorSelected : portTextColorUnselected;
-                }
             }
         }
 
@@ -174,24 +153,8 @@ namespace PQHD.Dialog
             dialogBoxInstance.transform.sizeDelta = new Vector2(-layout_margin * 2, layout_height);
             dialogBoxInstance.transform.anchoredPosition = new Vector2(0, layout_margin + layout_height / 2f);
 */
-            // set up dialog branch buttons if needed
-            activeDialog.hasPorts = choices != null && choices.Count > 0;// node.ports.Count > 1 || node.ports[0].portName != "DEFAULT";
-            dialogBox.portGroup.gameObject.SetActive(activeDialog.hasPorts);
-            dialogBox.defaultContinue.gameObject.SetActive(!activeDialog.hasPorts);
-            dialogBox.ClearPorts();
-            if(activeDialog.hasPorts)
-            {
-                for (int i = 0; i < choices.Count; i++)
-                {
-                    string c = choices[i];
-                    GameObject portInst = Instantiate(portButtonPrefab, dialogBox.portGroup.transform);
-                    portInst.SetActive(true);
-                    dialogBox.AddPort(portInst, c);
-                }
-            }
-            var exitGroup = activeDialog.hasPorts ? dialogBox.portGroup : dialogBox.defaultContinue;
-            exitGroup.alpha = 0;
-            exitGroup.interactable = false;
+            dialogBox.portGroup.gameObject.SetActive(false);
+            dialogBox.defaultContinue.gameObject.SetActive(false);
 
             // parse events
             string dialogText = ParseInlineEvents(node.dialogText, out List<ParsedInlineEvent> events);
@@ -199,7 +162,7 @@ namespace PQHD.Dialog
             float totalDelays = 0; eventsWithDelay.ForEach(e => totalDelays += e.delay);
             
             // parse inline properties
-            dialogText = ParseInlineProperties(node.dialogText, activeDialog.runtime);
+            dialogText = ParseInlineProperties(dialogText, activeDialog.runtime);
 
             // precalculate some stuff about the length of the dialog text
             dialogBox.textbox.text = dialogText;
@@ -270,7 +233,13 @@ namespace PQHD.Dialog
                 if (i < events.Count)
                 {
                     events[i].sourceEvent.output?.Invoke(activeDialog.runtime, events[i].eventParams);
-                    yield return new WaitForSeconds(events[i].delay);
+                    float wait = 0;
+                    while(wait < events[i].delay)
+                    {
+                        if (activeDialog.skip) break;
+                        wait += Time.deltaTime;
+                        yield return null;
+                    }
                 }
             }
 
@@ -280,16 +249,35 @@ namespace PQHD.Dialog
             float endScrollPos = Mathf.Clamp01((scrollAmount + textWindowHeight / 2f) / scrollAmount) * scrollAmount;
             dialogBox.textbox.rectTransform.anchoredPosition = new Vector2(0, endScrollPos);
             yield return null;
+
+            // set up dialog branch buttons if needed
+            activeDialog.hasPorts = choices != null && choices.Count > 0;// node.ports.Count > 1 || node.ports[0].portName != "DEFAULT";
+            dialogBox.portGroup.gameObject.SetActive(activeDialog.hasPorts);
+            dialogBox.defaultContinue.gameObject.SetActive(!activeDialog.hasPorts);
+            dialogBox.ClearPorts();
+            if(activeDialog.hasPorts)
+            {
+                for (int i = 0; i < choices.Count; i++)
+                {
+                    string c = choices[i];
+                    GameObject portInst = Instantiate(portButtonPrefab, dialogBox.portGroup.transform);
+                    portInst.SetActive(true);
+                    dialogBox.AddPort(portInst, this, c);
+                }
+            }
+            var exitGroup = activeDialog.hasPorts ? dialogBox.portGroup : dialogBox.defaultContinue;
+            exitGroup.alpha = 0;
+            exitGroup.interactable = false;
             
             if (activeDialog.hasPorts)
             {
                 if (node.defaultPort > 0 && node.defaultPort < node.ports.Count)
                 {
-                    dialogBox.SelectPort(node.defaultPort);
+                    dialogBox.navigator.Hover(node.defaultPort);
                 }
                 else
                 {
-                    dialogBox.SelectPort(0);
+                    dialogBox.navigator.Hover(0);
                 }
             }
 
@@ -309,11 +297,6 @@ namespace PQHD.Dialog
         {
             if (activeDialog != null)
             {
-                if (activeDialog.hasPorts)
-                {
-                    dialogBox.UpdateNavigation(Input.MoveAxis.Position);
-                }
-
                 if (Input.ButtonA.WasPressedThisFrame || Input.ButtonB.WasPressedThisFrame)
                 {
                     UISubmit();
@@ -354,11 +337,7 @@ namespace PQHD.Dialog
                 return;
             }
             
-            if (activeDialog.hasPorts)
-            {
-                ExecutePort(dialogBox.ports[dialogBox.SelectedPort].name);
-            }
-            else
+            if (!activeDialog.hasPorts)
             {
                 ExecutePort("DEFAULT");
             }

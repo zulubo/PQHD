@@ -2,6 +2,7 @@ using System;
 using System.Globalization;
 using PQHD.Dialog;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PQHD
 {
@@ -9,10 +10,11 @@ namespace PQHD
     {
         [SerializeField] private GameObject shackBroken;
         [SerializeField] private GameObject shackRebuilt;
-
+        [SerializeField] private HitReaction buildBounce;
+        [SerializeField] private AudioResource buildSound;
         [SerializeField] private DialogGraphRuntime dialog;
-
         [SerializeField] private Loot moonIngot;
+        [SerializeField] private Loot moonDrop;
         [SerializeField] private Loot meat;
 
         private bool isShackBuilt;
@@ -80,6 +82,9 @@ namespace PQHD
             dialog.SetProperty("IsShackBuilt", isShackBuilt.ToString(CultureInfo.InvariantCulture));
             dialog.SetProperty("HasMoonIngot", (Inventory.I.GetCount(moonIngot) > 0).ToString(CultureInfo.InvariantCulture));
             dialog.SetProperty("HasMeat", (meatCount > 0).ToString(CultureInfo.InvariantCulture));
+            int moreDropsNeeded = 500 - Inventory.I.GetCount(moonDrop);
+            dialog.SetProperty("CanAffordMeat", (moreDropsNeeded <= 0).ToString(CultureInfo.InvariantCulture));
+            dialog.SetProperty("MoreDropsNeeded", moreDropsNeeded.ToString(CultureInfo.InvariantCulture));
         }
 
         public void RebuildShack()
@@ -87,6 +92,8 @@ namespace PQHD
             Inventory.I.Remove(moonIngot);
             isShackBuilt = true;
             UpdateShack();
+            buildBounce.Bump(30);
+            Audio.I.PlaySound3D(buildSound, transform.position, 30);
         }
 
         public void SellMeat()

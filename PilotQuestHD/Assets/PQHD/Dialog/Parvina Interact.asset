@@ -16,12 +16,6 @@ MonoBehaviour:
   - baseNodeGuid: ENTRYPOINT
     portName: DEFAULT
     targetNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
-  - baseNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
-    portName: False
-    targetNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
-  - baseNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
-    portName: True
-    targetNodeGuid: a35ed137-a0ca-432f-bbe5-5305a7c32eae
   - baseNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
     portName: No
     targetNodeGuid: fb3f85b2-d000-460c-a24e-bcc4d26a44d6
@@ -40,26 +34,66 @@ MonoBehaviour:
   - baseNodeGuid: 1b2596a3-8485-4fc0-ac71-c3916162d5a9
     portName: DEFAULT
     targetNodeGuid: 7e08cb0c-99dd-4070-af3c-b379480f0eba
+  - baseNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
+    portName: False
+    targetNodeGuid: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
+  - baseNodeGuid: b4d84c3e-6ee0-45e0-97ed-c07702697de5
+    portName: True
+    targetNodeGuid: 349c1aaf-ef3c-4b62-957d-a71b82f15fcc
+  - baseNodeGuid: 349c1aaf-ef3c-4b62-957d-a71b82f15fcc
+    portName: True
+    targetNodeGuid: a35ed137-a0ca-432f-bbe5-5305a7c32eae
+  - baseNodeGuid: 349c1aaf-ef3c-4b62-957d-a71b82f15fcc
+    portName: False
+    targetNodeGuid: 87be20a2-c117-4e1b-9e48-caf22077a4c8
+  - baseNodeGuid: a35ed137-a0ca-432f-bbe5-5305a7c32eae
+    portName: No
+    targetNodeGuid: 8ac48192-82de-4b83-bbf4-a6bb1e72853d
+  - baseNodeGuid: a35ed137-a0ca-432f-bbe5-5305a7c32eae
+    portName: Yes
+    targetNodeGuid: 85564961-b336-44e6-9298-938ce097e348
+  - baseNodeGuid: 85564961-b336-44e6-9298-938ce097e348
+    portName: True
+    targetNodeGuid: c8709c56-6fe1-4b97-92fd-4401a996ce0d
+  - baseNodeGuid: 85564961-b336-44e6-9298-938ce097e348
+    portName: False
+    targetNodeGuid: 23c0808f-5532-4da0-863f-a00c63cac37a
+  - baseNodeGuid: c8709c56-6fe1-4b97-92fd-4401a996ce0d
+    portName: DEFAULT
+    targetNodeGuid: 1a4ba483-da1a-4f68-8b81-4ab918172362
   nodeData:
-  - rid: 4911756312070586675
-  - rid: 4911756312070586676
-  - rid: 4911756312070586677
-  - rid: 4911756312070586678
-  - rid: 4911756312070586679
-  - rid: 4911756312070586680
-  - rid: 4911756312070586681
-  - rid: 4911756312070586682
-  - rid: 4911756312070586683
-  - rid: 4911756312070586684
+  - rid: 4911756333870481731
+  - rid: 4911756333870481732
+  - rid: 4911756333870481733
+  - rid: 4911756333870481734
+  - rid: 4911756333870481735
+  - rid: 4911756333870481736
+  - rid: 4911756333870481737
+  - rid: 4911756333870481738
+  - rid: 4911756333870481739
+  - rid: 4911756333870481740
+  - rid: 4911756333870481741
+  - rid: 4911756333870481742
+  - rid: 4911756333870481743
+  - rid: 4911756333870481744
+  - rid: 4911756333870481745
+  - rid: 4911756333870481746
+  - rid: 4911756333870481747
   exposedProperties:
   - PropertyName: HasMoonIngot
     DefaultValue: False
   - PropertyName: IsShackBuilt
     DefaultValue: False
+  - PropertyName: HasMeat
+    DefaultValue: New Value
+  - PropertyName: CanAffordMeat
+    DefaultValue: False
+  - PropertyName: MoreDropsNeeded
+    DefaultValue: 500
   references:
     version: 2
     RefIds:
-    - rid: 4911756312070586675
+    - rid: 4911756333870481731
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -67,21 +101,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756312070586676
-      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: b4d84c3e-6ee0-45e0-97ed-c07702697de5
-        ports:
-        - portName: True
-          retriggerEnabled: 1
-        - portName: False
-          retriggerEnabled: 1
-        position: {x: 244.66667, y: 200}
-        propertyName: IsShackBuilt
-        type: 1
-        comparison: 0
-        comparator: True
-    - rid: 4911756312070586677
+    - rid: 4911756333870481732
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 6aedb896-ead7-4c4e-a5de-1265fc5a11e7
@@ -94,7 +114,7 @@ MonoBehaviour:
         dialogText: I'm Parvina the huntress. I need a moon ingot to repair my destroyed
           shack.
         defaultPort: 1
-    - rid: 4911756312070586678
+    - rid: 4911756333870481733
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: fb3f85b2-d000-460c-a24e-bcc4d26a44d6
@@ -104,7 +124,7 @@ MonoBehaviour:
         position: {x: 866, y: 396}
         dialogText: Okay... but I can't sell meat until I repair my shack.
         defaultPort: -1
-    - rid: 4911756312070586679
+    - rid: 4911756333870481734
       type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 87a2d1df-9663-4a2a-b0f2-62ceebe4624e
@@ -118,7 +138,7 @@ MonoBehaviour:
         type: 1
         comparison: 0
         comparator: True
-    - rid: 4911756312070586680
+    - rid: 4911756333870481735
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: fceaeb03-cdcc-41d0-81a0-0bbf988f7d21
@@ -128,17 +148,7 @@ MonoBehaviour:
         position: {x: 1042, y: 226.66667}
         dialogText: You don't have a moon ingot!
         defaultPort: -1
-    - rid: 4911756312070586681
-      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
-      data:
-        GUID: a35ed137-a0ca-432f-bbe5-5305a7c32eae
-        ports:
-        - portName: DEFAULT
-          retriggerEnabled: 1
-        position: {x: 525.3334, y: 68}
-        dialogText: Dialog Node
-        defaultPort: -1
-    - rid: 4911756312070586682
+    - rid: 4911756333870481736
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 7e08cb0c-99dd-4070-af3c-b379480f0eba
@@ -149,7 +159,7 @@ MonoBehaviour:
         dialogText: Thank you stranger! I can hunt again. Here's a free meat for
           helping me.
         defaultPort: -1
-    - rid: 4911756312070586683
+    - rid: 4911756333870481737
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 110a07ac-46d9-4923-81bc-24c1b899442e
@@ -159,7 +169,7 @@ MonoBehaviour:
         position: {x: 1042, y: 40.666664}
         eventKey: 'custom:'
         eventBody: GiveFreeMeat
-    - rid: 4911756312070586684
+    - rid: 4911756333870481738
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 1b2596a3-8485-4fc0-ac71-c3916162d5a9
@@ -169,3 +179,107 @@ MonoBehaviour:
         position: {x: 1232, y: 40.666664}
         eventKey: 'custom:'
         eventBody: RebuildShack
+    - rid: 4911756333870481739
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: b4d84c3e-6ee0-45e0-97ed-c07702697de5
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 237.33334, y: 200}
+        propertyName: IsShackBuilt
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756333870481740
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 349c1aaf-ef3c-4b62-957d-a71b82f15fcc
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 490, y: -298}
+        propertyName: HasMeat
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756333870481741
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 87be20a2-c117-4e1b-9e48-caf22077a4c8
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 680, y: -223.33333}
+        dialogText: Sorry, I'm currently out of meat! Please come back later.
+        defaultPort: -1
+    - rid: 4911756333870481742
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: a35ed137-a0ca-432f-bbe5-5305a7c32eae
+        ports:
+        - portName: Yes
+          retriggerEnabled: 1
+        - portName: No
+          retriggerEnabled: 1
+        position: {x: 680, y: -507.33334}
+        dialogText: Want to buy some delicious meat for 500 moon drops?
+        defaultPort: 1
+    - rid: 4911756333870481743
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 8ac48192-82de-4b83-bbf4-a6bb1e72853d
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1058.6666, y: -349.33334}
+        dialogText: Come back when you want some meat!
+        defaultPort: -1
+    - rid: 4911756333870481744
+      type: {class: SerializedComparisonNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 85564961-b336-44e6-9298-938ce097e348
+        ports:
+        - portName: True
+          retriggerEnabled: 1
+        - portName: False
+          retriggerEnabled: 1
+        position: {x: 1036.6666, y: -666}
+        propertyName: CanAffordMeat
+        type: 1
+        comparison: 0
+        comparator: True
+    - rid: 4911756333870481745
+      type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: c8709c56-6fe1-4b97-92fd-4401a996ce0d
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1247.3333, y: -746}
+        eventKey: 'custom:'
+        eventBody: SellMeat
+    - rid: 4911756333870481746
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 1a4ba483-da1a-4f68-8b81-4ab918172362
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1461.3333, y: -746}
+        dialogText: Ejoy the meat!
+        defaultPort: -1
+    - rid: 4911756333870481747
+      type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
+      data:
+        GUID: 23c0808f-5532-4da0-863f-a00c63cac37a
+        ports:
+        - portName: DEFAULT
+          retriggerEnabled: 1
+        position: {x: 1247.3333, y: -578}
+        dialogText: You need <prop:MoreDropsNeeded> more moon drops!
+        defaultPort: -1

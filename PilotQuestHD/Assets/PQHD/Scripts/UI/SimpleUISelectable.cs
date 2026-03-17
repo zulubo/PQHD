@@ -9,9 +9,12 @@ namespace PQHD
     {
         SimpleUINavigator navigator;
 
+        public Func<bool> validateSelect;
         public UnityEvent onSelect;
 
         [SerializeField] Graphic graphic;
+
+        public bool hoverByDefault;
 
 
         [SerializeField] Color defaultColor = Color.white;

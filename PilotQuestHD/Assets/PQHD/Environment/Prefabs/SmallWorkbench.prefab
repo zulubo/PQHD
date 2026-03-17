@@ -1,5 +1,85 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1149983879561707283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 915836386623790398}
+  m_Layer: 0
+  m_Name: rebuilt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &915836386623790398
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149983879561707283}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1265712467661186784}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2107332297315766887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7435152931118883916}
+  - component: {fileID: 8548310128743408540}
+  m_Layer: 0
+  m_Name: dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7435152931118883916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107332297315766887}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4896839574869635678}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8548310128743408540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107332297315766887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b8bf6206b6b5540ab218a6275befc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphRuntime
+  dialog: {fileID: 11400000, guid: 01a108d3d528f2c4d9dcc3f6858c114b, type: 2}
+  pullCameraFocusWhenActive: 0
+  voice: {fileID: 0}
+  playCount: 0
+  maximumPlayCount: -1
 --- !u!1 &7863643449625926512
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +91,7 @@ GameObject:
   - component: {fileID: 4896839574869635678}
   - component: {fileID: 5755731922650755037}
   - component: {fileID: 6276474151665916056}
+  - component: {fileID: 6300734437659127321}
   m_Layer: 0
   m_Name: Broken
   m_TagString: Untagged
@@ -33,6 +114,7 @@ Transform:
   m_Children:
   - {fileID: 4241199359558954923}
   - {fileID: 7457886312350129876}
+  - {fileID: 7435152931118883916}
   m_Father: {fileID: 1265712467661186784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &5755731922650755037
@@ -79,6 +161,25 @@ MonoBehaviour:
   sound: {fileID: 6418180475301049370, guid: dc5405c888a27ef41ab52b4c14314f06, type: 2}
   soundVolume: 0.611
   soundRadius: 30
+--- !u!114 &6300734437659127321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7863643449625926512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23d641aef625e7b4e9adaaa06c325e8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.RebuildableBuilding
+  brokenObject: {fileID: 7863643449625926512}
+  rebuiltObject: {fileID: 1149983879561707283}
+  buildBounce: {fileID: 6276474151665916056}
+  buildSound: {fileID: 6418180475301049370, guid: dc5405c888a27ef41ab52b4c14314f06, type: 2}
+  dialog: {fileID: 8548310128743408540}
+  costItem: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+  costAmount: 5
 --- !u!1 &8643410965627987093
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1265712467661186784}
   m_Layer: 0
-  m_Name: Workbench
+  m_Name: SmallWorkbench
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,6 +210,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4896839574869635678}
+  - {fileID: 915836386623790398}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3607185211057675915

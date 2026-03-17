@@ -41,6 +41,8 @@ namespace PQHD
             }
         }
 
+        public static bool SaveFileExists() => File.Exists(GetFilePath(FileName));
+
         private static Task taskManager;
 
         private static async Task TaskManager()

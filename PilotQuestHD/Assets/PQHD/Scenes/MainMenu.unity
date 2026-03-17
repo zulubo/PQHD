@@ -217,7 +217,7 @@ RectTransform:
   - {fileID: 1183122529}
   - {fileID: 1511354947}
   - {fileID: 550419712}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1134142870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -376,10 +376,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: PQHD::PQHD.SimpleUISelectable
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134142871}
+        m_TargetAssemblyTypeName: PQHD.MainMenu, PQHD
+        m_MethodName: NewGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   graphic: {fileID: 370892257}
+  hoverByDefault: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
   inactiveColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   _active: 1
 --- !u!1 &550419711
@@ -454,6 +467,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550419711}
   m_CullTransparentMesh: 1
+--- !u!1 &759640966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 759640967}
+  - component: {fileID: 759640969}
+  - component: {fileID: 759640968}
+  m_Layer: 0
+  m_Name: overwrite dialog
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &759640967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759640966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1134142870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &759640968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759640966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992f9781887dbf84b9537851111fcbfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogEventRelay
+  events:
+  - key: OverwriteSave
+    OnTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1134142871}
+          m_TargetAssemblyTypeName: PQHD.MainMenu, PQHD
+          m_MethodName: DeleteSaveAndNewGame
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!114 &759640969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759640966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b8bf6206b6b5540ab218a6275befc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.Dialog.DialogGraphRuntime
+  dialog: {fileID: 11400000, guid: 9893b99eca3863e4ca779b7157de3235, type: 2}
+  pullCameraFocusWhenActive: 0
+  voice: {fileID: 0}
+  playCount: 0
+  maximumPlayCount: -1
 --- !u!1 &938314469
 GameObject:
   m_ObjectHideFlags: 0
@@ -834,10 +926,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: PQHD::PQHD.SimpleUISelectable
   onSelect:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1134142871}
+        m_TargetAssemblyTypeName: PQHD.MainMenu, PQHD
+        m_MethodName: ContinueGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   graphic: {fileID: 1130832553}
+  hoverByDefault: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
-  hoverColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  hoverColor: {r: 1, g: 1, b: 1, a: 1}
   inactiveColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
   _active: 1
 --- !u!1 &1134142869
@@ -849,8 +954,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1134142870}
+  - component: {fileID: 1134142871}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -865,12 +971,31 @@ Transform:
   m_GameObject: {fileID: 1134142869}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 442.94473, y: 214.60269, z: -17.52179}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 186422241}
+  - {fileID: 759640967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1134142871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134142869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9645cb7a2e66247278b85d7388510ecb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.MainMenu
+  navigator: {fileID: 1183122531}
+  continueButton: {fileID: 1130832555}
+  newGameButton: {fileID: 370892259}
+  overwriteDialog: {fileID: 759640969}
+  gameScene: Clearing
 --- !u!1 &1183122528
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,7 +1074,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef98f6b4102e2416b83fe1c9d84444d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: PQHD::PQHD.SimpleUINavigator
+  priority: 0
   pointer: {fileID: 1299860536}
+  pointerAnim: {fileID: 1299860538}
   selectFlicker: 1
   selectSound: {fileID: 0}
   hoverSound: {fileID: 0}
@@ -1182,7 +1309,7 @@ GameObject:
   - component: {fileID: 1511354949}
   - component: {fileID: 1511354948}
   m_Layer: 5
-  m_Name: continue
+  m_Name: copyright
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1369,6 +1496,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1595038382}
-  - {fileID: 186422241}
-  - {fileID: 938314473}
   - {fileID: 1134142870}
+  - {fileID: 938314473}
