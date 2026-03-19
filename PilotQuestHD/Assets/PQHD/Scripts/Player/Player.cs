@@ -28,11 +28,11 @@ namespace PQHD
             Gizmos.DrawWireSphere(transform.TransformPoint(interactPos), interactRadius);
         }
 
-
-        private void Start()
+        void Awake()
         {
             I = this;
         }
+
 
         private void Update()
         {

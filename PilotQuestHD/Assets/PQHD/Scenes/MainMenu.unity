@@ -226,7 +226,7 @@ MonoBehaviour:
     m_Center: {x: 0, y: 0, z: 0}
     m_Extent: {x: 20, y: 10, z: 10}
   starDensity: 0.05
-  starSizeMinMax: {x: 0.1, y: 2}
+  starSizeMinMax: {x: 0.1, y: 0.5}
   edgeFading: 1
   scroll: {x: 0, y: -0.5, z: 0}
   starColors:
@@ -6095,6 +6095,7 @@ MonoBehaviour:
   newGameButton: {fileID: 370892259}
   overwriteDialog: {fileID: 759640969}
   gameScene: Clearing
+  introScene: Intro
   menuRootRect: {fileID: 2013291942}
   starfield: {fileID: 148192615}
   starfieldScrollInSpeed: -6

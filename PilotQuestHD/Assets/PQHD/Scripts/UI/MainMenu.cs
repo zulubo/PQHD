@@ -12,6 +12,7 @@ namespace PQHD
         [SerializeField] SimpleUISelectable newGameButton;
         [SerializeField] DialogGraphRuntime overwriteDialog;
         [SerializeField] private string gameScene;
+        [SerializeField] private string introScene;
 
 
         [SerializeField] private RectTransform menuRootRect;
@@ -66,7 +67,7 @@ namespace PQHD
 
         private void StartNewGame()
         {
-            SceneSwitcher.SwitchScenes(gameScene, SceneSwitcher.Transition.HardCut);
+            SceneSwitcher.SwitchScenes(introScene, SceneSwitcher.Transition.HardCut);
         }
 
         IEnumerator ScrollInCoroutine()
