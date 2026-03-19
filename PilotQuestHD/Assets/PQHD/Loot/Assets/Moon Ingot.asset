@@ -17,3 +17,4 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a8f89461f51fbcd46a0c7808f02de147, type: 3}
   unique: 0
   useIcon: {fileID: 0}
+  inventoryCapacity: 500

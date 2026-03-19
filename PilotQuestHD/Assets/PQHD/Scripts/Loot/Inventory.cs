@@ -33,6 +33,11 @@ namespace PQHD
         {
             contents.TryGetValue(loot, out int haveCount);
             haveCount += count;
+            int capacity = GetCapacity(loot);
+            if(capacity > 0)
+            {
+                if(haveCount > capacity) haveCount = capacity;
+            }
             if (loot.unique && haveCount > 1) haveCount = 1;
             contents[loot] = haveCount;
             OnChanged?.Invoke();
@@ -84,6 +89,14 @@ namespace PQHD
             {
                 contents.Add(database.loot[l], 0);
             }
+        }
+
+        /// <summary>
+        /// Get the capacity of the inventory for a loot type
+        /// </summary>
+        public int GetCapacity(Loot loot)
+        {
+            return loot.inventoryCapacity;
         }
 
         [System.Serializable]

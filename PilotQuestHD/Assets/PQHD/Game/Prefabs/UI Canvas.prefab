@@ -1411,6 +1411,8 @@ MonoBehaviour:
   rect: {fileID: 2604534053834380540}
   offsetDuringDialog: {x: 0, y: -270}
   lootPrefab: {fileID: 4145558673228070295}
+  defaultColor: {r: 1, g: 1, b: 1, a: 1}
+  atCapacityColor: {r: 0.9960785, g: 0.38431376, b: 0.43137258, a: 1}
 --- !u!1 &2508262974028478375
 GameObject:
   m_ObjectHideFlags: 0
@@ -3620,6 +3622,8 @@ MonoBehaviour:
   rect: {fileID: 2604534053834380540}
   offsetDuringDialog: {x: 0, y: 0}
   lootPrefab: {fileID: 4145558673228070295}
+  defaultColor: {r: 1, g: 0.2, b: 0.2, a: 1}
+  atCapacityColor: {r: 1, g: 0.2, b: 0.2, a: 1}
 --- !u!1 &5857327099841731884
 GameObject:
   m_ObjectHideFlags: 0

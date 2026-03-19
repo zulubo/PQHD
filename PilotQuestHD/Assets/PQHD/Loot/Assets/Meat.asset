@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: PQHD::PQHD.Loot
   id: meat
   displayName: Meat
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 94d35e763271dfd44ba7b1cc1b81766b, type: 3}
   unique: 0
   useIcon: {fileID: 0}
+  inventoryCapacity: 5

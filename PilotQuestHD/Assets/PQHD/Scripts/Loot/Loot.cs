@@ -11,5 +11,8 @@ namespace PQHD
         public bool unique;
         [Tooltip("Tooltip icon for active items")]
         public Sprite useIcon;
+
+        [Tooltip("Default capacity for this item in inventory. Set to 0 for no limit.")]
+        public int inventoryCapacity = 0;
     }
 }

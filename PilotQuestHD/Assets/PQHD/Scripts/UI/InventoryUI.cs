@@ -14,6 +14,9 @@ namespace PQHD
         private bool isDialogOffset;
         [SerializeField] private GameObject lootPrefab;
 
+        [SerializeField] private Color defaultColor = Color.white;
+        [SerializeField] private Color atCapacityColor = new Color(1, 0.2f, 0.2f);
+
         private class LootDisplay
         {
             public Loot loot;
@@ -26,10 +29,13 @@ namespace PQHD
             private float bounceTimer;
 
             private int _count;
+
+            private InventoryUI ui;
             
-            public LootDisplay(GameObject prefab, Loot loot)
+            public LootDisplay(GameObject prefab, Loot loot, InventoryUI ui)
             {
                 this.loot = loot;
+                this.ui = ui;
                 gameObject = Instantiate(prefab, prefab.transform.parent);
                 icon = gameObject.transform.Find("icon").GetComponent<Image>();
                 numText = gameObject.transform.Find("numText").GetComponent<TMP_Text>();
@@ -60,6 +66,8 @@ namespace PQHD
 
                     _count = count;
                 }
+
+                numText.color = _count >= Inventory.I.GetCapacity(loot) ? ui.atCapacityColor : ui.defaultColor;
             }
 
             public void Update()
@@ -95,7 +103,7 @@ namespace PQHD
                 displays = new LootDisplay[loot.Length];
                 for (int i = 0; i < loot.Length; i++)
                 {
-                    displays[i] = new LootDisplay(lootPrefab, loot[i]);
+                    displays[i] = new LootDisplay(lootPrefab, loot[i], this);
                 }
             }
             

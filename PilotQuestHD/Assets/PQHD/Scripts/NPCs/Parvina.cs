@@ -19,13 +19,20 @@ namespace PQHD
 
         private bool isShackBuilt;
         
+        [SerializeField] GameObject[] meatSupply;
         private int meatCount;
+        [SerializeField] float meatRestockTime = 240;
+        private float meatRestockTimer = 0;
+        private int maxMeat => meatSupply.Length;
+        [SerializeField] private int meatPrice = 500;
+
         
         [System.Serializable]
         public class SerializedParvina
         {
             public bool shackBuilt;
             public int meatCount;
+            public float meatRestockTimer;
         }
 
         public SerializedParvina Serialize()
@@ -33,7 +40,8 @@ namespace PQHD
             return new SerializedParvina()
             {
                 shackBuilt = this.isShackBuilt,
-                meatCount = this.meatCount
+                meatCount = this.meatCount,
+                meatRestockTimer = this.meatRestockTimer
             };
         }
 
@@ -41,10 +49,12 @@ namespace PQHD
         {
             isShackBuilt = false;
             meatCount = 0;
+            meatRestockTimer = 0;
             if (parvina != null)
             {
                 isShackBuilt = parvina.shackBuilt;
                 meatCount = parvina.meatCount;
+                meatRestockTimer = parvina.meatRestockTimer;
             }
             UpdateShack();
             UpdateMeatDisplay();
@@ -58,7 +68,10 @@ namespace PQHD
 
         private void UpdateMeatDisplay()
         {
-            
+            for(int m = 0; m < meatSupply.Length; m++)
+            {
+                meatSupply[m].SetActive(meatCount > m);
+            }
         }
 
         public void Interact()
@@ -73,6 +86,17 @@ namespace PQHD
             {
                 UpdateDialogProperties();
             }
+
+            if(isShackBuilt && meatCount < maxMeat)
+            {
+                meatRestockTimer += Time.deltaTime;
+                if(meatRestockTimer > meatRestockTime)
+                {
+                    meatRestockTimer = 0;
+                    meatCount++;
+                    UpdateMeatDisplay();
+                }
+            }
         }
 
         public Vector3 GetInteractPos() => transform.position;
@@ -82,9 +106,10 @@ namespace PQHD
             dialog.SetProperty("IsShackBuilt", isShackBuilt.ToString(CultureInfo.InvariantCulture));
             dialog.SetProperty("HasMoonIngot", (Inventory.I.GetCount(moonIngot) > 0).ToString(CultureInfo.InvariantCulture));
             dialog.SetProperty("HasMeat", (meatCount > 0).ToString(CultureInfo.InvariantCulture));
-            int moreDropsNeeded = 500 - Inventory.I.GetCount(moonDrop);
+            int moreDropsNeeded = meatPrice - Inventory.I.GetCount(moonDrop);
             dialog.SetProperty("CanAffordMeat", (moreDropsNeeded <= 0).ToString(CultureInfo.InvariantCulture));
             dialog.SetProperty("MoreDropsNeeded", moreDropsNeeded.ToString(CultureInfo.InvariantCulture));
+            dialog.SetProperty("MeatAtCapacity", (Inventory.I.GetCount(meat) >= Inventory.I.GetCapacity(meat)).ToString(CultureInfo.InvariantCulture));
         }
 
         public void RebuildShack()
@@ -99,11 +124,10 @@ namespace PQHD
         public void SellMeat()
         {
             if (meatCount <= 0) return;
-            if (Inventory.I.GetCount(moonIngot) == 0) return;
-            Inventory.I.Remove(moonIngot);
+            if (Inventory.I.GetCount(moonDrop) < meatPrice) return;
+            Inventory.I.Remove(moonDrop, meatPrice);
             Inventory.I.Add(meat);
             meatCount--;
-            if (meatCount < 0) meatCount = 0;
             UpdateMeatDisplay();
         }
 

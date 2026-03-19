@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 44464781833439540}
   - component: {fileID: 1962977747979249286}
   m_Layer: 7
-  m_Name: MoonIngot
+  m_Name: Pickup MoonIngot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
