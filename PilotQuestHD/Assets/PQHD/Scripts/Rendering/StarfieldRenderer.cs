@@ -25,7 +25,7 @@ namespace PQHD
         private Star[] stars;
         private ParticleSystem.Particle[] particles;
 
-        void Start()
+        void OnEnable()
         {
             particleSystem = GetComponent<ParticleSystem>();
             CreateStars();

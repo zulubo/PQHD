@@ -9,9 +9,11 @@ namespace PQHD
         [SerializeField] private PlayerMover mover;
         [SerializeField] private Animator anim;
         [SerializeField] private float dampTime = 0.1f;
+        [SerializeField] private TopDownTilt tilt;
 
         private readonly int anim_moveSpeed = Animator.StringToHash("MoveSpeed");
         private static readonly int anim_YoyoAttack = Animator.StringToHash("YoyoAttack");
+        private static readonly int anim_TiltReduction = Animator.StringToHash("TiltReduction");
 
         private void Start()
         {
@@ -36,6 +38,8 @@ namespace PQHD
                 {
                     anim.SetFloat(anim_moveSpeed, mover.MoveInput.magnitude);
                 }
+
+                if(tilt) tilt.tiltMultiplier = 1 - anim.GetFloat(anim_TiltReduction);
             }
         }
     }
