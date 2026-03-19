@@ -36,8 +36,7 @@ namespace PQHD
 
         private void Start()
         {
-            // moved with rigidbody in fixedupdate
-            nav.updatePosition = false;
+            nav.updateRotation = false;
             facingDir = transform.forward;
         }
 
@@ -118,14 +117,11 @@ namespace PQHD
                 facingDir = nav.desiredVelocity.normalized;
             }
             
+            Debug.Log("pre " + transform.rotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(facingDir), turnSpeed * Time.deltaTime);
+            Debug.Log("post " + transform.rotation);
 
             tilt.tiltMultiplier = 1 - anim.GetFloat(anim_tiltReduction);
-        }
-
-        private void FixedUpdate()
-        {
-            rb.MovePosition(nav.nextPosition);
         }
 
         public void Hit(HitInfo info)

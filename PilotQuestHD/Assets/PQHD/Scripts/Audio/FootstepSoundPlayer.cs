@@ -20,12 +20,22 @@ namespace PQHD
 
         public void PlayFootstepSound()
         {
+            PlayFootstepSoundInternal(false);
+        }
+
+        public void PlayFootstepSoundIgnoreSpeed()
+        {
+            PlayFootstepSoundInternal(true);
+        }
+
+        private void PlayFootstepSoundInternal(bool ignoreSpeed)
+        {
             if (!isActiveAndEnabled) return;
             if (!characterController.isGrounded) return;
             if (DetectGround(out RaycastHit hit))
             {
                 float volume = volumeMultiplier;
-                if (considerSpeed)
+                if (considerSpeed && !ignoreSpeed)
                 {
                     if (Speed < minSpeed) return;
                     volume *= Mathf.InverseLerp(minSpeed, 1, Speed);
