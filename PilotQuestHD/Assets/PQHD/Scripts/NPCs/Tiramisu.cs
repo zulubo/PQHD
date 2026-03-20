@@ -117,9 +117,7 @@ namespace PQHD
                 facingDir = nav.desiredVelocity.normalized;
             }
             
-            Debug.Log("pre " + transform.rotation);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, Quaternion.LookRotation(facingDir), turnSpeed * Time.deltaTime);
-            Debug.Log("post " + transform.rotation);
 
             tilt.tiltMultiplier = 1 - anim.GetFloat(anim_tiltReduction);
         }

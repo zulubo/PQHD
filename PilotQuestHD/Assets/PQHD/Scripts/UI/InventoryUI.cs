@@ -14,6 +14,8 @@ namespace PQHD
         private bool isDialogOffset;
         [SerializeField] private GameObject lootPrefab;
 
+        [SerializeField] bool hideWhenStoreOpen;
+
         [SerializeField] private Color defaultColor = Color.white;
         [SerializeField] private Color atCapacityColor = new Color(1, 0.2f, 0.2f);
 
@@ -91,12 +93,21 @@ namespace PQHD
             if (!Inventory.I) return;
             UpdateUI();
             Inventory.I.OnChanged += UpdateUI;
+            StoreRuntime.onChangeActive += UpdateUI;
             defaultPos = rect.anchoredPosition;
         }
 
         void UpdateUI()
         {
             if (!Inventory.I) return;
+
+            if(hideWhenStoreOpen && StoreRuntime.active)
+            {
+                rect.gameObject.SetActive(false);
+                return;
+            }
+                
+            rect.gameObject.SetActive(true);
             
             if (displays == null)
             {

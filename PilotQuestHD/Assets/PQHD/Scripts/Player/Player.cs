@@ -37,6 +37,7 @@ namespace PQHD
         private void Update()
         {
             if(Dialog.DialogManager.IsPlayingDialog) busy.Set(0.1f);
+            if(StoreRuntime.active) busy.Set(0.1f);
             
             if (Input.ButtonB.WasPressedThisFrame && !busy)
             {

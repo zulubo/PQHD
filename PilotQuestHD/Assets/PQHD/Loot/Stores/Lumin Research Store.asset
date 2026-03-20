@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8811d93ea65741e7aca31e3bb112f0e, type: 3}
+  m_Name: Lumin Research Store
+  m_EditorClassIdentifier: PQHD::PQHD.StoreDef
+  header: Look at all this amazing science!
+  currencies:
+  - {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+  - {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
+  - {fileID: 11400000, guid: 47a814b00aef048148cb0f359932ff11, type: 2}
+  items:
+  - loot: {fileID: 11400000, guid: 6f207bd4cde644b0a8ab0e5d314d7904, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+      amount: 150
+    inventory: 1
+  - loot: {fileID: 11400000, guid: 34b0a9f4f4c694bdbbd6c1505a299c89, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
+      amount: 100
+    inventory: 1
+  - loot: {fileID: 11400000, guid: 992163117805840458c09a030a581cba, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+      amount: 200
+    - currency: {fileID: 11400000, guid: 47a814b00aef048148cb0f359932ff11, type: 2}
+      amount: 150
+    inventory: 1
+  - loot: {fileID: 11400000, guid: 4adbcbe17b15f47d984cb31a1c2a1bd0, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+      amount: 100
+    - currency: {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
+      amount: 300
+    - currency: {fileID: 11400000, guid: 47a814b00aef048148cb0f359932ff11, type: 2}
+      amount: 100
+    inventory: 1
+  - loot: {fileID: 11400000, guid: b5014d98efd064886b46c5ac0d00c90c, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
+      amount: 500
+    - currency: {fileID: 11400000, guid: 47a814b00aef048148cb0f359932ff11, type: 2}
+      amount: 200
+    inventory: 1
+  - loot: {fileID: 11400000, guid: a0359f4740ac34b1f9bc1b41038fac77, type: 2}
+    count: 1
+    cost:
+    - currency: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+      amount: 1000
+    - currency: {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
+      amount: 1000
+    inventory: 1

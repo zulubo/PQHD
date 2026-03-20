@@ -30,7 +30,7 @@ namespace PQHD
 
         private const bool ModernControls = true;
 
-        bool AllowMovement => !StopMoving && !Dialog.DialogManager.IsPlayingDialog;
+        bool AllowMovement => !StopMoving && !Dialog.DialogManager.IsPlayingDialog && !StoreRuntime.active;
 
         private void Update()
         {

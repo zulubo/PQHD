@@ -14,5 +14,6 @@ namespace PQHD
 
         [Tooltip("Default capacity for this item in inventory. Set to 0 for no limit.")]
         public int inventoryCapacity = 0;
+        public bool hideInInventoryUI = false;
     }
 }

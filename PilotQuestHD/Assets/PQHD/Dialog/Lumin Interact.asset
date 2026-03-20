@@ -23,15 +23,15 @@ MonoBehaviour:
     portName: No
     targetNodeGuid: 95028aae-8391-44c2-bbc1-16b2cd6d024e
   nodeData:
-  - rid: 4911756245520351435
-  - rid: 4911756245520351436
-  - rid: 4911756245520351437
-  - rid: 4911756245520351438
+  - rid: 8349358612608188496
+  - rid: 8349358612608188497
+  - rid: 8349358612608188498
+  - rid: 8349358612608188499
   exposedProperties: []
   references:
     version: 2
     RefIds:
-    - rid: 4911756245520351435
+    - rid: 8349358612608188496
       type: {class: SerializedNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: ENTRYPOINT
@@ -39,7 +39,7 @@ MonoBehaviour:
         - portName: DEFAULT
           retriggerEnabled: 1
         position: {x: 0, y: 0}
-    - rid: 4911756245520351436
+    - rid: 8349358612608188497
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 48dde9c0-b0ed-41be-a8d0-fe1fd79cb0fd
@@ -48,27 +48,27 @@ MonoBehaviour:
           retriggerEnabled: 1
         - portName: No
           retriggerEnabled: 1
-        position: {x: 218.66667, y: 201.33333}
+        position: {x: 218.5, y: 201.5}
         dialogText: Hello. I am Dr. Lumin. Would you like to see our current research
           projects?
         defaultPort: 1
-    - rid: 4911756245520351437
+    - rid: 8349358612608188498
       type: {class: SerializedEventNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 4996098c-4eb1-4942-8d32-6f293167a14b
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 614.6667, y: 85.333336}
+        position: {x: 614.5, y: 85.5}
         eventKey: 'custom:'
         eventBody: openShop
-    - rid: 4911756245520351438
+    - rid: 8349358612608188499
       type: {class: SerializedDialogNode, ns: PQHD.Dialog, asm: PQHD}
       data:
         GUID: 95028aae-8391-44c2-bbc1-16b2cd6d024e
         ports:
         - portName: DEFAULT
           retriggerEnabled: 1
-        position: {x: 614.6667, y: 278.66666}
+        position: {x: 614.5, y: 278.5}
         dialogText: Oh? You're not a fan of science?
         defaultPort: -1
