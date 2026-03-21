@@ -1,8 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Codice.Client.BaseCommands.FastExport;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.UI;
 
 namespace PQHD
@@ -39,6 +41,9 @@ namespace PQHD
         [SerializeField] UIArray itemsDisplay;
 
         [SerializeField] SimpleUINavigator itemNav;
+        
+        [SerializeField] AudioResource buySound;
+        [SerializeField] AudioResource errorSound;
 
         bool IsActive => StoreRuntime.active;
         StoreRuntime ActiveStore => StoreRuntime.active;
@@ -46,7 +51,17 @@ namespace PQHD
 
         void Start()
         {
-            StoreRuntime.onChangeActive += () => UpdateUI();
+            StoreRuntime.onChangeActive += ActiveStoreChanged;
+        }
+
+        void OnDestroy()
+        {
+            StoreRuntime.onChangeActive -= ActiveStoreChanged;
+        }
+
+        void ActiveStoreChanged()
+        {
+            UpdateUI();
         }
 
         public void UpdateUI(bool keepSelection = false)
@@ -64,14 +79,15 @@ namespace PQHD
                 {
                     StoreDef.Item item = ActiveStoreDef.items[i];
                     GameObject itemUI = itemsDisplay.Create();
-                    itemUI.GetComponentInChildren<TMP_Text>().text = item.loot.displayName;
+                    bool bought = ActiveStore.inventory[item] <= 0;
+                    TMP_Text text = itemUI.GetComponentInChildren<TMP_Text>();
+                    text.text = bought ? "- Bought -" : item.loot.displayName;
+                    text.color = bought ? Color.gray2 : Color.white; 
                     SimpleUISelectable sel = itemUI.GetComponent<SimpleUISelectable>();
                     sel.onSelect.AddListener(() => Buy(item));
-                    sel.Active = ActiveStore.inventory[item] > 0;
-                    sel.UpdateColor();
                 }
 
-                if(keepSelection) itemNav.Hover(selection);
+                if(keepSelection) itemNav.Hover(selection, false);
 
                 for(int c = 0; c < ActiveStoreDef.currencies.Length; c++)
                 {
@@ -85,8 +101,11 @@ namespace PQHD
 
                     for(int i = 0; i < ActiveStoreDef.items.Length; i++)
                     {
+                        StoreDef.Item item = ActiveStoreDef.items[i];
                         GameObject priceUI = prices.Create();
-                        int? price = ActiveStoreDef.items[i].GetCost(ActiveStoreDef.currencies[c]);
+                        bool bought = ActiveStore.inventory[item] <= 0;
+                        int? price = null;
+                        if(!bought) price = ActiveStoreDef.items[i].GetCost(ActiveStoreDef.currencies[c]);
                         TMP_Text text = priceUI.GetComponent<TMP_Text>();
                         text.enabled = price.HasValue;
                         if(price.HasValue) text.text = price.ToString();
@@ -116,16 +135,38 @@ namespace PQHD
         {
             if(!IsActive) return;
 
-            if(item.CanAfford())
+            if(ActiveStore.inventory[item] > 0)
             {
-                ActiveStore.Buy(item);
-                UpdateUI();
+                if(item.CanAfford())
+                {
+                    ActiveStore.Buy(item);
+                    UpdateUI();
+                    Audio.I.PlaySound2D(buySound);
+                    if(!string.IsNullOrEmpty(item.buyText))
+                    {
+                        headerText.text = item.buyText;
+                    }
+                }
+                else
+                {
+                    StartCoroutine(ErrorCoroutine("Sorry, you don't have enough resources!"));
+                }
             }
             else
             {
-                // show error text?
+                StartCoroutine(ErrorCoroutine("You already bought this! (And I'm very grateful for it!)"));
             }
+        }
 
+        IEnumerator ErrorCoroutine(string errorText)
+        {
+            int hoverIndex = itemNav.HoverIndex;
+            itemNav.enabled = false;
+            headerText.text = errorText;
+            Audio.I.PlaySound2D(errorSound);
+            yield return new WaitForSeconds(0.6f);
+            itemNav.enabled = true;
+            itemNav.Hover(hoverIndex, false);
         }
     }
 }

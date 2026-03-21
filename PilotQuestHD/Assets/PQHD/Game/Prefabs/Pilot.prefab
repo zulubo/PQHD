@@ -100,6 +100,7 @@ Transform:
   - {fileID: 4294298348084606717}
   - {fileID: 4271226798450926362}
   - {fileID: 868921026982962873}
+  - {fileID: 516414711694716876}
   - {fileID: 1970143652130321910}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -123,6 +124,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9
   yoyoDefault: {fileID: 5898141708358377230}
+  altYoyos:
+  - yoyo: {fileID: 8548297591406945153}
+    item: {fileID: 11400000, guid: 6f207bd4cde644b0a8ab0e5d314d7904, type: 2}
 --- !u!114 &5555676651347435354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +219,64 @@ MonoBehaviour:
   tiltWhenFacingAwayFromCamera: 0
   tiltTransform: {fileID: 4294298348084606717}
   tiltMultiplier: 1
+--- !u!1 &5548882374831967487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516414711694716876}
+  - component: {fileID: 8548297591406945153}
+  m_Layer: 0
+  m_Name: Yoyo Metal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &516414711694716876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548882374831967487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1330024887972506481}
+  m_Father: {fileID: 3217010910705194095}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8548297591406945153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548882374831967487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 219c31e8a5d62fb4d88b2128c2baeac2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PilotQuestHD::Yoyo
+  yoyoVisual: {fileID: 1819140038856274379}
+  handPos: {fileID: 4468644458371285948}
+  attackPos: {x: 0, y: 0.73, z: 1.63}
+  attackRadius: 0.96
+  attackMask:
+    serializedVersion: 2
+    m_Bits: 9
+  attackDuration: 0.34
+  hitDelay: 0.12
+  attackSound: {fileID: 6418180475301049370, guid: 80a73cd5319386043ad5077ef53d6e97, type: 2}
+  hitHapticsAmp: 0.3
+  hitHapticsDuration: 0.1
+  hitDamage: 2
 --- !u!1 &6202710796938747928
 GameObject:
   m_ObjectHideFlags: 0
@@ -418,6 +480,110 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2214146128428796977}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ecf3caad17ad8954da4a1b6b17595417, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!1001 &1585139438524746906
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 516414711694716876}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.693
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.574
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3133228045029408151, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8810852176315009831, guid: a3046f688b044f44e9215627d42cb155, type: 3}
+    - target: {fileID: -3133228045029408151, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 39005440830a4a044ae6336501d00620, type: 2}
+    - target: {fileID: 919132149155446097, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_Name
+      value: YoYo
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 628258268160146500}
+  m_SourcePrefab: {fileID: 100100000, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+--- !u!4 &1330024887972506481 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+  m_PrefabInstance: {fileID: 1585139438524746906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1819140038856274379 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2001697d7ce81a743baeb5c10fe13889, type: 3}
+  m_PrefabInstance: {fileID: 1585139438524746906}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &628258268160146500
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819140038856274379}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: ecf3caad17ad8954da4a1b6b17595417, type: 2}

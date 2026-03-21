@@ -6181,8 +6181,8 @@ MonoBehaviour:
   pointer: {fileID: 1299860536}
   pointerAnim: {fileID: 1299860538}
   selectFlicker: 1
-  selectSound: {fileID: 0}
-  hoverSound: {fileID: 0}
+  selectSound: {fileID: 6418180475301049370, guid: 73c0b2f1d74682b4a830fe67770dacfa, type: 2}
+  hoverSound: {fileID: 6418180475301049370, guid: 794b2068e36a1214aa3819bd315d3dd2, type: 2}
 --- !u!1 &1299860535
 GameObject:
   m_ObjectHideFlags: 0

@@ -58,6 +58,12 @@ namespace PQHD
             private const float BounceDuration = 1f;
             public void SetCount(int count)
             {
+                if(loot.hideInInventoryUI)
+                {
+                    gameObject.SetActive(false);
+                    return;
+                }
+
                 if (_count != count)
                 {
                     gameObject.SetActive(count > 0);
@@ -95,6 +101,12 @@ namespace PQHD
             Inventory.I.OnChanged += UpdateUI;
             StoreRuntime.onChangeActive += UpdateUI;
             defaultPos = rect.anchoredPosition;
+        }
+
+        void OnDestroy()
+        {
+            Inventory.I.OnChanged -= UpdateUI;
+            StoreRuntime.onChangeActive -= UpdateUI;
         }
 
         void UpdateUI()

@@ -90,7 +90,10 @@ namespace PQHD.Dialog
 
         [SerializeField] DialogBox dialogBox;
 
-        public GameObject portButtonPrefab;
+        [SerializeField] private GameObject portButtonPrefab;
+        [SerializeField] private AudioResource defaultVoice;
+        [SerializeField] private AudioResource clickSound;
+        
         
         public float layout_margin = 100;
         public float layout_height = 300;
@@ -215,7 +218,8 @@ namespace PQHD.Dialog
                         t += Time.deltaTime / duration;
                         dialogBox.textbox.maxVisibleCharacters = Mathf.RoundToInt(t * parsedText.Length);
                         
-                        if(activeDialog.runtime.voice) PlayVoice(activeDialog.runtime.voice);
+                        if (activeDialog.runtime.voice) PlayVoice(activeDialog.runtime.voice);
+                        else if(defaultVoice) PlayVoice(defaultVoice);
 
                         if (scrollAmount > 0)
                         {
@@ -273,11 +277,11 @@ namespace PQHD.Dialog
             {
                 if (node.defaultPort > 0 && node.defaultPort < node.ports.Count)
                 {
-                    dialogBox.navigator.Hover(node.defaultPort);
+                    dialogBox.navigator.Hover(node.defaultPort, false);
                 }
                 else
                 {
-                    dialogBox.navigator.Hover(0);
+                    dialogBox.navigator.Hover(0, false);
                 }
             }
 
@@ -325,6 +329,7 @@ namespace PQHD.Dialog
             StopCoroutine(box.coroutine);
             dialogBox.Close();
             box.finishEvent(false, portName);
+            Audio.I.PlaySound2D(clickSound);
         }
 
         // clicked the submit button, continues when there are no branches

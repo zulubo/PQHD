@@ -494,6 +494,8 @@ MonoBehaviour:
     portTextColorUnselected: {r: 1, g: 1, b: 1, a: 1}
     portTextColorSelected: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
   portButtonPrefab: {fileID: 7295519761650825497}
+  defaultVoice: {fileID: 6418180475301049370, guid: cb7bd96d208759b4ea143b84da33ea80, type: 2}
+  clickSound: {fileID: 6418180475301049370, guid: 9895b4a91326d2f44aa01d1a832c0d85, type: 2}
   layout_margin: 100
   layout_height: 300
   charactersPerSecond: 50
@@ -1392,7 +1394,7 @@ MonoBehaviour:
   onSelect:
     m_PersistentCalls:
       m_Calls: []
-  graphic: {fileID: 4418104405399296519}
+  graphic: {fileID: 0}
   hoverByDefault: 0
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2726,6 +2728,8 @@ MonoBehaviour:
     prefab: {fileID: 4460535596976878890}
     root: {fileID: 9194357013715044838}
   itemNav: {fileID: 6809906041163766909}
+  buySound: {fileID: 6418180475301049370, guid: 73c0b2f1d74682b4a830fe67770dacfa, type: 2}
+  errorSound: {fileID: 6418180475301049370, guid: c233ba0409901f64892369c4fbe67cd4, type: 2}
 --- !u!1 &7589053211660634465
 GameObject:
   m_ObjectHideFlags: 0
@@ -2876,7 +2880,7 @@ MonoBehaviour:
   pointerAnim: {fileID: 6102558171313081536}
   selectFlicker: 0
   selectSound: {fileID: 0}
-  hoverSound: {fileID: 0}
+  hoverSound: {fileID: 6418180475301049370, guid: 794b2068e36a1214aa3819bd315d3dd2, type: 2}
 --- !u!1 &7622424164285908889
 GameObject:
   m_ObjectHideFlags: 0

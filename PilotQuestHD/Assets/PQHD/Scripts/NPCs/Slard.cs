@@ -12,7 +12,7 @@ namespace PQHD
 
         public void Hit(HitInfo info)
         {
-            hitDialog.Play();
+            //hitDialog.Play();
         }
 
         public void Interact()

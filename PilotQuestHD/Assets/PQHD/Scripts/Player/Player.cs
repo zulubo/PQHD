@@ -18,6 +18,13 @@ namespace PQHD
         public BoolTimer busy;
 
         [SerializeField] private Yoyo yoyoDefault;
+        [System.Serializable]
+        private class AltYoyo
+        {
+            public Yoyo yoyo;
+            public Loot item;
+        }
+        [SerializeField] AltYoyo[] altYoyos;
 
         public Action OnYoyoAttack;
 
@@ -41,13 +48,25 @@ namespace PQHD
             
             if (Input.ButtonB.WasPressedThisFrame && !busy)
             {
-                YoyoAttack(yoyoDefault);
+                YoyoAttack(GetEquippedYoyo());
             }
 
             if(Input.ButtonA.WasPressedThisFrame && !busy)
             {
                 Interact();
             }
+        }
+
+        Yoyo GetEquippedYoyo()
+        {
+            for(int i = altYoyos.Length - 1; i >= 0; i--)
+            {
+                if(Inventory.I.GetCount(altYoyos[i].item) > 0)
+                {
+                    return altYoyos[i].yoyo;
+                }
+            }
+            return yoyoDefault;
         }
 
 

@@ -60,11 +60,11 @@ namespace PQHD
 
             if(sel.hoverByDefault && sel.Active)
             {
-                Hover(selectables.IndexOf(sel));
+                Hover(selectables.IndexOf(sel), false);
             }
             else if(!Hovering)
             {
-                Hover(0);
+                Hover(0, false);
             }
         }
 
@@ -81,7 +81,7 @@ namespace PQHD
 
             if(oldHovering)
             {
-                Hover(selectables.IndexOf(oldHovering));
+                Hover(selectables.IndexOf(oldHovering), false);
             }
         }
 
@@ -92,7 +92,7 @@ namespace PQHD
             ValidateHoverIndex();
             if(HoverIndex != oldHover)
             {
-                if(playSound && hoverSound) Audio.I.PlaySound2D(hoverSound);
+                if(playSound) Audio.I.PlaySound2D(hoverSound);
             }
             UpdateVisuals();
         }
@@ -135,10 +135,10 @@ namespace PQHD
         {
             if(Hovering == null) return;
 
-            if(selectSound) Audio.I.PlaySound2D(selectSound);
             if(Hovering.validateSelect != null && !Hovering.validateSelect()) return;
             if(selectFlicker) StartCoroutine(SelectFlickerCoroutine(Hovering));
             else Hovering.onSelect.Invoke();
+            if(selectSound) Audio.I.PlaySound2D(selectSound);
         }
 
         private bool selecting = false;
@@ -217,16 +217,16 @@ namespace PQHD
             if(!Hovering || !Hovering.Active)
             {
                 ValidateHoverIndex();
-                if(HoverIndex != -1) Hover(HoverIndex);
+                if(HoverIndex != -1) Hover(HoverIndex, false);
             }
 
             if(Input.MoveAxis.DPadUp.WasPressedThisFrame)
             {
-                Hover(HoverIndex - 1);
+                Hover(HoverIndex - 1, true);
             }
             if(Input.MoveAxis.DPadDown.WasPressedThisFrame)
             {
-                Hover(HoverIndex + 1);
+                Hover(HoverIndex + 1, true);
             }
 
             if(Hovering && Input.ButtonA.WasPressedThisFrame || Input.ButtonB.WasPressedThisFrame)

@@ -40,6 +40,8 @@ namespace PQHD
             [Tooltip("How many in store")]
             public int startInventory = 1;
 
+            public string buyText;
+
             public int? GetCost(Loot currency)
             {
                 return System.Array.Find(cost, c => c.currency == currency)?.amount;

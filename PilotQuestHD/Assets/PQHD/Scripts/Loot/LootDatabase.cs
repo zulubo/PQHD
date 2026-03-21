@@ -16,11 +16,11 @@ namespace PQHD
         [ContextMenu("Find Loot Assets")]
         void FindLootAssets()
         {
-            string[] lootAssetPaths = UnityEditor.AssetDatabase.FindAssets("t:Loot");
-            loot = new Loot[lootAssetPaths.Length];
-            for (int l = 0; l < lootAssetPaths.Length; l++)
+            string[] lootAssetGUIDs = UnityEditor.AssetDatabase.FindAssets("t:Loot");
+            loot = new Loot[lootAssetGUIDs.Length];
+            for (int l = 0; l < lootAssetGUIDs.Length; l++)
             {
-                loot[l] = UnityEditor.AssetDatabase.LoadAssetAtPath(lootAssetPaths[l], typeof(Loot)) as Loot;
+                loot[l] = UnityEditor.AssetDatabase.LoadAssetAtPath(UnityEditor.AssetDatabase.GUIDToAssetPath(lootAssetGUIDs[l]), typeof(Loot)) as Loot;
             }
         }
         #endif
