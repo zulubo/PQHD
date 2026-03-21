@@ -68,6 +68,7 @@ namespace PQHD
         /// </summary>
         public PlayingSound PlaySound2D(AudioResource sound, float volume = 1, float pitch = 1)
         {
+            if(sound == null) return null;
             PlayingSound playing = new PlayingSound(GetPooledSource());
             playing.source.spatialBlend = 0;
             playing.source.volume = volume;
@@ -83,6 +84,7 @@ namespace PQHD
         /// </summary>
         public PlayingSound PlaySound3D(AudioResource sound, Vector3 position, float radius, float volume = 1, float pitch = 1, float doppler = 0)
         {
+            if(sound == null) return null;
             PlayingSound playing = new PlayingSound(GetPooledSource());
             playing.source.spatialBlend = 1;
             playing.source.transform.position = position;
@@ -101,6 +103,7 @@ namespace PQHD
         /// </summary>
         public PlayingSound PlaySound3D(AudioResource sound, Transform follow, float radius, float volume = 1, float pitch = 1, float doppler = 0)
         {
+            if(sound == null) return null;
             PlayingSound playing = new PlayingSound(GetPooledSource());
             playing.source.spatialBlend = 1;
             playing.source.transform.position = follow.position;

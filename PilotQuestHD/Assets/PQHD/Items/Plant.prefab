@@ -4958,6 +4958,7 @@ MonoBehaviour:
   growSound: {fileID: 0}
   growParticles: {fileID: 3706069776647298223}
   reaction: {fileID: 8266895673898347433}
+  soundRadius: 20
 --- !u!54 &5506977563879773647
 Rigidbody:
   m_ObjectHideFlags: 0

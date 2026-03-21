@@ -17,4 +17,6 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: a37a728db35507c4f8d2462a6b0b6c70, type: 3}
   unique: 0
   useIcon: {fileID: 0}
+  pickupSound: {fileID: 6418180475301049370, guid: 7069a9e73446f7f4cb9a8ba7c94593a6, type: 2}
   inventoryCapacity: 2500
+  hideInInventoryUI: 0

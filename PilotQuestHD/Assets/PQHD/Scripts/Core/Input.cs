@@ -1,4 +1,5 @@
  using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -86,6 +87,45 @@ namespace PQHD
         public static Axis2 MoveAxis { get; private set; } = new();
         public static Axis2 AimAxis { get; private set; } = new();
 
+        public enum HapticFreq
+        {
+            Low,
+            High
+        }
+
+        private class HapticEvent
+        {
+            private float duration;
+            private float amplitude;
+            private float timer;
+            public HapticFreq freq;
+
+            private const float DefaultFreq = 20;
+
+            public HapticEvent(float duration, float amplitude, HapticFreq freq)
+            {
+                this.duration = duration;
+                this.amplitude = amplitude;
+                this.freq = freq;
+                timer = 0;
+            }
+
+            public void Update(float deltaTime, out bool finished, out float currentAmplitude)
+            {
+                timer += deltaTime;
+                float falloff = 1 - (timer / duration);
+                currentAmplitude = amplitude * falloff * falloff;
+                finished = timer > duration;
+            }
+        }
+
+        private static List<HapticEvent> haptics = new();
+
+        public static void Haptics(float duration, float amplitude, HapticFreq freq)
+        {
+            haptics.Add(new HapticEvent(duration, amplitude, freq));
+        }
+
         private void Update()
         {
             Style = style;
@@ -106,6 +146,41 @@ namespace PQHD
                     ButtonB.Update(action_B.action.IsPressed() || action_B_Alt.action.IsPressed());
                     break;
             }
+
+            // haptics
+            float lowFreqHaptics = 0;
+            float highFreqHaptics = 0;
+            for(int i = haptics.Count - 1; i >= 0; i--)
+            {
+                haptics[i].Update(Time.deltaTime, out bool finished, out float amp);
+                
+                if(finished)
+                {
+                    haptics.RemoveAt(i);
+                    continue;
+                }
+
+                switch(haptics[i].freq)
+                {
+                    case HapticFreq.Low: 
+                        lowFreqHaptics += amp;
+                        break;
+                    case HapticFreq.High:
+                        highFreqHaptics += amp;
+                        break;
+                }
+            }
+
+            if(Gamepad.current != null)
+            {
+                Gamepad.current.SetMotorSpeeds(lowFreqHaptics, highFreqHaptics);
+            }
+        }
+
+        void OnDestroy()
+        {
+            haptics.Clear();
+            InputSystem.ResetHaptics();
         }
     }
 }

@@ -14,6 +14,8 @@ namespace PQHD
         [SerializeField] private ParticleSystem growParticles;
         [SerializeField] private HitReaction reaction;
 
+        [SerializeField] private float soundRadius = 15;
+
         private BoolTimer growing;
 
         /// <summary>
@@ -51,7 +53,7 @@ namespace PQHD
             Inventory.I.Add(moonDrop);
             anim.SetTrigger("SpawnDrop");
             reaction.Bump(4);
-            // TODO: play sound
+            Audio.I.PlaySound3D(moonDrop.pickupSound, transform.position, soundRadius, 0.7f);
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PQHD
 {
@@ -14,6 +15,10 @@ namespace PQHD
         [SerializeField] private float attackDuration = 0.3f;
         public float AttackDuration => attackDuration;
         [SerializeField] private float hitDelay = 0.1f;
+        [SerializeField] private AudioResource attackSound;
+
+        [SerializeField] private float hitHapticsAmp = 0.8f;
+        [SerializeField] private float hitHapticsDuration = 0.2f;
 
         private bool attacking;
         public bool Attacking => attacking;
@@ -41,6 +46,7 @@ namespace PQHD
             attacking = true;
             hasHit = false;
             attackTimer = 0;
+            Audio.I.PlaySound3D(attackSound, transform.position, 20);
         }
 
         private void Update()
@@ -73,7 +79,13 @@ namespace PQHD
 
             for (int i = 0; i < overlapCount; i++)
             {
-                IHittable.HitCollider(overlapBuffer[i], new HitInfo(hitDamage, transform.forward, HitType.Melee));
+                IHittable.HitCollider(overlapBuffer[i], new HitInfo(hitDamage, transform.forward, HitType.Melee), out bool hitAnything);
+                
+                if(hitAnything && hitHapticsAmp > 0)
+                {
+                    Input.Haptics(hitHapticsDuration, hitHapticsAmp, Input.HapticFreq.Low);
+                    Input.Haptics(hitHapticsDuration * 0.5f, hitHapticsAmp, Input.HapticFreq.High);
+                }
             }
         }
     }

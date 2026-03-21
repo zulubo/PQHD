@@ -16,6 +16,7 @@ namespace PQHD
             
             Inventory.I.Remove(moonDrop, 1000);
             Inventory.I.Add(moonIngot);
+            Audio.I.PlaySound2D(moonIngot.pickupSound);
         }
 
         public Vector3 GetInteractPos() => transform.position;

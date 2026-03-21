@@ -299,7 +299,10 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 9
   attackDuration: 0.34
-  hitDelay: 0.05
+  hitDelay: 0.12
+  attackSound: {fileID: 6418180475301049370, guid: 80a73cd5319386043ad5077ef53d6e97, type: 2}
+  hitHapticsAmp: 0.3
+  hitHapticsDuration: 0.1
   hitDamage: 1
 --- !u!1 &7933263010282654318
 GameObject:

@@ -11,6 +11,7 @@ namespace PQHD
         [SerializeField] private Farm farm;
         [SerializeField] private float autosaveTime = 10;
         [SerializeField] private Parvina parvina;
+        [SerializeField] private StoreRuntime luminStore;
 
         private void Start()
         {
@@ -31,6 +32,7 @@ namespace PQHD
             inventory.Deserialize(state.inventory);
             farm.Deserialize(state.plants);
             parvina.Deserialize(state.parvina);
+            luminStore.Deserialize(state.luminStore);
         }
 
         IEnumerator AutosaveCoroutine()
@@ -47,6 +49,7 @@ namespace PQHD
             Saving.State.inventory = inventory.Serialize();
             Saving.State.plants = farm.Serialize();
             Saving.State.parvina = parvina.Serialize();
+            Saving.State.luminStore = luminStore.Serialize();
             Saving.SaveToDisk();
         }
     }

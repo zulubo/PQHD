@@ -129,11 +129,13 @@ namespace PQHD
             Inventory.I.Add(meat);
             meatCount--;
             UpdateMeatDisplay();
+            Audio.I.PlaySound2D(meat.pickupSound);
         }
 
         public void GiveFreeMeat()
         {
             Inventory.I.Add(meat);
+            Audio.I.PlaySound2D(meat.pickupSound);
         }
     }
 }

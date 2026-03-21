@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: PilotQuestHD::LootPickup
   loot: {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+  pickupSound: {fileID: 6418180475301049370, guid: 12efb0750aae1bd42859e3425f4ae7dd, type: 2}
   gravityMultiplier: 1
   collider: {fileID: 1962977747979249286}
   bounciness: 0.6

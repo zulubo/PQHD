@@ -9,26 +9,30 @@ namespace PQHD
         /// <summary>
         /// Hit all hittable components on collider and its rigidbody
         /// </summary>
-        public static void HitCollider(Collider collider, HitInfo info)
+        public static void HitCollider(Collider collider, HitInfo info, out bool hitAnything)
         {
+            hitAnything = false;
             if (collider.attachedRigidbody && collider.attachedRigidbody.gameObject != collider.gameObject)
             {
-                HitGameObject(collider.attachedRigidbody.gameObject, info);
+                HitGameObject(collider.attachedRigidbody.gameObject, info, out bool hitRB);
+                hitAnything |= hitRB;
             }
-            HitGameObject(collider.gameObject, info);
-            
+            HitGameObject(collider.gameObject, info, out bool hitCol);
+            hitAnything |= hitCol;
         }
 
         /// <summary>
         /// Hit all hittable components on a gameobject
         /// </summary>
         /// <param name="gameObject"></param>
-        public static void HitGameObject(GameObject gameObject, HitInfo info)
+        public static void HitGameObject(GameObject gameObject, HitInfo info, out bool hitAnything)
         {
+            hitAnything = false;
             var hittables = gameObject.GetComponents<IHittable>();
             for (int h = 0; h < hittables.Length; h++)
             {
                 hittables[h].Hit(info);
+                hitAnything = true;
             }
         }
     }

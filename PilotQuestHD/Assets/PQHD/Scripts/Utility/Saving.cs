@@ -18,6 +18,7 @@ namespace PQHD
             public Inventory.SerializedInventory inventory;
             public bool[] plants;
             public Parvina.SerializedParvina parvina;
+            public StoreRuntime.SerializedStore luminStore;
         }
 
         public static SaveState State;

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 namespace PQHD
 {
@@ -165,7 +166,9 @@ namespace PQHD
 
             if(loot && Inventory.I) Inventory.I.Add(loot);
             Destroy(gameObject);
+            if(loot.pickupSound != null) Audio.I.PlaySound3D(loot.pickupSound, transform.position, 20);
             despawned = true;
+            Input.Haptics(0.05f, 0.2f, Input.HapticFreq.High);
         }
 
         void Despawn()
