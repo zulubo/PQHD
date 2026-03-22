@@ -12,7 +12,7 @@ namespace PQHD
 
         public Dictionary<Loot, int> contents = new();
 
-        public Action OnChanged;
+        public static Action onChanged;
 
         /// <summary>
         /// Get the number of a loot item in inventory
@@ -40,7 +40,7 @@ namespace PQHD
             }
             if (loot.unique && haveCount > 1) haveCount = 1;
             contents[loot] = haveCount;
-            OnChanged?.Invoke();
+            onChanged?.Invoke();
         }
 
         /// <summary>
@@ -53,7 +53,7 @@ namespace PQHD
                 haveCount -= count;
                 if (haveCount < 0) haveCount = 0;
                 contents[loot] = haveCount;
-                OnChanged?.Invoke();
+                onChanged?.Invoke();
             }
         }
 
@@ -65,7 +65,7 @@ namespace PQHD
             if (contents.ContainsKey(loot))
             {
                 contents[loot] = 0;
-                OnChanged?.Invoke();
+                onChanged?.Invoke();
             }
         }
 
@@ -78,7 +78,7 @@ namespace PQHD
             {
                 contents[loot] = 0;
             }
-            OnChanged?.Invoke();
+            onChanged?.Invoke();
         }
 
         private void Awake()
@@ -129,7 +129,7 @@ namespace PQHD
                 Loot loot = database.FindByID(loadedContent.Key);
                 if (loot != null && contents.ContainsKey(loot)) contents[loot] = loadedContent.Value;
             }
-            OnChanged?.Invoke();
+            onChanged?.Invoke();
         }
     }
 }

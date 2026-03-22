@@ -94,20 +94,25 @@ namespace PQHD
         
         private Loot[] loot => Inventory.I.database.loot;
 
-        private void Start()
+        void Awake()
         {
-            if (!Inventory.I) return;
-            UpdateUI();
-            Inventory.I.OnChanged += UpdateUI;
-            StoreRuntime.onChangeActive += UpdateUI;
             defaultPos = rect.anchoredPosition;
         }
 
-        void OnDestroy()
+        private void OnEnable()
         {
-            Inventory.I.OnChanged -= UpdateUI;
+            UpdateUI();
+            Inventory.onChanged += UpdateUI;
+            StoreRuntime.onChangeActive += UpdateUI;
+        }
+
+        void OnDisable()
+        {
+            Inventory.onChanged -= UpdateUI;
             StoreRuntime.onChangeActive -= UpdateUI;
         }
+
+        private bool initUI;
 
         void UpdateUI()
         {
@@ -134,10 +139,14 @@ namespace PQHD
             {
                 displays[i].SetCount(Inventory.I.contents[loot[i]]);
             }
+
+            initUI = true;
         }
 
         void Update()
         {
+            if(!Inventory.I || !initUI) return;
+            
             for (int i = 0; i < loot.Length; i++)
             {
                 displays[i].Update();
