@@ -123,10 +123,65 @@ Transform:
   - {fileID: 7705591363422950211}
   - {fileID: 6701513357699914123}
   - {fileID: 3860920069876345673}
+  - {fileID: 6065130624858228592}
   - {fileID: 4181754277786932717}
   - {fileID: 6421932385135019014}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8452876362610770195
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6065130624858228592}
+  - component: {fileID: 4321338885642471975}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6065130624858228592
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452876362610770195}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 700502864851443958}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4321338885642471975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8452876362610770195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bfae3a64c954314cae2e4a52a233d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: PQHD::PQHD.Settings
+  audioMasterGroup: {fileID: 24300002, guid: ece382da2e2f9c043b459debbde82a49, type: 2}
+  audioMusicGroup: {fileID: 6321948336316385708, guid: ece382da2e2f9c043b459debbde82a49, type: 2}
+  audioSfxGroup: {fileID: 4238071930242275706, guid: ece382da2e2f9c043b459debbde82a49, type: 2}
+  settings:
+    displayMode: 1
+    inputStyle: 1
+    vibration: 0
+    audio_volume: 1
+    audio_bgmEnabled: 1
+    audio_sfxEnabled: 1
 --- !u!1001 &1282207348221969627
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,6 +314,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 700502864851443958}
     m_Modifications:
+    - target: {fileID: 1214845541019366564, guid: 08739c425ec7dcd4da105e01ae4c6061, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214845541019366564, guid: 08739c425ec7dcd4da105e01ae4c6061, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214845541019366564, guid: 08739c425ec7dcd4da105e01ae4c6061, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214845541019366564, guid: 08739c425ec7dcd4da105e01ae4c6061, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1340668719691901006, guid: 08739c425ec7dcd4da105e01ae4c6061, type: 3}
       propertyPath: m_Name
       value: UI Canvas

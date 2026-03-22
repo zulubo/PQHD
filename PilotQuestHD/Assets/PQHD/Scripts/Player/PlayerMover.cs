@@ -34,6 +34,8 @@ namespace PQHD
 
         private void Update()
         {
+            if(PauseMenu.Paused) return;
+            
             Vector3 velocity = Vector3.down * gravity;
             
             Vector2 moveInput = Input.MoveAxis.Position;

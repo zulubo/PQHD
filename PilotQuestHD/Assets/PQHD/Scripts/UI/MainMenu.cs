@@ -61,7 +61,7 @@ namespace PQHD
 
         public void DeleteSaveAndNewGame()
         {
-            Saving.DeleteSave();
+            Saving.DeleteSave(true);
             StartNewGame();
         }
 

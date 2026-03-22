@@ -16,10 +16,13 @@ namespace PQHD
 
         public bool hoverByDefault;
 
+        public bool canSelect = true;
+
 
         [SerializeField] Color defaultColor = Color.white;
         [SerializeField] Color hoverColor = Color.yellow;
-        [SerializeField] Color inactiveColor = Color.yellow;
+        [SerializeField] Color inactiveColor = Color.gray3;
+        [SerializeField] GameObject hoverObject;
 
         [SerializeField] private bool _active = true;
         public bool Active
@@ -28,7 +31,7 @@ namespace PQHD
             set
             {
                 _active = value;
-                UpdateColor();
+                UpdateVisual();
             }
         }
 
@@ -45,7 +48,7 @@ namespace PQHD
             if(navigator) navigator.DeRegister(this);
         }
 
-        public void UpdateColor()
+        public void UpdateVisual()
         {
             if(graphic != null)
             {
@@ -53,6 +56,7 @@ namespace PQHD
                 if(hovering) graphic.color = hoverColor;
                 if(!Active) graphic.color = inactiveColor;
             }
+            if(hoverObject) hoverObject.SetActive(hovering);
         }
 
         public void Flicker(bool on)

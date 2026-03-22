@@ -19,6 +19,12 @@ namespace PQHD
             public bool[] plants;
             public Parvina.SerializedParvina parvina;
             public StoreRuntime.SerializedStore luminStore;
+            public Settings.SettingsContainer settings;
+
+            public static readonly SaveState Default = new()
+            {
+                settings = Settings.SettingsContainer.Default()
+            };
         }
 
         public static SaveState State;
@@ -94,6 +100,7 @@ namespace PQHD
             Init();
             taskQueue.Enqueue(LoadTask(GetFilePath(FileName)));
         }
+
         
         /// <summary>
         /// Load state from disk.
@@ -112,7 +119,7 @@ namespace PQHD
                 }
                 else
                 {
-                    State = default;
+                    State = SaveState.Default;
                 }
                 
                 OnLoadedState?.Invoke(State);
@@ -169,16 +176,23 @@ namespace PQHD
         /// Added to a task queue, may not execute immediately.
         /// Call LoadFromDisk after deleting if you want it to take effect in-game
         /// </summary>
-        public static void DeleteSave()
+        public static void DeleteSave(bool keepSettings)
         {
             Init();
-            taskQueue.Enqueue(DeleteSaveTask());
+            taskQueue.Enqueue(DeleteSaveTask(keepSettings));
         }
 
-        private static async Task DeleteSaveTask()
+        private static async Task DeleteSaveTask(bool keepSettings)
         {
+            Settings.SettingsContainer oldSettings = Settings.I.settings; 
             string path = GetFilePath(FileName);
             if(File.Exists(path)) File.Delete(path);
+            if(keepSettings)
+            {
+                State.settings = oldSettings;
+                await SaveTask(path);
+            }
+            await LoadTask(path);
         }
     }
 }

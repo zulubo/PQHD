@@ -51,6 +51,8 @@ namespace PQHD
 
         private void Update()
         {
+            if(PauseMenu.Paused) return;
+            
             if (attacking)
             {
                 if (handPos) yoyoVisual.transform.position = handPos.position;

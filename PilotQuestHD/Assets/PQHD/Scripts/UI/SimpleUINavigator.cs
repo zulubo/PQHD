@@ -14,7 +14,8 @@ namespace PQHD
         
         [Tooltip("Priority for choosing active navigator when multiple are active. Make sure each has a different priority to prevent conflicts")]
         [SerializeField] int priority;
-         
+        [SerializeField] bool disableWhenPaused = true;
+        [SerializeField] bool eitherButtonSelects = true;
         [SerializeField] RectTransform pointer;
         [SerializeField] Animator pointerAnim;
         [SerializeField] private bool selectFlicker = false;
@@ -102,7 +103,7 @@ namespace PQHD
             for(int s = 0; s < selectables.Count; s++)
             {
                 selectables[s].hovering = s == HoverIndex;
-                selectables[s].UpdateColor();
+                selectables[s].UpdateVisual();
             }
         }
 
@@ -134,6 +135,7 @@ namespace PQHD
         private void Select()
         {
             if(Hovering == null) return;
+            if(!Hovering.canSelect) return;
 
             if(Hovering.validateSelect != null && !Hovering.validateSelect()) return;
             if(selectFlicker) StartCoroutine(SelectFlickerCoroutine(Hovering));
@@ -159,7 +161,7 @@ namespace PQHD
             while(t < duration)
             {
                 sel.Flicker(on);
-                pointer.gameObject.SetActive(on);
+                if(pointer) pointer.gameObject.SetActive(on);
                 on = !on;
                 t += period;
                 yield return new WaitForSeconds(period);
@@ -173,15 +175,19 @@ namespace PQHD
             selecting = false;
         }
 
+        public bool Active => isActiveAndEnabled && !SceneSwitcher.Transitioning && !(disableWhenPaused && PauseMenu.Paused);
+
         private void Update()
         {
-            if(selecting || SceneSwitcher.Transitioning) return;
+            if(selecting) return;
+            if(!Active) return;
 
             bool overridden = false;
             // make sure we are the primary navigator
             for(int n = 0; n < all.Count; n++)
             {
                 if(all[n] == this) continue;
+                if(!all[n].Active) continue;
                 if(all[n].priority == priority) Debug.LogError("Multiple SimpleUINavigators have same priority");
                 if(all[n].priority > priority)
                 {
@@ -192,7 +198,7 @@ namespace PQHD
 
             if(overridden)
             {
-                pointer.gameObject.SetActive(false);
+                if(pointer) pointer.gameObject.SetActive(false);
                 return;
             }
 
@@ -202,13 +208,16 @@ namespace PQHD
 
         void UpdatePointer()
         {
-            pointer.gameObject.SetActive(Hovering);
-            if(Hovering)
-            {
-                RectTransform selRect = Hovering.transform as RectTransform;
-                // place pointer at left center of selectable
-                Vector3 pointerPoint = selRect.TransformPoint(new Vector3(selRect.rect.xMin, selRect.rect.center.y, 0));
-                pointer.position = pointerPoint;
+            if(pointer)
+            { 
+                pointer.gameObject.SetActive(Hovering);
+                if(Hovering)
+                {
+                    RectTransform selRect = Hovering.transform as RectTransform;
+                    // place pointer at left center of selectable
+                    Vector3 pointerPoint = selRect.TransformPoint(new Vector3(selRect.rect.xMin, selRect.rect.center.y, 0));
+                    pointer.position = pointerPoint;
+                }
             }
         }
 
@@ -229,7 +238,7 @@ namespace PQHD
                 Hover(HoverIndex + 1, true);
             }
 
-            if(Hovering && Input.ButtonA.WasPressedThisFrame || Input.ButtonB.WasPressedThisFrame)
+            if(Hovering && Hovering.canSelect && Input.ButtonA.WasPressedThisFrame || (eitherButtonSelects && Input.ButtonB.WasPressedThisFrame))
             {
                 Select();
             }

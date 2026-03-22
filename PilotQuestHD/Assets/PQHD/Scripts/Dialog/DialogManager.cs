@@ -215,6 +215,8 @@ namespace PQHD.Dialog
                     {
                         if (activeDialog.skip) break;
 
+                        while(PauseMenu.Paused) yield return null;
+
                         t += Time.deltaTime / duration;
                         dialogBox.textbox.maxVisibleCharacters = Mathf.RoundToInt(t * parsedText.Length);
                         
@@ -299,6 +301,8 @@ namespace PQHD.Dialog
 
         private void Update()
         {
+            if(PauseMenu.Paused) return;
+            
             if (activeDialog != null)
             {
                 if (Input.ButtonA.WasPressedThisFrame || Input.ButtonB.WasPressedThisFrame)

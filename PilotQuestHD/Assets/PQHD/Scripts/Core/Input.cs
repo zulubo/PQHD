@@ -23,8 +23,6 @@ namespace PQHD
             Modern
         }
         
-        [SerializeField] private InputStyle style;
-
         public class Button
         {
             public bool Pressed { get; private set; }
@@ -79,7 +77,8 @@ namespace PQHD
             }
         }
 
-        public static InputStyle Style { get; private set; } = InputStyle.Classic;
+        public static InputStyle Style { get; set; }
+        public static bool VibrationEnabled { get; set; } = true;
         public static Button ButtonA { get; private set; } = new();
         public static Button ButtonB { get; private set; } = new();
         public static Button ButtonStart { get; private set; } = new();
@@ -123,13 +122,13 @@ namespace PQHD
 
         public static void Haptics(float duration, float amplitude, HapticFreq freq)
         {
+            if(!VibrationEnabled) return;
+
             haptics.Add(new HapticEvent(duration, amplitude, freq));
         }
 
         private void Update()
         {
-            Style = style;
-
             ButtonA.Update(action_A.action.IsPressed());
             ButtonStart.Update(action_Start.action.IsPressed());
             MoveAxis.Update(action_Move.action.ReadValue<Vector2>(), stickDeadzone);

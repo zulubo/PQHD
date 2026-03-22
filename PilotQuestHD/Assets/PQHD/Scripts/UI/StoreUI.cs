@@ -121,6 +121,8 @@ namespace PQHD
 
         void Update()
         {
+            if(PauseMenu.Paused) return;
+            
             if(IsActive)
             {
                 if(Input.ButtonB.WasPressedThisFrame)

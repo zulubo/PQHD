@@ -5129,7 +5129,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -5171,7 +5171,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2013291942}
+  - {fileID: 1531427431}
   m_Father: {fileID: 1134142870}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5346,9 +5346,11 @@ MonoBehaviour:
         m_CallState: 2
   graphic: {fileID: 370892257}
   hoverByDefault: 0
+  canSelect: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   inactiveColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  hoverObject: {fileID: 0}
   _active: 1
 --- !u!1 &550419711
 GameObject:
@@ -6040,9 +6042,11 @@ MonoBehaviour:
         m_CallState: 2
   graphic: {fileID: 1130832553}
   hoverByDefault: 1
+  canSelect: 1
   defaultColor: {r: 1, g: 1, b: 1, a: 1}
   hoverColor: {r: 1, g: 1, b: 1, a: 1}
   inactiveColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+  hoverObject: {fileID: 0}
   _active: 1
 --- !u!1 &1134142869
 GameObject:
@@ -6178,6 +6182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: PQHD::PQHD.SimpleUINavigator
   priority: 0
+  disableWhenPaused: 1
+  eitherButtonSelects: 1
   pointer: {fileID: 1299860536}
   pointerAnim: {fileID: 1299860538}
   selectFlicker: 1
@@ -6400,6 +6406,57 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1511354946}
   m_CullTransparentMesh: 1
+--- !u!1 &1531427430
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1531427431}
+  - component: {fileID: 1531427432}
+  m_Layer: 5
+  m_Name: aspectRatio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1531427431
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531427430}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2013291942}
+  m_Father: {fileID: 186422241}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1531427432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1531427430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.AspectRatioFitter
+  m_AspectMode: 3
+  m_AspectRatio: 1.7777778
 --- !u!1001 &1595038382
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6452,6 +6509,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: CoreSystems
       objectReference: {fileID: 0}
+    - target: {fileID: 7873024943150541669, guid: 34f185b41abd9414fb05c69bea90aa57, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873024943150541669, guid: 34f185b41abd9414fb05c69bea90aa57, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7873024943150541669, guid: 34f185b41abd9414fb05c69bea90aa57, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6480,7 +6549,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2013291941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6491,7 +6560,7 @@ RectTransform:
   - {fileID: 1511354947}
   - {fileID: 550419712}
   - {fileID: 669731628}
-  m_Father: {fileID: 186422241}
+  m_Father: {fileID: 1531427431}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
