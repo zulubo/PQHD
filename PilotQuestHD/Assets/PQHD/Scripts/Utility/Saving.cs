@@ -19,12 +19,6 @@ namespace PQHD
             public bool[] plants;
             public Parvina.SerializedParvina parvina;
             public StoreRuntime.SerializedStore luminStore;
-            public Settings.SettingsContainer settings;
-
-            public static readonly SaveState Default = new()
-            {
-                settings = Settings.SettingsContainer.Default()
-            };
         }
 
         public static SaveState State;
@@ -32,7 +26,7 @@ namespace PQHD
 
         public static Action<SaveState> OnLoadedState;
         
-        private static string SaveDirectory => Application.persistentDataPath;
+        public static string SaveDirectory => Application.persistentDataPath;
         private const bool UseEncryption = true;
         private const string EncryptionKey = "Campanella";
         private const string FileName = "save.data";
@@ -119,7 +113,7 @@ namespace PQHD
                 }
                 else
                 {
-                    State = SaveState.Default;
+                    State = default;
                 }
                 
                 OnLoadedState?.Invoke(State);
@@ -176,23 +170,10 @@ namespace PQHD
         /// Added to a task queue, may not execute immediately.
         /// Call LoadFromDisk after deleting if you want it to take effect in-game
         /// </summary>
-        public static void DeleteSave(bool keepSettings)
+        public static void DeleteSave()
         {
-            Init();
-            taskQueue.Enqueue(DeleteSaveTask(keepSettings));
-        }
-
-        private static async Task DeleteSaveTask(bool keepSettings)
-        {
-            Settings.SettingsContainer oldSettings = Settings.I.settings; 
             string path = GetFilePath(FileName);
             if(File.Exists(path)) File.Delete(path);
-            if(keepSettings)
-            {
-                State.settings = oldSettings;
-                await SaveTask(path);
-            }
-            await LoadTask(path);
         }
     }
 }

@@ -30,6 +30,9 @@ namespace PQHD
 
         [SerializeField] private AudioMixerGroup musicMixer;
 
+        [SerializeField] private AudioResource pauseSound;
+        [SerializeField] private AudioResource backSound;
+
         public void SetSection(string id)
         {
             int newSection = 0;
@@ -66,6 +69,7 @@ namespace PQHD
             root.SetActive(true);
             Time.timeScale = 0;
             musicMixer.audioMixer.SetFloat("MusicPitch", 0);
+            Audio.I.PlaySound2D(pauseSound);
             paused = true;
         }
 
@@ -100,6 +104,7 @@ namespace PQHD
                 if(!string.IsNullOrEmpty(sections[activeSection].parentID))
                 {
                     SetSection(sections[activeSection].parentID);
+                    Audio.I.PlaySound2D(backSound);
                 }
                 else
                 {

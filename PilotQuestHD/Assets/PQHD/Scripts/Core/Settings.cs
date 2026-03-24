@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -13,7 +15,6 @@ namespace PQHD
         [SerializeField] AudioMixerGroup audioMusicGroup;
         [SerializeField] AudioMixerGroup audioSfxGroup;
         
-
         [System.Serializable]
         public struct SettingsContainer
         {
@@ -43,24 +44,25 @@ namespace PQHD
         void Start()
         {
             I = this;
-            Saving.OnLoadedState += LoadedState;
-            Saving.LoadFromDisk();
+            Load();
         }
 
-        void OnDestroy()
-        {
-            Saving.OnLoadedState -= LoadedState;
-        }
-
+        private static string SettingsFilePath => Saving.SaveDirectory + "/" + "settings.json";
         public void Save()
         {
-            Saving.State.settings = settings;
-            Saving.SaveToDisk();
+            File.WriteAllText(SettingsFilePath, JsonConvert.SerializeObject(settings, Formatting.Indented));
         }
 
-        private void LoadedState(Saving.SaveState state)
+        private void Load()
         {
-            settings = state.settings;
+            if (File.Exists(SettingsFilePath))
+            {
+                settings = JsonConvert.DeserializeObject<SettingsContainer>(File.ReadAllText(SettingsFilePath));
+            }
+            else
+            {
+                settings = SettingsContainer.Default();
+            }
             ApplySettings();
         }
 

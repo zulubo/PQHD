@@ -7,6 +7,8 @@ namespace PQHD
 {
     public class MainMenu : MonoBehaviour
     {
+        [SerializeField] GameObject splashScreen;
+        [SerializeField] float splashScreenDuration;
         [SerializeField] SimpleUINavigator navigator;
         [SerializeField] SimpleUISelectable continueButton;
         [SerializeField] SimpleUISelectable newGameButton;
@@ -28,7 +30,7 @@ namespace PQHD
         {
             continueButton.Active = HasSaveFile;
             newGameButton.validateSelect = ValidateNewGameButtonPressed;
-            StartCoroutine(ScrollInCoroutine());
+            StartCoroutine(IntroCoroutine());
         }
 
         public void ContinueGameButton()
@@ -61,7 +63,7 @@ namespace PQHD
 
         public void DeleteSaveAndNewGame()
         {
-            Saving.DeleteSave(true);
+            Saving.DeleteSave();
             StartNewGame();
         }
 
@@ -70,9 +72,14 @@ namespace PQHD
             SceneSwitcher.SwitchScenes(introScene, SceneSwitcher.Transition.HardCut);
         }
 
-        IEnumerator ScrollInCoroutine()
+        IEnumerator IntroCoroutine()
         {
             navigator.enabled = false;
+            
+            splashScreen.SetActive(true);
+            yield return new WaitForSeconds(splashScreenDuration);
+            splashScreen.SetActive(false);
+            
             Vector3 starfieldBaseScroll = starfield.scroll;
 
             starfield.scroll = starfieldBaseScroll + new Vector3(0, starfieldScrollInSpeed, 0);

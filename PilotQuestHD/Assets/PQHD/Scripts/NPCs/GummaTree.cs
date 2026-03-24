@@ -15,6 +15,7 @@ namespace PQHD
         [SerializeField] private Farm farm;
         [SerializeField] private GameObject seedPrefab;
         [SerializeField] private AudioResource seedSpawnSound;
+        [SerializeField] private AudioResource seedPlantSound;
         [SerializeField] private Transform seedSpawnPos;
         [SerializeField] private GameObject seedImpactFX;
 
@@ -99,6 +100,7 @@ namespace PQHD
             Inventory.I.Remove(moonDrop, nextPlant.price);
             
             nextPlant.SetGrownWithoutActivate(true);
+            Audio.I.PlaySound2D(seedSpawnSound);
             StartCoroutine(SpawnPlantCoroutine(nextPlant.plant));
         }
 
@@ -106,7 +108,6 @@ namespace PQHD
         {
             spawningSeed = true;
             GameObject seed = Instantiate(seedPrefab, seedSpawnPos.position, Quaternion.identity);
-            // TODO: play sound
             float t = 0;
             while(t < 1)
             {
@@ -116,6 +117,7 @@ namespace PQHD
                 yield return null;
             }
             Destroy(seed);
+            Audio.I.PlaySound3D(seedPlantSound, plant.transform.position, 20);
             if(seedImpactFX) Instantiate(seedImpactFX, plant.transform.position, Quaternion.identity);
             plant.Grow();
             spawningSeed = false;
