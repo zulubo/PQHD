@@ -41,6 +41,7 @@ namespace PQHD
         public void ResetSave()
         {
             Saving.DeleteSave();
+            Saving.LoadFromDisk();
         }
 
     }

@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: LootDatabase
   m_EditorClassIdentifier: PQHD::PQHD.LootDatabase
   loot:
-  - {fileID: 11400000, guid: 992163117805840458c09a030a581cba, type: 2}
-  - {fileID: 11400000, guid: 34b0a9f4f4c694bdbbd6c1505a299c89, type: 2}
-  - {fileID: 11400000, guid: b0c4098e78e531543badd007781c8736, type: 2}
-  - {fileID: 11400000, guid: 6f207bd4cde644b0a8ab0e5d314d7904, type: 2}
   - {fileID: 11400000, guid: 674f4d124dcfe3c408f599b9b99e3c2f, type: 2}
   - {fileID: 11400000, guid: 48c91932fa7747b40a37034db54e7d91, type: 2}
+  - {fileID: 11400000, guid: b0c4098e78e531543badd007781c8736, type: 2}
+  - {fileID: 11400000, guid: 992163117805840458c09a030a581cba, type: 2}
+  - {fileID: 11400000, guid: 34b0a9f4f4c694bdbbd6c1505a299c89, type: 2}
+  - {fileID: 11400000, guid: 6f207bd4cde644b0a8ab0e5d314d7904, type: 2}
   - {fileID: 11400000, guid: d9a095510129b4b32a519981888f67b5, type: 2}
   - {fileID: 11400000, guid: a0359f4740ac34b1f9bc1b41038fac77, type: 2}
   - {fileID: 11400000, guid: 47a814b00aef048148cb0f359932ff11, type: 2}
