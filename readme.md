@@ -2,6 +2,8 @@ This is an HD remake of the beginning of the game Pilot Quest from UFO 50.
 
 All assets and code were created by me, except for a couple sound effects stolen from the original game.
 
+Download a build on Itch.io https://zulubo.itch.io/pilot-quest-hd
+
 Play the original! https://store.steampowered.com/app/1147860/UFO_50/
 
 <p>
